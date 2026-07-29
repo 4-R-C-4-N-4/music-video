@@ -1,0 +1,60 @@
+{
+  "title": "True To Myself — Vito Fognini & Cari",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 1000,
+  "bars_per_shot": {"low": 4, "mid": 2, "high": 2},
+  "scenes": [
+    {
+      "id": "mist-ocean",
+      "still_prompt": "Cinematic film still, shot on 65mm: a lone figure in a long dark coat stands on a black sand shore at blue hour before a vast ocean of slow-rolling luminous mist. Far above, an infinite serene expanse of soft golden-white light breaks through a slate sky. A single narrow shaft of light descends to the misty horizon. Muted teal and gold grade, volumetric haze, photorealistic, contemplative, immense negative space.",
+      "video_prompt": "The mist ocean rolls in slow luminous waves while the shaft of golden light on the horizon gently brightens and widens. The figure's coat stirs in a soft wind.",
+      "motion": {
+        "low": "The camera drifts forward almost imperceptibly. Calm, weightless, meditative pacing.",
+        "mid": "The camera glides forward at walking pace as the light pulses softly with a slow heartbeat rhythm.",
+        "high": "The camera accelerates low over the mist, streaks of light sweeping past, mist whipping and parting."
+      }
+    },
+    {
+      "id": "gate-hall",
+      "still_prompt": "Cinematic film still, shot on 65mm: a colossal torchlit stone hall, seven successive monumental gates receding into darkness, each gate taller than the last, carved with glowing cuneiform and hieroglyphs. A small figure in a dark coat walks the polished obsidian floor toward the first gate, reflections of torch flames rippling beneath their feet. Warm firelight against deep indigo shadow, embers drifting in the air, photorealistic, monumental scale.",
+      "video_prompt": "Embers drift and torch flames gutter as the figure walks steadily deeper down the hall of gates, reflections gliding across the obsidian floor beneath them.",
+      "motion": {
+        "low": "The camera follows slowly behind at floor level, solemn processional pacing.",
+        "mid": "The camera tracks alongside at walking pace, gates sliding past, torchlight strobing gently across the frame.",
+        "high": "The camera surges forward through gate after gate, flames flaring as each threshold passes, embers streaming past the lens."
+      }
+    },
+    {
+      "id": "storm-sea",
+      "still_prompt": "Cinematic film still, shot on 65mm: a mountainous night ocean under an apocalyptic electrical storm, colossal waves lit from inside by branching lightning. In the sky a vast rotating cell of storm cloud glows from within, and inside its eye a giant humanoid silhouette of light stands wreathed in lightning. Below, a tiny figure in a dark coat stands calm on a spur of black rock as spray explodes around them. Torrential rain, god-rays through black cloud, muted realistic grade, photorealistic VFX blockbuster quality.",
+      "video_prompt": "Colossal waves heave and crash against the rock, spray whipping past the unmoving figure while lightning branches through the rotating storm cell and the giant silhouette of light pulses within its eye.",
+      "motion": {
+        "low": "The camera holds a wide static frame, the storm churning in slow majesty.",
+        "mid": "The camera pushes slowly toward the storm's glowing eye, rain streaking the lens, thunderlight pulsing in rhythm.",
+        "high": "The camera whips low across the wave tops toward the light, lightning strobing, walls of spray detonating on either side."
+      }
+    },
+    {
+      "id": "world-tree",
+      "still_prompt": "Cinematic film still, shot on 65mm: an immense ancient tree rising out of a mist-filled valley at night, trunk wide as a tower, under cold starlight and a rippling green aurora. Ember-red glyphs glow faintly in a hollow beneath its roots, and sparks of light drift upward along the trunk like slow fireflies. A small figure in a dark coat stands among the roots looking up. Frost, moonlit bark, deep blues and greens with ember accents, photorealistic, sombre and holy.",
+      "video_prompt": "The aurora ripples overhead while glowing sparks stream slowly up the great trunk and the ember-red glyphs beneath the roots brighten and breathe. Mist coils around the roots past the small upturned figure.",
+      "motion": {
+        "low": "The camera rises very slowly up the trunk toward the canopy and the aurora, weightless and reverent.",
+        "mid": "The camera circles the tree at a slow orbit, sparks drifting past the lens, aurora light washing the frame in waves.",
+        "high": "The camera spirals upward fast along the trunk, sparks streaming past like rain, the aurora blazing and rippling violently."
+      }
+    },
+    {
+      "id": "crystal-dawn",
+      "still_prompt": "Cinematic film still, shot on 65mm: dawn breaking over an endless plain of translucent crystal spires that refract the sunrise into prismatic beams, a calm golden sun rising through rose and amber sky. The figure in the dark coat walks away from camera down a shining avenue between the spires toward the sun, their long shadow cast behind them. Lens flare, prismatic light scatter, warm hopeful grade, photorealistic, vast and serene.",
+      "video_prompt": "Prismatic beams sweep slowly across the crystal plain as the sun climbs, refractions drifting over the walking figure and the avenue of spires glittering.",
+      "motion": {
+        "low": "The camera drifts behind the walking figure, slow and resolved, the light growing steadily warmer.",
+        "mid": "The camera glides past spires alongside the figure, beams of refracted sunlight strobing gently between them.",
+        "high": "The camera sweeps up and over the spires into the full blaze of sunrise, prismatic flares streaming across the frame."
+      }
+    }
+  ]
+}

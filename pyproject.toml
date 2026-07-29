@@ -1,0 +1,10 @@
+[project]
+name = "mvgen"
+version = "0.1.0"
+description = "Reproducible music-video generation: track -> beat-aware shot manifest -> Z-Image stills -> LTX-2.3 clips -> assembled video"
+requires-python = ">=3.11"
+dependencies = [
+    "librosa>=0.10",
+    "soundfile",
+    "numpy",
+]
