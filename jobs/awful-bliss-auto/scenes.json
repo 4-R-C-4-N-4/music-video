@@ -1,0 +1,76 @@
+{
+  "title": "Awful Bliss Auto",
+  "concept": "A solitary wanderer navigates a series of decaying, elemental landscapes that reflect the weight of past decisions.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 3000,
+  "bars_per_shot": {
+    "low": 4,
+    "mid": 2,
+    "high": 2
+  },
+  "style": "A recurring figure appears throughout: A middle-aged individual wearing a heavy, oversized wool coat in charcoal gray..",
+  "scenes": [
+    {
+      "id": "the-rusting-coast",
+      "material": "verdigris",
+      "lead": "Oxidized copper relief panel in raking light:",
+      "style": "Hammered copper sheet with deep verdigris green patina, mineral crust, corroded pitting, raised repouss\u00e9 forms catching the light, aged metal. No photorealism \u2014 the material and process are the subject.",
+      "still_prompt": "An abandoned shipyard filled with massive, corroded iron hulls and oxidizing copper plates.",
+      "beats": [
+        "Wide shot: The figure stands motionless beside a massive green-crusted anchor.",
+        "Close-up: The figure traces a finger along a jagged edge of oxidized metal.",
+        "Medium shot: The figure walks slowly through a narrow gap between two rusted shipping containers.",
+        "Low angle shot: The figure looks up at the towering, peeling metal structures.",
+        "Over-the-shoulder shot: The figure stares out at the dark, churning water beyond the scrap heap."
+      ],
+      "video_prompt": "Heavy salt spray mist drifts through the structural gaps. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A slow, drifting pan across the textured metal surfaces.",
+        "mid": "A steady tracking shot following the figure from a distance.",
+        "high": "Rapid whip pans between the sharp angles of the rusted iron."
+      }
+    },
+    {
+      "id": "the-shattered-hall",
+      "material": "stainedglass",
+      "lead": "Stained glass window panel, backlit:",
+      "style": "Leaded came dividing saturated colored glass, luminous jewel tones, glass texture and trapped bubbles, heavy dark lead lines, medieval craft. No photorealism \u2014 the material and process are the subject.",
+      "still_prompt": "A ruined cathedral nave where fragmented, colorful glass shards litter the stone floor.",
+      "beats": [
+        "Extreme wide shot: The figure enters through a broken archway into the light-streaked hall.",
+        "Medium shot: The figure steps carefully over a pile of vibrant blue and red glass fragments.",
+        "Close-up: The figure's hand reaches toward a single shard reflecting a spectrum of light.",
+        "Medium shot: The figure spins in the center of a kaleidoscope of colors.",
+        "Low angle shot: The figure collapses onto the stone floor surrounded by light."
+      ],
+      "video_prompt": "Dust motes dance intensely within the shafts of colored light. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A creeping dolly shot toward the altar.",
+        "mid": "A rhythmic handheld movement following the figure's steps.",
+        "high": "A frantic, circular tracking shot around the central figure."
+      }
+    },
+    {
+      "id": "the-winter-archive",
+      "material": "cyanotype",
+      "lead": "Cyanotype sun print on rough cotton rag paper:",
+      "style": "Deep Prussian blue and raw paper white only, brush-stroked emulsion edges, fibrous paper grain visible throughout, high contrast with no midtones, hand-coated unevenness. No photorealism \u2014 the material and process are the subject.",
+      "still_prompt": "A vast, empty library filled with blue-tinted parchment and shadows.",
+      "beats": [
+        "Wide shot: The figure sits at a heavy wooden desk in the center of the blue hall.",
+        "Medium shot: The figure flips through a thick book of monochromatic blueprints.",
+        "Close-up: The figure closes their eyes and leans their head back against the chair.",
+        "Medium shot: The figure stands and walks toward a wall of blue-tinted archives.",
+        "Extreme long shot: The figure becomes a small silhouette against the deep blue expanse."
+      ],
+      "video_prompt": "A fine layer of frost settles slowly on the wooden surfaces. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A slow, vertical tilt from floor to ceiling.",
+        "mid": "A smooth gliding shot down the length of the aisle.",
+        "high": "A sudden, sharp zoom toward the figure's face."
+      }
+    }
+  ]
+}

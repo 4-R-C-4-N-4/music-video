@@ -16,7 +16,36 @@ muxes the original track back over the top.
 - `uv sync` for the analysis deps (librosa), ffmpeg on PATH.
 - Stop any resident LLM first (`llm stop`) — the GPU can't be shared.
 
-## Workflow: making a video for a new song
+## Fully automatic
+
+```bash
+.venv/bin/python -m mvgen build <track file> jobs/<job>
+```
+
+That is the whole thing. With no `scenes.json` present, a local llama.cpp
+model reads the track's structure and transcript and writes one — concept,
+recurring figure, per-scene settings, per-shot blocking beats, motion
+language, and a material treatment per scene chosen from the validated
+palette in `mvgen/materials.py`. Then it plans, renders and assembles.
+
+Stages are skipped when their outputs exist, so re-running resumes. Delete a
+stage's output to redo it. The GPU is taken and released in turn: demucs,
+then the LLM, then ComfyUI (started automatically if it isn't up).
+
+Flags: `--no-lyrics` to skip transcription, `--model=<name>` to pick another
+llama.cpp runner (default `gemma4-nothink`; reasoning models return
+transcripts instead of JSON, so use a no-think runner).
+
+The director is constrained, not trusted: it picks material *keys* from the
+tested palette rather than writing its own treatment prompts, and its output
+is rejected and regenerated if it echoes the transcript's wording.
+
+## Workflow: hand-authoring a video for a new song
+
+Write `scenes.json` yourself when you want control — it is always preferred
+over regenerating, and the automatic director is a good starting point to
+edit rather than a black box.
+
 
 1. **Create a job dir** and write the creative spec:
    ```bash
