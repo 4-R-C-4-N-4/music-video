@@ -1,3 +1,4 @@
 .venv/
 jobs/*/work/
 __pycache__/
+jobs/*/lyrics.json
