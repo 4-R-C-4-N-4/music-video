@@ -1,0 +1,70 @@
+{
+  "title": "Awful Bliss",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 3000,
+  "bars_per_shot": {"low": 4, "mid": 2, "high": 2},
+  "style": "A recurring figure appears throughout: a young person in a windbreaker and shorts, small in the frame. No photorealism — the material and process are the subject.",
+  "scenes": [
+    {
+      "id": "pool",
+      "lead": "Cyanotype sun print on rough cotton rag paper:",
+      "style": "Deep Prussian blue and raw paper white only, brush-stroked emulsion edges, fibrous paper grain visible throughout, high contrast with no midtones, hand-coated unevenness. No photorealism — the process is the subject.",
+      "still_prompt": "an empty municipal swimming pool at dawn, drained to a shallow skin of rainwater, a high diving board above, chain-link fence, folded loungers stacked against tiled walls, long early shadows across the concrete deck.",
+      "beats": [
+        "Wide shot: the figure stands alone at the deep end of the empty pool, dwarfed by the diving board above.",
+        "Overhead shot looking straight down: the figure lying spread-eagled on the pool floor, water skin rippling around them.",
+        "Low angle from inside the pool basin: the diving board and fence against the pale sky, the figure climbing the ladder.",
+        "Detail: bare feet at the edge of the tiled lip, rainwater trembling below.",
+        "Wide shot from behind the chain-link fence: the whole pool, the small figure crossing it diagonally.",
+        "The figure sits at the pool edge, legs hanging into empty air, seen from across the water."
+      ],
+      "video_prompt": "The shallow rainwater trembles and ripples across the pool floor. The paper texture and blue emulsion of the print remain constant and visible throughout.",
+      "motion": {
+        "low": "The camera drifts forward almost imperceptibly. Still, held, patient.",
+        "mid": "The camera glides slowly across the pool deck at walking pace.",
+        "high": "The camera sweeps quickly along the pool, chain-link flickering past."
+      }
+    },
+    {
+      "id": "greenhouse",
+      "lead": "Needle-felted wool diorama photographed in soft daylight:",
+      "style": "Everything built from dyed carded wool fibers — fuzzy matted surfaces, visible needle-poke marks, loose fiber wisps catching the light, handmade craft object on a tabletop, shallow depth of field. No photorealism — the wool is the subject.",
+      "still_prompt": "a derelict glasshouse overtaken from within by flowering weeds, panes missing and others green with algae, foxgloves and cow parsley bursting through the staging, warm light flooding through the broken roof.",
+      "beats": [
+        "Wide shot: the figure pushes open the glasshouse door into a wall of flowering weeds taller than they are.",
+        "The figure waist-deep among the flowers, arms out, face tipped up toward the broken roof.",
+        "Low angle from among the stems: towering foxgloves and shattered panes above, the figure small between them.",
+        "Detail: a hand brushing through a mass of blossoms, petals shaking loose.",
+        "Overhead shot: the figure spinning slowly in the one clear patch of floor, flowers all around."
+      ],
+      "video_prompt": "The felted flowers sway and tremble, loose wool fibers drifting through the light. The needle-felted texture of every surface stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera drifts gently among the stems.",
+        "mid": "The camera glides through the flowers at walking pace, blossoms brushing the lens.",
+        "high": "The camera rushes upward through the flowers toward the broken roof, petals and fibers streaming past."
+      }
+    },
+    {
+      "id": "underpass",
+      "lead": "Copperplate etching, intaglio print on laid paper:",
+      "style": "Dense cross-hatched line work, drypoint burr, plate tone and ink held in bitten lines, warm sepia-black ink on off-white laid paper, visible plate edge. No photorealism — the engraved line is the subject.",
+      "still_prompt": "a concrete road underpass at night in heavy rain, sodium lamps in cages, standing water across the roadway, wet tyre-streaked walls, a bicycle chained to a railing, rain falling in sheets beyond the mouth of the tunnel.",
+      "beats": [
+        "Wide shot: the figure stands at the mouth of the underpass, silhouetted against the falling rain beyond.",
+        "The figure walking away from camera down the centre of the flooded underpass, reflected in standing water.",
+        "Low angle: the caged sodium lamps overhead in a receding row, rain slanting past them.",
+        "Detail: a shoe stepping into a puddle, concentric rings spreading through the reflection.",
+        "Reverse wide shot from deep inside the tunnel: the small figure approaching out of the rain-lit opening.",
+        "The figure stops, head tipped back, arms loose at their sides, rain sheeting down beyond the tunnel mouth."
+      ],
+      "video_prompt": "Rain falls in sheets beyond the tunnel mouth and puddles ripple across the roadway. The etched cross-hatching and paper grain of the print stay constant and visible throughout.",
+      "motion": {
+        "low": "The camera holds nearly static, the rain falling steadily.",
+        "mid": "The camera tracks slowly down the underpass, lamps sliding past overhead.",
+        "high": "The camera pushes fast toward the rain-lit tunnel mouth, lamps strobing past."
+      }
+    }
+  ]
+}
