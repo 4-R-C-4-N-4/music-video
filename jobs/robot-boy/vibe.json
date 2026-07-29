@@ -1,0 +1,70 @@
+{
+ "acoustic": {
+  "valence": 0.684,
+  "energy": 0.548,
+  "warmth": 0.633,
+  "tempo": 136.0,
+  "majorness": 0.739
+ },
+ "semantic": {
+  "valence": 0.5,
+  "energy": 0.4,
+  "warmth": 0.2,
+  "age": 0.1,
+  "tactility": 0.3,
+  "adjectives": [
+   "pensive",
+   "rhythmic",
+   "detached",
+   "uncertain"
+  ],
+  "imagery": [
+   "gears",
+   "circuits",
+   "clocks",
+   "cables"
+  ]
+ },
+ "vector": {
+  "valence": 0.61,
+  "energy": 0.504,
+  "warmth": 0.46,
+  "age": 0.1,
+  "tactility": 0.3
+ },
+ "tension": 0.184,
+ "families": [
+  [
+   "silkscreen",
+   0.363
+  ],
+  [
+   "risograph",
+   0.392
+  ],
+  [
+   "linocut",
+   0.456
+  ],
+  [
+   "charcoal",
+   0.584
+  ],
+  [
+   "chemigram",
+   0.609
+  ],
+  [
+   "cutpaper",
+   0.654
+  ],
+  [
+   "ukiyoe",
+   0.71
+  ],
+  [
+   "lithograph",
+   0.749
+  ]
+ ]
+}

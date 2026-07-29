@@ -40,6 +40,30 @@ The director is constrained, not trusted: it picks material *keys* from the
 tested palette rather than writing its own treatment prompts, and its output
 is rejected and regenerated if it echoes the transcript's wording.
 
+## Vibe matching
+
+`mvgen.vibe` reads the song two independent ways and blends them into a
+five-axis vector (valence, energy, warmth, age, tactility):
+
+- **acoustic** — librosa: major/minor mode for valence, tempo + loudness +
+  onset density for energy, spectral centroid for warmth. Works on
+  instrumentals, needs no words.
+- **semantic** — a local model rates the same axes from the title and
+  transcript, plus the two audio can't reach (how antique it feels, how
+  handmade it wants to look).
+
+Material families carry `affinity` vectors on the same axes, so families are
+ranked by distance and only the best fits are offered to the director. Choice
+of medium becomes a property of the song rather than a coin flip.
+
+`tension` is the gap between how the music feels and how the words feel.
+Bright music with bleak words is a real songwriting move, and averaging the
+two erases it — so when tension is high the director is told to stage the
+contradiction instead of resolving it.
+
+Nothing from the transcript leaves the machine or reaches the output: the
+vibe step returns numbers and its own adjectives.
+
 ## Workflow: hand-authoring a video for a new song
 
 Write `scenes.json` yourself when you want control — it is always preferred

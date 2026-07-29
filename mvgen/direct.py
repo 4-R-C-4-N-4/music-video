@@ -119,14 +119,31 @@ def leaks(text: str, grams: set[str], n: int = 5) -> bool:
                for i in range(len(words) - n + 1))
 
 
-def mood_context(lyrics: dict | None) -> str:
-    """Give the director the transcript as mood context, or say there is none."""
+def mood_context(lyrics: dict | None, vibe: dict | None = None) -> str:
+    """Mood context for the director: the vibe read, plus the transcript."""
+    parts = []
+    if vibe:
+        v = vibe["vector"]
+        parts.append("Measured character (0-1): " + ", ".join(
+            f"{a} {v[a]:.2f}" for a in ("valence", "energy", "warmth", "age", "tactility")))
+        sem = vibe.get("semantic", {})
+        if sem.get("adjectives"):
+            parts.append("Mood: " + ", ".join(sem["adjectives"]))
+        if sem.get("imagery"):
+            parts.append("Evoked objects: " + ", ".join(sem["imagery"]))
+        if vibe.get("tension", 0) >= 0.35:
+            parts.append(
+                "IMPORTANT: the music and the words disagree — the sound is "
+                "brighter than the sentiment (or the reverse). Stage that "
+                "contradiction rather than resolving it: settings that are "
+                "beautiful and wrong at once, warmth in a bleak place.")
     if not lyrics or not lyrics.get("has_sung_lyrics"):
-        return ("This track is instrumental — there are no lyrics. Derive mood "
-                "from the structure alone: where it is sparse and where it peaks.")
-    text = " ".join(s["text"] for s in lyrics["segments"])
-    return ("Transcript of the sung vocal, for mood and theme only — do not "
-            f"reuse its wording in your output:\n\"\"\"\n{text}\n\"\"\"")
+        parts.append("This track is instrumental — there are no lyrics.")
+    else:
+        text = " ".join(s["text"] for s in lyrics["segments"])
+        parts.append("Transcript of the sung vocal, for mood and theme only — "
+                     f"do not reuse its wording:\n\"\"\"\n{text}\n\"\"\"")
+    return "\n".join(parts)
 
 
 def build_spec(plan_json: dict, analysis: dict, lyrics: dict | None,
@@ -176,9 +193,21 @@ def direct(jobdir: str, model: str = "gemma4-nothink", keep_llm: bool = False) -
         t1 = bars[s["end_bar"]]["t0"] if s["end_bar"] < len(bars) else analysis["duration"]
         lines.append(f"  {i+1}. {t0:.0f}s-{t1:.0f}s ({t1-t0:.0f}s), energy: {s['level']}")
 
-    palette = "\n".join(f"  {k}: {v['mood']}" for k, v in MATERIALS.items())
+    # Constrain the palette to families that actually fit this song's vibe,
+    # rather than offering all 20 blind. The ranking is the whole point of
+    # the vibe read: material choice becomes rooted in the track.
+    vibe_path = job / "vibe.json"
+    vibe = json.load(open(vibe_path)) if vibe_path.exists() else None
+    if vibe:
+        keys = [k for k, _ in vibe["families"]]
+        print("  vibe-matched palette: " + ", ".join(keys), flush=True)
+    else:
+        keys = list(MATERIALS)
+    palette = "\n".join(f"  {k}: {MATERIALS[k]['mood']}" for k in keys)
+
     prompt = USER.format(duration=analysis["duration"], tempo=analysis["tempo"],
-                         sections="\n".join(lines), mood=mood_context(lyrics),
+                         sections="\n".join(lines),
+                         mood=mood_context(lyrics, vibe),
                          palette=palette, n=len(secs))
 
     print(f"starting {model}...", flush=True)

@@ -1,6 +1,6 @@
 {
   "title": "Awful Bliss Auto",
-  "concept": "A solitary wanderer navigates a series of decaying, elemental landscapes that reflect the weight of past decisions.",
+  "concept": "A solitary figure wanders through decaying structures, witnessing the physical erosion of memory and time.",
   "fps": 25,
   "width": 1280,
   "height": 704,
@@ -10,66 +10,63 @@
     "mid": 2,
     "high": 2
   },
-  "style": "A recurring figure appears throughout: A middle-aged individual wearing a heavy, oversized wool coat in charcoal gray..",
+  "style": "A recurring figure appears throughout: A person in their late thirties wearing a heavy, oversized wool coat in slate gray..",
   "scenes": [
     {
-      "id": "the-rusting-coast",
-      "material": "verdigris",
-      "lead": "Oxidized copper relief panel in raking light:",
-      "style": "Hammered copper sheet with deep verdigris green patina, mineral crust, corroded pitting, raised repouss\u00e9 forms catching the light, aged metal. No photorealism \u2014 the material and process are the subject.",
-      "still_prompt": "An abandoned shipyard filled with massive, corroded iron hulls and oxidizing copper plates.",
+      "id": "the-abandoned-atrium",
+      "material": "lithograph",
+      "material_seed": 7400,
+      "still_prompt": "A vast, derelict conservatory with shattered glass panes and oxidized copper frames.",
       "beats": [
-        "Wide shot: The figure stands motionless beside a massive green-crusted anchor.",
-        "Close-up: The figure traces a finger along a jagged edge of oxidized metal.",
-        "Medium shot: The figure walks slowly through a narrow gap between two rusted shipping containers.",
-        "Low angle shot: The figure looks up at the towering, peeling metal structures.",
-        "Over-the-shoulder shot: The figure stares out at the dark, churning water beyond the scrap heap."
+        "Wide shot: The figure stands motionless in the center of the cracked marble floor.",
+        "Medium shot: The figure brushes a layer of thick dust off a stone pedestal.",
+        "Close-up: The figure stares at a single dried leaf caught in a floor crack.",
+        "Medium shot: The figure walks slowly toward a rusted iron door.",
+        "Long shot: The figure exits through the doorway into a thick fog."
       ],
-      "video_prompt": "Heavy salt spray mist drifts through the structural gaps. The material texture of the image stays constant and visible throughout.",
+      "video_prompt": "Dust motes dance in the shafts of light piercing through the broken roof. The material texture of the image stays constant and visible throughout.",
       "motion": {
-        "low": "A slow, drifting pan across the textured metal surfaces.",
-        "mid": "A steady tracking shot following the figure from a distance.",
-        "high": "Rapid whip pans between the sharp angles of the rusted iron."
+        "low": "A slow, creeping dolly shot moves toward the figure's feet.",
+        "mid": "A steady tracking shot follows the figure from the side.",
+        "high": "A rapid whip-pan shifts from the figure to the ceiling."
       }
     },
     {
-      "id": "the-shattered-hall",
-      "material": "stainedglass",
-      "lead": "Stained glass window panel, backlit:",
-      "style": "Leaded came dividing saturated colored glass, luminous jewel tones, glass texture and trapped bubbles, heavy dark lead lines, medieval craft. No photorealism \u2014 the material and process are the subject.",
-      "still_prompt": "A ruined cathedral nave where fragmented, colorful glass shards litter the stone floor.",
+      "id": "the-industrial-corridor",
+      "material": "chemigram",
+      "material_seed": 7401,
+      "still_prompt": "A narrow, damp hallway lined with corroded iron pipes and leaking valves.",
       "beats": [
-        "Extreme wide shot: The figure enters through a broken archway into the light-streaked hall.",
-        "Medium shot: The figure steps carefully over a pile of vibrant blue and red glass fragments.",
-        "Close-up: The figure's hand reaches toward a single shard reflecting a spectrum of light.",
-        "Medium shot: The figure spins in the center of a kaleidoscope of colors.",
-        "Low angle shot: The figure collapses onto the stone floor surrounded by light."
+        "Medium shot: The figure runs their hand along a sweating, rusted pipe.",
+        "Close-up: The figure's eyes dart frantically toward a flickering light fixture.",
+        "Wide shot: The figure stumbles through a puddle of dark oil on the floor.",
+        "Medium shot: The figure presses their back against a damp brick wall.",
+        "Close-up: The figure grips the hem of their heavy wool coat tightly."
       ],
-      "video_prompt": "Dust motes dance intensely within the shafts of colored light. The material texture of the image stays constant and visible throughout.",
+      "video_prompt": "Water drips rhythmically from a fractured pipe into a metal bucket. The material texture of the image stays constant and visible throughout.",
       "motion": {
-        "low": "A creeping dolly shot toward the altar.",
-        "mid": "A rhythmic handheld movement following the figure's steps.",
-        "high": "A frantic, circular tracking shot around the central figure."
+        "low": "A slow tilt moves from the floor to the figure's face.",
+        "mid": "A jittery handheld shot follows the figure's erratic movement.",
+        "high": "A chaotic, handheld shaky-cam moves aggressively toward the figure."
       }
     },
     {
-      "id": "the-winter-archive",
-      "material": "cyanotype",
-      "lead": "Cyanotype sun print on rough cotton rag paper:",
-      "style": "Deep Prussian blue and raw paper white only, brush-stroked emulsion edges, fibrous paper grain visible throughout, high contrast with no midtones, hand-coated unevenness. No photorealism \u2014 the material and process are the subject.",
-      "still_prompt": "A vast, empty library filled with blue-tinted parchment and shadows.",
+      "id": "the-salt-flats",
+      "material": "ukiyoe",
+      "material_seed": 7402,
+      "still_prompt": "A vast, white salt crust landscape under a heavy, violet twilight sky.",
       "beats": [
-        "Wide shot: The figure sits at a heavy wooden desk in the center of the blue hall.",
-        "Medium shot: The figure flips through a thick book of monochromatic blueprints.",
-        "Close-up: The figure closes their eyes and leans their head back against the chair.",
-        "Medium shot: The figure stands and walks toward a wall of blue-tinted archives.",
-        "Extreme long shot: The figure becomes a small silhouette against the deep blue expanse."
+        "Wide shot: The figure walks a straight line toward the horizon.",
+        "Medium shot: The figure stops and looks back at their own footprints.",
+        "Close-up: The figure's boots crunch into the brittle salt crust.",
+        "Medium shot: The figure reaches out to touch the cold, stagnant water at the edge.",
+        "Long shot: The figure becomes a small silhouette against the darkening sky."
       ],
-      "video_prompt": "A fine layer of frost settles slowly on the wooden surfaces. The material texture of the image stays constant and visible throughout.",
+      "video_prompt": "A cold wind ripples the surface of the shallow water. The material texture of the image stays constant and visible throughout.",
       "motion": {
-        "low": "A slow, vertical tilt from floor to ceiling.",
-        "mid": "A smooth gliding shot down the length of the aisle.",
-        "high": "A sudden, sharp zoom toward the figure's face."
+        "low": "A slow crane shot rises high above the figure.",
+        "mid": "A steady side-tracking shot matches the figure's walking pace.",
+        "high": "A fast zoom-in captures the figure's sudden stillness."
       }
     }
   ]

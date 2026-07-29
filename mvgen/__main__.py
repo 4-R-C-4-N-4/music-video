@@ -86,6 +86,23 @@ def build(track: str, jobdir: str, limit: int | None = None,
         except Exception as e:  # transcription is optional enrichment
             print(f"lyrics step skipped ({e})", flush=True)
 
+    vibe_path = job / "vibe.json"
+    if not vibe_path.exists() and not (job / "scenes.json").exists():
+        try:
+            import re as _re
+
+            from . import vibe as _vibe
+            lyrics = json.load(open(lyrics_path)) if lyrics_path.exists() else None
+            title = _re.sub(r"[-_]+", " ", job.name).title()
+            res = _vibe.analyse(track, title, lyrics, model)
+            json.dump(res, open(vibe_path, "w"), indent=1)
+            v = res["vector"]
+            print("vibe: " + "  ".join(f"{a}={v[a]:.2f}" for a in _vibe.AXES)
+                  + (f"  tension={res['tension']:.2f}" if res.get("tension") else ""),
+                  flush=True)
+        except Exception as e:
+            print(f"vibe step skipped ({e})", flush=True)
+
     spec_path = job / "scenes.json"
     if not spec_path.exists():
         print("no scenes.json — directing automatically", flush=True)
