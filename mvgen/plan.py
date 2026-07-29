@@ -80,10 +80,15 @@ def plan(analysis: dict, spec: dict) -> dict:
         n = len(group)
         for k, shot in enumerate(group):
             beat = beats[min(k * len(beats) // max(n, 1), len(beats) - 1)]
+            # A scene may override the global style with its own material
+            # treatment — LTX i2v preserves the still's texture, so a video
+            # can genuinely change medium between scenes.
+            scene_style = scene_map[sid].get("style", style)
+            lead = scene_map[sid].get("lead", "Cinematic film still:")
             shot["still_prompt"] = " ".join(p for p in (
-                "Cinematic film still: " + beat,
+                lead + " " + beat,
                 "Setting: " + scene_map[sid]["still_prompt"],
-                style) if p)
+                scene_style) if p)
 
     return {
         "track": analysis["track"],

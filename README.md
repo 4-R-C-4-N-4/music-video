@@ -68,6 +68,11 @@ delete them to force a re-plan after editing scenes.json.
 - LTX frame counts must be 8n+1, so exact bar-boundary cuts are impossible;
   each shot is quantized against its *absolute* track-time boundary so error
   never accumulates (every cut lands within 4 frames of its beat).
+- A scene may set its own `style` (and `lead`) to override the global style
+  clause — LTX i2v preserves the still's material treatment, so a video can
+  genuinely change medium between scenes (validated: needle-felted wool,
+  cyanotype, copperplate etching and stained glass all survive the video
+  stage intact). Prompt the *process*, not an abstract effect.
 - Everything that affects output lives in `scenes.json` + `manifest.json` —
   commit them and the video is reproducible bit-for-bit modulo GPU
   nondeterminism.

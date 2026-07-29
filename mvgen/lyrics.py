@@ -44,14 +44,17 @@ def transcribe(vocal_path: pathlib.Path, model_size: str = "large-v3") -> list[d
         model = WhisperModel(model_size, device="cpu", compute_type="int8")
         segments, _info = model.transcribe(str(vocal_path), word_timestamps=True,
                                            vad_filter=True, beam_size=5)
+    # faster-whisper hands back numpy scalars; coerce everything to plain
+    # Python types or json.dump chokes downstream.
     out = []
     for seg in segments:
         out.append({
-            "start": round(seg.start, 3),
-            "end": round(seg.end, 3),
+            "start": round(float(seg.start), 3),
+            "end": round(float(seg.end), 3),
             "text": seg.text.strip(),
-            "words": [{"w": w.word.strip(), "start": round(w.start, 3),
-                       "end": round(w.end, 3), "prob": round(w.probability, 3)}
+            "words": [{"w": w.word.strip(), "start": round(float(w.start), 3),
+                       "end": round(float(w.end), 3),
+                       "prob": round(float(w.probability), 3)}
                       for w in (seg.words or [])],
         })
     return out
@@ -123,11 +126,11 @@ def extract(track: str, out_path: str, model_size: str = "large-v3") -> dict:
         energy = energy_spans(vocal)
 
     words = [w for s in segments for w in s["words"]]
-    mean_conf = sum(w["prob"] for w in words) / len(words) if words else 0.0
+    mean_conf = float(sum(w["prob"] for w in words) / len(words)) if words else 0.0
     # Sparse, low-confidence output on a track with real vocal energy means
     # Whisper is hallucinating speech onto non-speech texture. Say so rather
     # than handing the planner garbage phrases.
-    sung = len(words) >= 20 and mean_conf >= 0.6
+    sung = bool(len(words) >= 20 and mean_conf >= 0.6)
 
     result = {
         "track": track,
