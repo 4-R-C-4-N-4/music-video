@@ -6,13 +6,14 @@ Two independent readings, deliberately kept separate:
              mode (major/minor) for valence, tempo and loudness for energy,
              spectral centroid for warmth. Works on instrumentals.
   semantic   a local model reads the title and transcript and rates the same
-             axes, plus two the audio can't give: how antique the song feels
-             and how tactile/handmade it wants to look.
+             axes, plus the ones audio can't give: how antique the song
+             feels, how tactile it wants to look, how alive it is.
 
-They are blended (audio wins on what audio measures) into a five-axis vector,
-and material families are ranked by distance to it. So a bleak, slow, cold
-song surfaces daguerreotype and cyanotype; a bright frantic one surfaces
-silkscreen and riso — rather than the director picking from all 20 blind.
+They are blended (audio wins on what audio measures) into a seven-axis
+vector — valence, energy, warmth, age, tactility, scale, organic — and
+material families are ranked by distance to it. So a bleak, slow, cold song
+surfaces daguerreotype and cyanotype; a vast one surfaces cosmic or lithic;
+a teeming one surfaces mycology or microbial — rather than picking blind.
 
 The transcript is only ever sent to the local model. Nothing from it is
 returned or stored here: the output is adjectives and numbers.
@@ -21,7 +22,7 @@ import json
 import re
 import sys
 
-AXES = ("valence", "energy", "warmth", "age", "tactility")
+AXES = ("valence", "energy", "warmth", "age", "tactility", "scale", "organic")
 
 # Krumhansl-Kessler key profiles, used only to decide major vs minor.
 MAJOR = [6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88]
@@ -30,7 +31,7 @@ MINOR = [6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17]
 SEMANTIC_SYSTEM = """You rate the emotional character of songs. Reply with strict \
 JSON only — no markdown, no commentary. Never quote or reproduce lyrics."""
 
-SEMANTIC_USER = """Rate this song on five axes from 0.0 to 1.0.
+SEMANTIC_USER = """Rate this song on seven axes from 0.0 to 1.0.
 
 title: {title}
 {lyrics}
@@ -41,9 +42,11 @@ Axes:
   warmth     0 = cold, metallic, clinical; 1 = warm, soft, human
   age        0 = contemporary, synthetic, digital; 1 = antique, weathered, historical
   tactility  0 = flat, graphic, screen-like; 1 = dimensional, handmade, physical
+  scale      0 = intimate, close, small; 1 = vast, cosmic, immense
+  organic    0 = inert, geometric, mineral, synthetic; 1 = living, growing, biological
 
 Return:
-{{"valence":0.0,"energy":0.0,"warmth":0.0,"age":0.0,"tactility":0.0,
+{{"valence":0.0,"energy":0.0,"warmth":0.0,"age":0.0,"tactility":0.0,"scale":0.0,"organic":0.0,
  "adjectives":["<6 mood words, your own, not from the lyrics>"],
  "imagery":["<4 concrete physical nouns the song evokes, your own words>"]}}"""
 
@@ -73,12 +76,20 @@ def acoustic(track: str) -> dict:
     centroid = float(librosa.feature.spectral_centroid(y=y, sr=sr).mean())
     warmth = float(np.clip(1.0 - (centroid - 800) / 3200, 0, 1))
 
+    # Spaciousness proxy for scale: a wide spectrum with sparse events and
+    # slow amplitude decay reads as vast; dense, narrow and dry reads close.
+    bandwidth = float(librosa.feature.spectral_bandwidth(y=y, sr=sr).mean())
+    env = librosa.onset.onset_strength(y=y, sr=sr)
+    sustain = float(np.mean(env < np.percentile(env, 60)))  # fraction of quiet frames
+    scale_n = float(np.clip(0.5 * (bandwidth / 3000) + 0.3 * sustain
+                            + 0.2 * (1 - dens_n), 0, 1))
+
     # Brightness nudges valence, but mode dominates.
     valence = float(np.clip(0.7 * majorness + 0.3 * (1 - warmth) * 0.6 + 0.1, 0, 1))
 
     return {"valence": round(valence, 3), "energy": round(energy, 3),
-            "warmth": round(warmth, 3), "tempo": round(tempo, 1),
-            "majorness": round(majorness, 3)}
+            "warmth": round(warmth, 3), "scale": round(scale_n, 3),
+            "tempo": round(tempo, 1), "majorness": round(majorness, 3)}
 
 
 def semantic(title: str, lyrics: dict | None, model: str = "gemma4-nothink") -> dict:
@@ -113,6 +124,9 @@ def blend(ac: dict, sem: dict) -> dict:
         "warmth": 0.6 * ac["warmth"] + 0.4 * sem["warmth"],
         "age": sem["age"],
         "tactility": sem["tactility"],
+        # Audio measures spaciousness; the model judges aliveness.
+        "scale": 0.6 * ac["scale"] + 0.4 * sem["scale"],
+        "organic": sem["organic"],
     }
     return {k: round(float(x), 3) for k, x in v.items()}
 

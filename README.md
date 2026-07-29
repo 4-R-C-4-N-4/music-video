@@ -121,6 +121,15 @@ delete them to force a re-plan after editing scenes.json.
 - LTX frame counts must be 8n+1, so exact bar-boundary cuts are impossible;
   each shot is quantized against its *absolute* track-time boundary so error
   never accumulates (every cut lands within 4 frames of its beat).
+- Families come in three kinds. **craft** — a human process leaving an
+  artifact (cyanotype, etching, felted wool, silkscreen). **substance** — the
+  scene is *constituted* from matter (mycelium, chitin, crystal, carved stone,
+  ferrofluid, ice, pressed plants, bacterial colonies). **instrument** — the
+  scene is *observed through* a modality (electron micrograph, astronomical
+  composite, atomic lattice, radiograph). Substance families are the strongest
+  of the new kinds; instrument families are more easily reinterpreted by the
+  model as a colour filter over an ordinary photograph, so they suit abstract
+  settings better than landscapes.
 - Materials are *composed*, not stored. `mvgen/materials.py` holds physical
   families (cyanotype, intaglio etching, needle-felted wool...) each with
   substrates, palettes, surface emphases, process flaws, lighting and wear.
