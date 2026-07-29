@@ -9,6 +9,25 @@ never accumulates (every cut stays within 4 frames of its target beat).
 import json
 import sys
 
+# Per-shot camera variation within a scene: same world, different setup.
+# Kills the "same keyframe looping" feel of naive one-still-per-scene.
+ANGLES = [
+    "Wide establishing shot.",
+    "Medium shot, closer to the figure.",
+    "Low angle looking up, foreground elements towering.",
+    "Detail close-up of the scene's central element.",
+    "Reverse angle, looking back the way we came.",
+    "Slightly elevated shot, the figure small in the landscape.",
+]
+
+# Progression through a scene: shot k of n moves through these stages.
+STAGES = [
+    "The scene at its threshold, just arrived.",
+    "Deeper in now, the scene fully surrounding.",
+    "At the heart of the scene, its central element close and dominant.",
+    "Passing through the far side, the scene beginning to open up.",
+]
+
 
 def quantize_frames(seconds: float, fps: int, lo: int = 33, hi: int = 241) -> int:
     n = round((seconds * fps - 1) / 8)
@@ -23,10 +42,15 @@ def plan(analysis: dict, spec: dict) -> dict:
     bars = analysis["bars"]
     duration = analysis["duration"]
 
+    style = spec.get("style", "")
+    n_sections = len(analysis["sections"])
+
     shots = []
     cum = 0.0  # seconds of video planned so far
     for si, sec in enumerate(analysis["sections"]):
-        scene = scenes[si % len(scenes)]
+        # Linear allocation: scenes play through once, in order, across the
+        # whole song — a journey, not a cycle. No scene ever returns.
+        scene = scenes[min(si * len(scenes) // n_sections, len(scenes) - 1)]
         level = sec["level"]
         step = bars_per_shot[level]
         b = sec["start_bar"]
@@ -43,11 +67,26 @@ def plan(analysis: dict, spec: dict) -> dict:
                 "frames": frames,
                 "seed": base_seed + len(shots),
                 "video_prompt": scene["video_prompt"] + " " + scene["motion"][level],
+                "still_seed": base_seed + 9000 + len(shots),
             })
             cum += frames / fps
             b = b_end
         if cum >= duration:
             break
+
+    # Per-shot stills: each shot in a scene gets its own camera angle and a
+    # progression stage through the scene, plus the global style clause.
+    by_scene: dict[str, list[dict]] = {}
+    for s in shots:
+        by_scene.setdefault(s["scene"], []).append(s)
+    scene_map = {s["id"]: s for s in scenes}
+    for sid, group in by_scene.items():
+        n = len(group)
+        for k, shot in enumerate(group):
+            stage = STAGES[min(k * len(STAGES) // max(n, 1), len(STAGES) - 1)]
+            angle = ANGLES[k % len(ANGLES)]
+            shot["still_prompt"] = " ".join(
+                p for p in (scene_map[sid]["still_prompt"], stage, angle, style) if p)
 
     return {
         "track": analysis["track"],
@@ -56,8 +95,6 @@ def plan(analysis: dict, spec: dict) -> dict:
         "height": spec.get("height", 704),
         "video_duration": round(cum, 3),
         "track_duration": duration,
-        "stills": {s["id"]: {"prompt": s["still_prompt"], "seed": base_seed + 9000 + i}
-                   for i, s in enumerate(scenes)},
         "shots": shots,
     }
 
@@ -67,10 +104,9 @@ def main():
     manifest = plan(json.load(open(analysis_path)), json.load(open(spec_path)))
     json.dump(manifest, open(out, "w"), indent=1)
     n = len(manifest["shots"])
-    est = n * 2
-    print(f"{n} shots, {len(manifest['stills'])} stills, "
+    print(f"{n} shots (one still each), "
           f"video {manifest['video_duration']:.1f}s vs track {manifest['track_duration']:.1f}s, "
-          f"~{est} min render")
+          f"~{n * 2} min render")
 
 
 if __name__ == "__main__":

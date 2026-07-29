@@ -129,24 +129,23 @@ def render(manifest_path: str, workdir: str, limit: int | None = None):
     w, h, fps = manifest["width"], manifest["height"], manifest["fps"]
     job = pathlib.Path(manifest_path).parent.name
 
-    for sid, still in manifest["stills"].items():
-        if sid in state["stills"]:
-            continue
-        print(f"still {sid}", flush=True)
-        out = run_graph(still_graph(still["prompt"], still["seed"], w, h, f"mv-{job}-{sid}"), f"still:{sid}")
-        dest = grab_output(out, "10", "images", workdir, f"still-{sid}.png")
-        shutil.copy(dest, COMFY_IN / dest.name)
-        state["stills"][sid] = dest.name
-        save_state()
-
     todo = [s for s in manifest["shots"] if str(s["idx"]) not in state["shots"]]
     if limit:
         todo = todo[:limit]
     for shot in todo:
         i = shot["idx"]
+        key = str(i)
+        if key not in state["stills"]:
+            print(f"still {i+1}/{len(manifest['shots'])} (scene {shot['scene']})", flush=True)
+            out = run_graph(still_graph(shot["still_prompt"], shot["still_seed"], w, h,
+                                        f"mv-{job}-s{i:03d}"), f"still:{i}")
+            dest = grab_output(out, "10", "images", workdir, f"still-{i:03d}.png")
+            shutil.copy(dest, COMFY_IN / dest.name)
+            state["stills"][key] = dest.name
+            save_state()
         print(f"shot {i+1}/{len(manifest['shots'])} "
               f"(scene {shot['scene']}, {shot['frames']}f, {shot['level']})", flush=True)
-        g = i2v_graph(f"still-{shot['scene']}.png", shot["video_prompt"], shot["seed"],
+        g = i2v_graph(state["stills"][key], shot["video_prompt"], shot["seed"],
                       w, h, shot["frames"], fps, f"mv-{job}-{i:03d}")
         out = run_graph(g, f"shot:{i}")
         dest = grab_output(out, "20", "images", workdir, f"shot-{i:03d}.mp4")
