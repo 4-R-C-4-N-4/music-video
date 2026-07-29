@@ -1,0 +1,103 @@
+{
+  "title": "Robot Boy",
+  "concept": "A solitary figure navigates a series of shifting architectural realities, transitioning from static observation to frantic movement through layered textures.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 3000,
+  "bars_per_shot": {
+    "low": 4,
+    "mid": 2,
+    "high": 2
+  },
+  "style": "A recurring figure appears throughout: A young adult wearing a heavy oversized linen jumpsuit in a neutral grey tone..",
+  "scenes": [
+    {
+      "id": "the-archive",
+      "material": "cyanotype",
+      "lead": "Cyanotype sun print on rough cotton rag paper:",
+      "style": "Deep Prussian blue and raw paper white only, brush-stroked emulsion edges, fibrous paper grain visible throughout, high contrast with no midtones, hand-coated unevenness. No photorealism \u2014 the material and process are the subject.",
+      "still_prompt": "A vast, empty industrial warehouse with high windows and dust motes dancing in blue-tinted light.",
+      "beats": [
+        "Wide shot: the figure sits motionless on a wooden crate in the center of the floor",
+        "Medium shot: the figure reaches out to touch a cold steel pillar",
+        "Close-up: the figure stares blankly at a crack in the concrete floor",
+        "Medium shot: the figure slowly stands up and turns in a circle",
+        "Wide shot: the figure walks toward a distant, shadowed corner"
+      ],
+      "video_prompt": "Fine particles of dust drift through the blue light beams. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera glides forward with extreme slowness toward the figure."
+      }
+    },
+    {
+      "id": "the-workshop",
+      "material": "felted",
+      "lead": "Needle-felted wool diorama photographed in soft daylight:",
+      "style": "Everything built from dyed carded wool fibers \u2014 fuzzy matted surfaces, visible needle-poke marks, loose fiber wisps catching the light, handmade craft object on a tabletop, shallow depth of field. No photorealism \u2014 the material and process are the subject.",
+      "still_prompt": "A cramped studio filled with mounds of colorful wool and hanging textile scraps.",
+      "beats": [
+        "Close-up: the figure's hands pull a thick strand of crimson yarn",
+        "Medium shot: the figure sits on a stool surrounded by fabric piles",
+        "Close-up: the figure's eyes watch a needle pierce through a heavy cloth"
+      ],
+      "video_prompt": "Soft fabric scraps sway slightly from an unseen vent. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera pans slowly across the texture of the wool."
+      }
+    },
+    {
+      "id": "the-gallery",
+      "material": "risograph",
+      "lead": "Risograph print, two ink layers only (fluorescent pink and teal):",
+      "style": "Visible halftone dot screens, slight misregistration between layers, ink smudge, matte uncoated paper grain, flat poster shapes. No photorealism \u2014 the material and process are the subject.",
+      "still_prompt": "A bright white minimalist gallery with vibrant magenta and yellow geometric shapes on the walls.",
+      "beats": [
+        "Wide shot: the figure walks briskly down a long, brightly lit corridor",
+        "Medium shot: the figure stops to examine a large colorful print on the wall",
+        "Medium shot: the figure turns and walks quickly toward a bright doorway",
+        "Close-up: the figure's feet stepping rapidly across a polished floor",
+        "Wide shot: the figure disappears into a brightly lit hallway"
+      ],
+      "video_prompt": "Bright, saturated light pulses rhythmically from the overhead fixtures. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "The camera follows the figure at a steady walking pace from behind."
+      }
+    },
+    {
+      "id": "the-cathedral",
+      "material": "stainedglass",
+      "lead": "Stained glass window panel, backlit:",
+      "style": "Leaded came dividing saturated colored glass, luminous jewel tones, glass texture and trapped bubbles, heavy dark lead lines, medieval craft. No photorealism \u2014 the material and process are the subject.",
+      "still_prompt": "A dark stone chamber illuminated by intense, fractured beams of multi-colored light.",
+      "beats": [
+        "Wide shot: the figure runs through a corridor of intense colored light",
+        "Medium shot: the figure spins wildly in a patch of deep red light",
+        "Close-up: the figure's face as it is struck by a beam of bright violet",
+        "Medium shot: the figure stumbles through a thick curtain of light",
+        "Wide shot: the figure sprints toward a massive luminous window"
+      ],
+      "video_prompt": "Vibrant colored light beams shift across the stone floor. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "The camera shakes and whips rapidly between the figure and the light sources."
+      }
+    },
+    {
+      "id": "the-garden",
+      "material": "cutpaper",
+      "lead": "Layered cut-paper diorama in a shadow box:",
+      "style": "Six stacked planes of hand-cut textured cardstock, visible paper edges and drop shadows between layers, matte colored stock, craft-object lighting. No photorealism \u2014 the material and process are the subject.",
+      "still_prompt": "An outdoor courtyard filled with white paper-like trees and layered paper hedges.",
+      "beats": [
+        "Wide shot: the figure sits quietly at the base of a paper tree",
+        "Medium shot: the figure rests their head against a white textured trunk",
+        "Close-up: the figure's hands resting still in their lap",
+        "Wide shot: the figure remains seated as the light fades"
+      ],
+      "video_prompt": "Thin white petals fall slowly from the paper trees. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera pulls back slowly to reveal the stillness of the courtyard."
+      }
+    }
+  ]
+}

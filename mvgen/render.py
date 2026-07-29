@@ -7,8 +7,10 @@ the manifest re-renders only that shot (delete its state entry or use --redo).
 import json
 import pathlib
 import shutil
+import subprocess
 import sys
 import time
+import urllib.error
 import urllib.request
 
 COMFY = "http://127.0.0.1:8188"
@@ -36,7 +38,41 @@ def api(path, data=None, timeout=30):
         return json.loads(r.read())
 
 
-def run_graph(graph, label, timeout=1800):
+def comfy_up() -> bool:
+    try:
+        api("/system_stats", timeout=3)
+        return True
+    except Exception:
+        return False
+
+
+def ensure_comfy(timeout: int = 180) -> bool:
+    """Start ComfyUI if it isn't answering. Returns True once it is.
+
+    The server dies unpredictably on long unattended runs, so every stage
+    that talks to it must be able to bring it back rather than failing the
+    whole build.
+    """
+    if comfy_up():
+        return True
+    start = pathlib.Path.home() / "programs/comfyui/start.sh"
+    if not start.exists():
+        return False
+    subprocess.run(["pkill", "-9", "-f", "main.py --listen 127.0.0.1 --port 8188"],
+                   capture_output=True)
+    time.sleep(2)
+    print("  (re)starting comfyui...", flush=True)
+    subprocess.Popen([str(start)], stdout=subprocess.DEVNULL,
+                     stderr=subprocess.DEVNULL, start_new_session=True)
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        if comfy_up():
+            return True
+        time.sleep(3)
+    return False
+
+
+def _run_once(graph, label, timeout=1800):
     pid = api("/prompt", {"prompt": graph})["prompt_id"]
     t0 = time.time()
     while time.time() - t0 < timeout:
@@ -52,6 +88,25 @@ def run_graph(graph, label, timeout=1800):
             print(f"  {label} done in {time.time()-t0:.0f}s", flush=True)
             return h[pid]["outputs"]
     raise TimeoutError(label)
+
+
+def run_graph(graph, label, timeout=1800, attempts=4):
+    """Run a graph, surviving ComfyUI dying underneath us.
+
+    A dead server is a transport failure (connection refused / timeout), not
+    a RuntimeError — those come from the graph itself and are not retried,
+    since re-running a broken graph just fails again more slowly.
+    """
+    for attempt in range(attempts):
+        try:
+            return _run_once(graph, label, timeout)
+        except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
+            if attempt == attempts - 1:
+                raise
+            print(f"  {label}: comfy unreachable ({e}); recovering "
+                  f"[{attempt+1}/{attempts-1}]", flush=True)
+            if not ensure_comfy():
+                raise RuntimeError("could not bring comfyui back up") from e
 
 
 def still_graph(prompt, seed, w, h, prefix):
