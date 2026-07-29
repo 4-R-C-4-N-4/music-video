@@ -2,3 +2,4 @@
 jobs/*/work/
 __pycache__/
 jobs/*/lyrics.json
+jobs/*/*.mp4
