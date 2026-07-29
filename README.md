@@ -16,21 +16,47 @@ muxes the original track back over the top.
 - `uv sync` for the analysis deps (librosa), ffmpeg on PATH.
 - Stop any resident LLM first (`llm stop`) — the GPU can't be shared.
 
-## Usage
+## Workflow: making a video for a new song
 
-```bash
-V=.venv/bin/python
-J=jobs/<job>          # contains scenes.json (see jobs/true-to-myself)
+1. **Create a job dir** and write the creative spec:
+   ```bash
+   mkdir jobs/my-song
+   cp jobs/true-to-myself/scenes.json jobs/my-song/scenes.json
+   ```
+   Edit `scenes.json`: this is the entire creative surface. Each scene has a
+   `still_prompt` (the look — one keyframe image per scene), a `video_prompt`
+   (what's always in motion), and three `motion` variants (`low`/`mid`/`high`)
+   that get appended depending on the music's energy at that point. Scenes are
+   assigned to the song's sections in listed order, cycling. A recurring
+   character/palette across scenes ("figure in a long dark coat", one color
+   grade) is what makes the result read as one video. 3–6 scenes works well.
 
-$V -m mvgen.analyze <track file> $J/analysis.json
-$V -m mvgen.plan $J/analysis.json $J/scenes.json $J/manifest.json
-$V -m mvgen.render $J/manifest.json $J/work [limit]   # ~2 min per shot
-$V -m mvgen.assemble $J/manifest.json $J/work $J/out.mp4
-```
+2. **Preview cheaply before the long render.** Stills are ~10s each, so build
+   with a shot limit, look at `work/still-*.png` and the first shot clips, and
+   iterate on `scenes.json` (delete `work/state.json` entries — or the whole
+   `work/` dir — for scenes you re-prompt):
+   ```bash
+   .venv/bin/python -m mvgen build <track file> jobs/my-song 2
+   ```
 
-`render` is resumable and idempotent (`work/state.json`): kill it any time and
-re-run; to re-roll one shot, edit its prompt/seed in the manifest, delete its
-entry from `state.json`, and re-run render + assemble.
+3. **Full build** (same command, no limit — resumes past everything already
+   rendered, then assembles `jobs/my-song/my-song.mp4`):
+   ```bash
+   .venv/bin/python -m mvgen build <track file> jobs/my-song
+   ```
+   Budget ~2 min of GPU per shot; a 3–4 min track is ~40–50 shots.
+
+4. **Reroll bad shots**: edit that shot's `video_prompt`/`seed` in
+   `manifest.json`, delete its entry from `work/state.json`, re-run step 3.
+   Only that shot re-renders, then assembly re-runs.
+
+5. **Commit** `scenes.json` + `manifest.json` (and `analysis.json`) — that's
+   the reproducible record of the video.
+
+Individual stages are also runnable on their own (`mvgen.analyze`,
+`mvgen.plan`, `mvgen.render`, `mvgen.assemble`) — see each module's docstring
+for arguments. `analysis.json`/`manifest.json` are only generated if missing;
+delete them to force a re-plan after editing scenes.json.
 
 ## How the plan works
 
