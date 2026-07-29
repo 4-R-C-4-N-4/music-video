@@ -46,7 +46,16 @@ MOOD CONTEXT
 {mood}
 
 MATERIAL PALETTE (choose one key per scene; each scene must differ)
+Each entry gives the material's feel, then what it can plausibly depict.
 {palette}
+
+COHERENCE RULE — this matters more than any other choice:
+The setting and the material must belong together. The material is not a
+filter laid over an arbitrary place; it either IS the place, or it is the
+instrument the place is seen through. A microscope cannot image a harbour;
+a nebula is not a room. If you pick a material with a scale restriction,
+the setting must live at that scale. If you cannot write a setting that
+honestly suits the material, choose a different material.
 
 Return JSON:
 {{
@@ -203,7 +212,9 @@ def direct(jobdir: str, model: str = "gemma4-nothink", keep_llm: bool = False) -
         print("  vibe-matched palette: " + ", ".join(keys), flush=True)
     else:
         keys = list(MATERIALS)
-    palette = "\n".join(f"  {k}: {MATERIALS[k]['mood']}" for k in keys)
+    palette = "\n".join(
+        f"  {k}: {MATERIALS[k]['mood']}\n      suits: {MATERIALS[k]['suits']}"
+        for k in keys)
 
     prompt = USER.format(duration=analysis["duration"], tempo=analysis["tempo"],
                          sections="\n".join(lines),

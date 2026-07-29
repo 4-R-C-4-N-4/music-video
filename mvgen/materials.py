@@ -26,6 +26,7 @@ import random
 
 FAMILIES = {
     "cyanotype": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.25, "energy": 0.2, "warmth": 0.15, "age": 0.75, "tactility": 0.35, "scale": 0.45, "organic": 0.2},
         "mood": "cold, still, elegiac, archival",
@@ -61,6 +62,7 @@ FAMILIES = {
                  "handled often, soft at the corners", "archival and pristine"],
     },
     "etching": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.3, "energy": 0.3, "warmth": 0.35, "age": 0.9, "tactility": 0.45, "scale": 0.35, "organic": 0.2},
         "mood": "austere, antique, melancholy, precise",
@@ -89,6 +91,7 @@ FAMILIES = {
                  "foxed and yellowed with age"],
     },
     "felted": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.85, "energy": 0.35, "warmth": 0.95, "age": 0.3, "tactility": 0.95, "scale": 0.2, "organic": 0.45},
         "mood": "warm, tender, handmade, childlike",
@@ -119,6 +122,7 @@ FAMILIES = {
                  "slightly compressed as if stored in a box"],
     },
     "risograph": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.8, "energy": 0.8, "warmth": 0.6, "age": 0.2, "tactility": 0.3, "scale": 0.25, "organic": 0.1},
         "mood": "bright, punchy, graphic, youthful",
@@ -146,6 +150,7 @@ FAMILIES = {
                  "sun-bleached, the fluorescent gone pale", "creased from being folded"],
     },
     "collodion": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.15, "energy": 0.25, "warmth": 0.3, "age": 0.95, "tactility": 0.4, "scale": 0.3, "organic": 0.2},
         "mood": "haunted, historical, decayed, solemn",
@@ -174,6 +179,7 @@ FAMILIES = {
                  "the varnish yellowed and crazed"],
     },
     "cutpaper": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.65, "energy": 0.3, "warmth": 0.6, "age": 0.35, "tactility": 0.85, "scale": 0.3, "organic": 0.25},
         "mood": "delicate, storybook, quiet, constructed",
@@ -201,6 +207,7 @@ FAMILIES = {
         "wear": ["crisply new", "sun-faded on one side", "dented from storage"],
     },
     "stainedglass": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.75, "energy": 0.6, "warmth": 0.55, "age": 0.85, "tactility": 0.7, "scale": 0.55, "organic": 0.2},
         "mood": "transcendent, devotional, radiant",
@@ -227,6 +234,7 @@ FAMILIES = {
                  "partly restored, some panes clean and some dark"],
     },
     "verdigris": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.25, "energy": 0.55, "warmth": 0.35, "age": 0.9, "tactility": 0.9, "scale": 0.4, "organic": 0.15},
         "mood": "ancient, corroded, heavy, elemental",
@@ -254,6 +262,7 @@ FAMILIES = {
                  "weathered outdoors for decades"],
     },
     "ukiyoe": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.6, "energy": 0.45, "warmth": 0.55, "age": 0.8, "tactility": 0.35, "scale": 0.5, "organic": 0.3},
         "mood": "stylized, flowing, poised",
@@ -282,6 +291,7 @@ FAMILIES = {
                  "water-stained along one edge"],
     },
     "raku": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.45, "energy": 0.7, "warmth": 0.7, "age": 0.6, "tactility": 0.9, "scale": 0.25, "organic": 0.2},
         "mood": "volatile, lustrous, earthy",
@@ -379,6 +389,7 @@ def jitter(family_key: str, base_seed: int, shot_seed: int) -> dict:
 # age (contemporary..antique), tactility (flat..dimensional).
 FAMILIES.update({
     "lithograph": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.4, "energy": 0.35, "warmth": 0.4, "age": 0.8, "tactility": 0.3, "scale": 0.35, "organic": 0.2},
         "mood": "smoky, tonal, brooding, literary",
@@ -401,6 +412,7 @@ FAMILIES.update({
         "wear": ["a crisp early pull", "yellowed and foxed", "rubbed and smudged at the edges"],
     },
     "silkscreen": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.75, "energy": 0.75, "warmth": 0.5, "age": 0.3, "tactility": 0.4, "scale": 0.3, "organic": 0.1},
         "mood": "bold, flat, pop, insistent",
@@ -421,6 +433,7 @@ FAMILIES.update({
         "wear": ["fresh and glossy", "sun-bleached in the fluorescents", "creased and thumbed"],
     },
     "embroidery": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.7, "energy": 0.3, "warmth": 0.85, "age": 0.6, "tactility": 0.9, "scale": 0.2, "organic": 0.35},
         "mood": "patient, domestic, intimate, devotional",
@@ -444,6 +457,7 @@ FAMILIES.update({
                  "moth-nibbled at one corner"],
     },
     "fresco": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.5, "energy": 0.3, "warmth": 0.7, "age": 0.95, "tactility": 0.75, "scale": 0.6, "organic": 0.2},
         "mood": "monumental, sun-bleached, ruined, sacred",
@@ -467,6 +481,7 @@ FAMILIES.update({
                  "partly restored, losses filled flat"],
     },
     "linocut": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.55, "energy": 0.65, "warmth": 0.45, "age": 0.5, "tactility": 0.45, "scale": 0.35, "organic": 0.2},
         "mood": "blunt, vigorous, graphic, worked",
@@ -488,6 +503,7 @@ FAMILIES.update({
         "wear": ["a clean fresh pull", "a late pull, block worn", "creased from storage"],
     },
     "daguerreotype": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.2, "energy": 0.15, "warmth": 0.25, "age": 1.0, "tactility": 0.5, "scale": 0.25, "organic": 0.15},
         "mood": "spectral, mirror-like, uncanny, funereal",
@@ -509,6 +525,7 @@ FAMILIES.update({
         "wear": ["freshly sealed and brilliant", "heavily tarnished", "cracked cover glass over it"],
     },
     "mosaic": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.65, "energy": 0.5, "warmth": 0.6, "age": 0.9, "tactility": 0.85, "scale": 0.55, "organic": 0.15},
         "mood": "eternal, fragmented, ceremonial, patient",
@@ -531,6 +548,7 @@ FAMILIES.update({
         "wear": ["newly laid and sharp", "worn smooth by centuries of feet", "excavated and partly cleaned"],
     },
     "chemigram": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.35, "energy": 0.85, "warmth": 0.4, "age": 0.4, "tactility": 0.6, "scale": 0.4, "organic": 0.25},
         "mood": "chaotic, alchemical, corroded, feverish",
@@ -551,6 +569,7 @@ FAMILIES.update({
         "wear": ["still wet from the tray", "dried and cockled", "silvered out with age"],
     },
     "batik": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.7, "energy": 0.45, "warmth": 0.8, "age": 0.65, "tactility": 0.7, "scale": 0.3, "organic": 0.35},
         "mood": "sinuous, ceremonial, saturated, flowing",
@@ -573,6 +592,7 @@ FAMILIES.update({
                  "sun-faded along one fold"],
     },
     "charcoal": {
+        "suits": "any location; the material is a picture of the place, so scale is free",
         "kind": "craft",
         "affinity": {"valence": 0.3, "energy": 0.55, "warmth": 0.45, "age": 0.55, "tactility": 0.5, "scale": 0.35, "organic": 0.25},
         "mood": "urgent, smudged, unresolved, breathing",
@@ -615,6 +635,7 @@ BY_LEVEL = {
 # and organic (inert/geometric..living).
 FAMILIES.update({
     "mycology": {
+        "suits": "damp, rotting, enclosed or forest places — cellars, fallen timber, wet undergrowth, decaying interiors",
         "kind": "substance",
         "affinity": {"valence": 0.4, "energy": 0.3, "warmth": 0.6, "age": 0.5,
                      "tactility": 0.95, "scale": 0.25, "organic": 1.0},
@@ -642,6 +663,7 @@ FAMILIES.update({
                  "dried to leather and papery"],
     },
     "botanical": {
+        "suits": "gardens, meadows, herbaria, pressed and catalogued places; anything that was once growing",
         "kind": "substance",
         "affinity": {"valence": 0.65, "energy": 0.2, "warmth": 0.7, "age": 0.6,
                      "tactility": 0.8, "scale": 0.3, "organic": 0.95},
@@ -669,6 +691,7 @@ FAMILIES.update({
                  "water-stained and partly lost"],
     },
     "entomological": {
+        "suits": "hives, undergrowth, specimen drawers, swarming or chitinous places; close, teeming interiors",
         "kind": "substance",
         "affinity": {"valence": 0.35, "energy": 0.5, "warmth": 0.45, "age": 0.55,
                      "tactility": 0.9, "scale": 0.15, "organic": 0.9},
@@ -700,6 +723,7 @@ FAMILIES.update({
                  "brittle and partly crumbled"],
     },
     "microbial": {
+        "suits": "laboratories, petri dishes, sealed vessels, wet surfaces; small enclosed spaces seen very close",
         "kind": "substance",
         "affinity": {"valence": 0.4, "energy": 0.45, "warmth": 0.5, "age": 0.3,
                      "tactility": 0.7, "scale": 0.1, "organic": 0.95},
@@ -729,6 +753,7 @@ FAMILIES.update({
                  "dried out and cracked"],
     },
     "mineral": {
+        "suits": "caves, geodes, mines, cracked ground; places of rock and crystal growth",
         "kind": "substance",
         "affinity": {"valence": 0.6, "energy": 0.35, "warmth": 0.4, "age": 0.7,
                      "tactility": 0.85, "scale": 0.35, "organic": 0.1},
@@ -758,6 +783,7 @@ FAMILIES.update({
                  "weathered where it lay exposed"],
     },
     "lithic": {
+        "suits": "cliffs, quarries, monuments, ruins, carved facades; large weathered stone places",
         "kind": "substance",
         "affinity": {"valence": 0.35, "energy": 0.3, "warmth": 0.4, "age": 0.95,
                      "tactility": 0.9, "scale": 0.7, "organic": 0.1},
@@ -784,6 +810,7 @@ FAMILIES.update({
                  "buried and recently excavated"],
     },
     "ferrofluid": {
+        "suits": "labs, dark reflective voids, pooling liquid surfaces; abstract or near-abstract spaces",
         "kind": "substance",
         "affinity": {"valence": 0.45, "energy": 0.75, "warmth": 0.3, "age": 0.1,
                      "tactility": 0.8, "scale": 0.2, "organic": 0.15},
@@ -817,6 +844,7 @@ FAMILIES.update({
                  "settled and dulled with a skin"],
     },
     "cryo": {
+        "suits": "frozen lakes, glaciers, frosted windows, winter fields; anything cold and still",
         "kind": "substance",
         "affinity": {"valence": 0.4, "energy": 0.35, "warmth": 0.05, "age": 0.4,
                      "tactility": 0.75, "scale": 0.4, "organic": 0.25},
@@ -845,6 +873,7 @@ FAMILIES.update({
                  "old ice, milky and scarred"],
     },
     "sem": {
+        "suits": "microscopic subjects only — pollen, fibres, dust, insect surfaces, fracture faces. NEVER a landscape or building",
         "kind": "instrument",
         "affinity": {"valence": 0.35, "energy": 0.5, "warmth": 0.15, "age": 0.2,
                      "tactility": 0.85, "scale": 0.05, "organic": 0.6},
@@ -872,6 +901,7 @@ FAMILIES.update({
                  "poorly coated, charging badly"],
     },
     "cosmic": {
+        "suits": "astronomical subjects only — nebulae, star fields, voids, planetary limbs. NEVER a terrestrial place",
         "kind": "instrument",
         "affinity": {"valence": 0.6, "energy": 0.55, "warmth": 0.3, "age": 0.5,
                      "tactility": 0.4, "scale": 1.0, "organic": 0.1},
@@ -903,6 +933,7 @@ FAMILIES.update({
                  "an old plate scan with emulsion flaws"],
     },
     "crystallographic": {
+        "suits": "atomic-scale subjects only — lattices, diffraction, grain boundaries. NEVER a place with a horizon",
         "kind": "instrument",
         "affinity": {"valence": 0.5, "energy": 0.6, "warmth": 0.2, "age": 0.25,
                      "tactility": 0.5, "scale": 0.05, "organic": 0.05},
@@ -934,6 +965,7 @@ FAMILIES.update({
                  "a drifting noisy acquisition"],
     },
     "radiographic": {
+        "suits": "objects that can be seen through — bodies, luggage, machines, sealed containers. NEVER an open landscape",
         "kind": "instrument",
         "affinity": {"valence": 0.25, "energy": 0.3, "warmth": 0.1, "age": 0.4,
                      "tactility": 0.4, "scale": 0.2, "organic": 0.55},

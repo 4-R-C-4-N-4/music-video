@@ -126,10 +126,15 @@ delete them to force a re-plan after editing scenes.json.
   scene is *constituted* from matter (mycelium, chitin, crystal, carved stone,
   ferrofluid, ice, pressed plants, bacterial colonies). **instrument** — the
   scene is *observed through* a modality (electron micrograph, astronomical
-  composite, atomic lattice, radiograph). Substance families are the strongest
-  of the new kinds; instrument families are more easily reinterpreted by the
-  model as a colour filter over an ordinary photograph, so they suit abstract
-  settings better than landscapes.
+  composite, atomic lattice, radiograph).
+- **Material and setting must be coherent.** Every family carries a `suits`
+  line saying what it can plausibly depict, and the director is required to
+  pick the pair together. A craft family images any place at any scale — a
+  harbour prints fine as a cyanotype. A substance family must be able to
+  *become* the place. An instrument family only works on subjects at its own
+  scale: there is no electron micrograph of a jetty, and asking for one gets
+  you a tinted photograph of a jetty. Match the content to the medium and the
+  same families that failed become the strongest in the set.
 - Materials are *composed*, not stored. `mvgen/materials.py` holds physical
   families (cyanotype, intaglio etching, needle-felted wool...) each with
   substrates, palettes, surface emphases, process flaws, lighting and wear.
