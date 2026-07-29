@@ -138,12 +138,12 @@ def build_spec(plan_json: dict, analysis: dict, lyrics: dict | None,
         key = sc.get("material")
         if key not in MATERIALS:
             key = BY_LEVEL[level][i % len(BY_LEVEL[level])]
-        mat = MATERIALS[key]
         scenes.append({
             "id": sc.get("id") or f"scene-{i+1}",
             "material": key,
-            "lead": mat["lead"],
-            "style": mat["style"] + " No photorealism — the material and process are the subject.",
+            # The treatment is composed at plan time from this family plus
+            # the seed, so two videos using the same family still differ.
+            "material_seed": seed + 4400 + i,
             "still_prompt": sc["setting"],
             "beats": sc["beats"],
             "video_prompt": sc.get("ambient", "") + " The material texture of the image stays constant and visible throughout.",

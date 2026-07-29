@@ -9,6 +9,8 @@ never accumulates (every cut stays within 4 frames of its target beat).
 import json
 import sys
 
+from .materials import FAMILIES, jitter
+
 # Fallback beats when a scene doesn't author its own: generic blocking that
 # leads the prompt (the image model follows lead content, so composition MUST
 # come first — a camera phrase appended after a long setting prompt is noise).
@@ -116,14 +118,21 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
         n = len(group)
         for k, shot in enumerate(group):
             beat = beats[min(k * len(beats) // max(n, 1), len(beats) - 1)]
-            # A scene may override the global style with its own material
-            # treatment — LTX i2v preserves the still's texture, so a video
-            # can genuinely change medium between scenes.
-            scene_style = scene_map[sid].get("style", style)
-            lead = scene_map[sid].get("lead", "Cinematic film still:")
+            scene = scene_map[sid]
+            fam = scene.get("material")
+            if fam in FAMILIES:
+                # Compose the treatment per shot: the scene keeps one family,
+                # substrate and palette, but each shot re-rolls its flaws so
+                # it reads as its own physical artefact rather than one image
+                # with a filter applied.
+                t = jitter(fam, scene.get("material_seed", base_seed), shot["seed"])
+                lead, scene_style = t["lead"], t["style"]
+            else:
+                scene_style = scene.get("style", style)
+                lead = scene.get("lead", "Cinematic film still:")
             shot["still_prompt"] = " ".join(p for p in (
                 lead + " " + beat,
-                "Setting: " + scene_map[sid]["still_prompt"],
+                "Setting: " + scene["still_prompt"],
                 scene_style) if p)
 
     return {

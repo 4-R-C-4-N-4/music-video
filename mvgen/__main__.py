@@ -15,11 +15,16 @@ GPU is exclusive: the local LLM, then ComfyUI. Each stage takes the card and
 releases it before the next.
 """
 import json
+import os
 import pathlib
 import subprocess
 import sys
 import time
 import urllib.request
+
+# Finished videos land here rather than in the job dir; override with
+# MVGEN_OUTPUT_DIR. Job dirs stay as working state (stills, shot clips).
+DEFAULT_OUTPUT_DIR = pathlib.Path.home() / "Music/mvgen"
 
 from . import analyze as _analyze
 from . import assemble as _assemble
@@ -103,7 +108,9 @@ def build(track: str, jobdir: str, limit: int | None = None,
     _render.render(str(manifest_path), str(job / "work"), limit)
 
     if limit is None:
-        out = job / (job.name + ".mp4")
+        outdir = pathlib.Path(os.environ.get("MVGEN_OUTPUT_DIR", DEFAULT_OUTPUT_DIR))
+        outdir.mkdir(parents=True, exist_ok=True)
+        out = outdir / (job.name + ".mp4")
         _assemble.assemble(str(manifest_path), str(job / "work"), str(out))
 
 
