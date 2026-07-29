@@ -1,0 +1,85 @@
+{
+  "title": "Behelit",
+  "concept": "A descent from the preservation of life into the chaotic consumption of organic matter.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 3000,
+  "bars_per_shot": {
+    "low": 4,
+    "mid": 2,
+    "high": 2
+  },
+  "style": "A recurring figure appears throughout: An elderly person with deep facial wrinkles wearing a heavy, tattered linen shroud..",
+  "scenes": [
+    {
+      "id": "the-herbarium",
+      "material": "botanical",
+      "material_seed": 7400,
+      "still_prompt": "A dimly lit, high-ceilinged archive filled with floor-to-ceiling wooden drawers containing pressed flora.",
+      "beats": [
+        "Extreme close-up: The figure's trembling finger brushes a dried, translucent leaf.",
+        "Medium shot: The figure stands motionless before a massive specimen cabinet.",
+        "Close-up: The figure carefully places a brittle stem into a heavy glass frame.",
+        "Medium shot: The figure turns slowly toward a shadowed corner of the room.",
+        "Wide shot: The figure sits slumped in a wooden chair amidst piles of dried petals."
+      ],
+      "video_prompt": "Dust particles dance slowly in single shafts of light. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera drifts with a heavy, gliding sensation through the dust motes."
+      }
+    },
+    {
+      "id": "the-decay",
+      "material": "mycology",
+      "material_seed": 7401,
+      "still_prompt": "A claustrophobic cellar floor covered in thick, damp moss and spreading white fungal filaments.",
+      "beats": [
+        "Close-up: The figure's bare feet step into a patch of soft, dark silt.",
+        "Medium shot: The figure crawls slowly through a narrow gap between rotting timber beams.",
+        "Close-up: The figure's hand presses into a cluster of pale, fleshy mushrooms.",
+        "Medium shot: The figure pauses to watch a white thread expand across a decaying log.",
+        "Wide shot: The figure is partially obscured by thick, hanging strands of mycelium."
+      ],
+      "video_prompt": "Moisture drips rhythmically from the low, dark ceiling. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "The camera follows the figure at a steady walking pace through the thicket."
+      }
+    },
+    {
+      "id": "the-swarm",
+      "material": "entomological",
+      "material_seed": 7402,
+      "still_prompt": "A dense, pitch-black thicket of interlocking, iridescent insect wings and chitinous shells.",
+      "beats": [
+        "Extreme close-up: The figure's eye reflects a shimmering, jewelled pattern.",
+        "Medium shot: The figure struggles to move through a wall of vibrating, translucent wings.",
+        "Close-up: The figure's hands are coated in a fine, dark powder from rubbing against shells.",
+        "Medium shot: The figure spins around as the surrounding structures shift and click.",
+        "Wide shot: The figure is engulfed by a sudden surge of swarming, metallic shapes.",
+        "Extreme close-up: The figure's mouth opens as iridescent scales fill the frame."
+      ],
+      "video_prompt": "A constant, rhythmic clicking and buzzing vibrates through the air. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "The camera jerks violently with frantic, handheld energy."
+      }
+    },
+    {
+      "id": "the-void",
+      "material": "charcoal",
+      "material_seed": 7403,
+      "still_prompt": "An empty, featureless expanse of fine, black soot covering a cracked stone floor.",
+      "beats": [
+        "Wide shot: The figure stands as a small silhouette in the center of the black plane.",
+        "Medium shot: The figure drags a hand through the soot, leaving a dark streak.",
+        "Close-up: The figure's breath creates a momentary cloud in the cold air.",
+        "Medium shot: The figure kneels and stares into a deep fissure in the floor.",
+        "Wide shot: The figure remains perfectly still as the darkness swallows the edges."
+      ],
+      "video_prompt": "Fine black ash settles silently onto the ground. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera pulls back extremely slowly into the darkness."
+      }
+    }
+  ]
+}

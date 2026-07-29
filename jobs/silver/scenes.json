@@ -1,0 +1,136 @@
+{
+  "title": "Silver",
+  "concept": "A solitary figure navigates a series of increasingly surreal and textured environments that contrast domestic warmth with structural decay.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 3000,
+  "bars_per_shot": {
+    "low": 4,
+    "mid": 2,
+    "high": 2
+  },
+  "style": "A recurring figure appears throughout: A nineteen-year-old in dark indigo denim overalls and worn leather boots..",
+  "scenes": [
+    {
+      "id": "library-archives",
+      "material": "cutpaper",
+      "material_seed": 7400,
+      "still_prompt": "An endless corridor of towering wooden bookshelves filled with white parchment volumes.",
+      "beats": [
+        "Wide shot: the figure walks down the center aisle looking upward.",
+        "Medium shot: the figure pulls a blank white book from a shelf.",
+        "Close up: the figure's hands tracing the sharp edges of a paper book spine.",
+        "Low angle: the figure sits on a small paper stool at a reading desk.",
+        "Extreme close up: the figure's eyes scanning a page made of layered white cardstock."
+      ],
+      "video_prompt": "Fine white paper dust falls like snow through a single beam of light. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A slow, drifting glide forward through the aisle."
+      }
+    },
+    {
+      "id": "moonlit-garden",
+      "material": "ukiyoe",
+      "material_seed": 7401,
+      "still_prompt": "A stylized Zen rock garden under a massive, glowing lunar disc.",
+      "beats": [
+        "Wide shot: the figure stands perfectly still beside a raked sand wave.",
+        "Medium shot: the figure reaches out to touch a smooth, black basalt stone.",
+        "Close up: the figure's boots pressing into the perfectly raked sand patterns.",
+        "High angle: the figure looking up at the stylized, swirling clouds.",
+        "Medium shot: the figure walking slowly along a narrow stone path."
+      ],
+      "video_prompt": "Long, dark shadows stretch and retract across the white sand. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A smooth, sweeping lateral pan across the sand waves."
+      }
+    },
+    {
+      "id": "subterranean-vault",
+      "material": "charcoal",
+      "material_seed": 7402,
+      "still_prompt": "A damp stone dungeon with walls covered in thick, smudged black soot.",
+      "beats": [
+        "Wide shot: the figure enters a large arched doorway.",
+        "Medium shot: the figure leans against a wall, leaving a dark smudge on the stone.",
+        "Close up: the figure's hands rubbing against the gritty, black-dusted floor.",
+        "Medium shot: the figure lights a single tallow candle.",
+        "Low angle: the figure looking up at the heavy, dark ceiling."
+      ],
+      "video_prompt": "Thick plumes of grey smoke rise from a single flickering flame. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "A steady, walking-pace handheld movement following the figure."
+      }
+    },
+    {
+      "id": "microscopic-vessel",
+      "material": "microbial",
+      "material_seed": 7403,
+      "still_prompt": "A glass petri dish containing a swirling, translucent amber liquid.",
+      "beats": [
+        "Wide shot: the figure's face reflected in the curved glass surface.",
+        "Medium shot: the figure's finger pressing against the outer glass wall.",
+        "Close up: tiny, translucent bubbles rising through the viscous liquid.",
+        "Extreme close up: the figure's eye peering through the thick glass lens.",
+        "Medium shot: the figure's hand casting a shadow over the vessel."
+      ],
+      "video_prompt": "Tiny biological filaments drift and multiply in the amber fluid. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A slow, microscopic zoom into a single cell structure."
+      }
+    },
+    {
+      "id": "corroded-hallway",
+      "material": "chemigram",
+      "material_seed": 7404,
+      "still_prompt": "A narrow industrial corridor with walls of oxidized copper and bleeding chemical stains.",
+      "beats": [
+        "Wide shot: the figure runs through a corridor of bright teal and orange stains.",
+        "Medium shot: the figure brushes past a wall, leaving streaks of color on their overalls.",
+        "Close up: the figure's feet splashing through a shallow puddle of iridescent liquid.",
+        "Medium shot: the figure spinning in the center of a heavy metal doorway.",
+        "High angle: the figure looking down at a complex pattern of chemical spills.",
+        "Close up: the figure's frantic breathing in the metallic air."
+      ],
+      "video_prompt": "Liquid chemicals drip rhythmically from the ceiling into metal basins. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "A rapid, shaky handheld camera tracking the figure's movement."
+      }
+    },
+    {
+      "id": "silk-chamber",
+      "material": "batik",
+      "material_seed": 7405,
+      "still_prompt": "A vast room draped in heavy, saturated indigo fabrics with wax-resist patterns.",
+      "beats": [
+        "Wide shot: the figure disappears behind a massive hanging curtain.",
+        "Medium shot: the figure emerges from a fold of heavy, patterned blue cloth.",
+        "Close up: the figure's hands gripping the thick, wax-textured fabric.",
+        "Medium shot: the figure dancing slowly between two towering silk pillars.",
+        "High angle: the figure lying down amidst a sea of swirling blue patterns."
+      ],
+      "video_prompt": "Heavy fabric curtains sway as if caught in a deep draft. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "A fast, swirling circular camera movement around the figure."
+      }
+    },
+    {
+      "id": "urban-overlook",
+      "material": "linocut",
+      "material_seed": 7406,
+      "still_prompt": "A high rooftop overlooking a stark, graphic city skyline of black and white blocks.",
+      "beats": [
+        "Wide shot: the figure stands at the edge of the roof looking at the city.",
+        "Medium shot: the figure sits on a blocky concrete ledge.",
+        "Close up: the figure's hands gripping the rough, carved edge of the stone.",
+        "Medium shot: the figure looks toward the horizon as the sun rises.",
+        "Wide shot: the figure walking away from the edge toward the roof access."
+      ],
+      "video_prompt": "A harsh, bright light pulses from the horizon, creating sharp shadows. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "A steady, walking-pace camera movement following the figure's exit."
+      }
+    }
+  ]
+}

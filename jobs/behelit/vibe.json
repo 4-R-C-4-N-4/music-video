@@ -1,0 +1,76 @@
+{
+ "acoustic": {
+  "valence": 0.215,
+  "energy": 0.573,
+  "warmth": 0.946,
+  "scale": 0.401,
+  "tempo": 95.7,
+  "majorness": 0.151
+ },
+ "semantic": {
+  "valence": 0.1,
+  "energy": 0.7,
+  "warmth": 0.0,
+  "age": 0.8,
+  "tactility": 0.6,
+  "scale": 0.9,
+  "organic": 0.9,
+  "adjectives": [
+   "ominous",
+   "visceral",
+   "primordial",
+   "chaotic",
+   "inevitable"
+  ],
+  "imagery": [
+   "blood",
+   "stone",
+   "void",
+   "teeth"
+  ]
+ },
+ "vector": {
+  "valence": 0.169,
+  "energy": 0.611,
+  "warmth": 0.568,
+  "age": 0.8,
+  "tactility": 0.6,
+  "scale": 0.601,
+  "organic": 0.9
+ },
+ "tension": 0.115,
+ "families": [
+  [
+   "entomological",
+   0.644
+  ],
+  [
+   "mycology",
+   0.705
+  ],
+  [
+   "botanical",
+   0.769
+  ],
+  [
+   "charcoal",
+   0.77
+  ],
+  [
+   "microbial",
+   0.773
+  ],
+  [
+   "ukiyoe",
+   0.803
+  ],
+  [
+   "chemigram",
+   0.861
+  ],
+  [
+   "etching",
+   0.864
+  ]
+ ]
+}

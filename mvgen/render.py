@@ -62,8 +62,13 @@ def ensure_comfy(timeout: int = 180) -> bool:
                    capture_output=True)
     time.sleep(2)
     print("  (re)starting comfyui...", flush=True)
-    subprocess.Popen([str(start)], stdout=subprocess.DEVNULL,
-                     stderr=subprocess.DEVNULL, start_new_session=True)
+    # Keep the server's own output — when it dies mid-render this file is the
+    # only record of why, and discarding it makes the failure undiagnosable.
+    log = pathlib.Path.home() / ".cache/mvgen-comfyui.log"
+    log.parent.mkdir(parents=True, exist_ok=True)
+    fh = open(log, "a")
+    subprocess.Popen([str(start)], stdout=fh, stderr=subprocess.STDOUT,
+                     start_new_session=True)
     deadline = time.time() + timeout
     while time.time() < deadline:
         if comfy_up():

@@ -29,21 +29,21 @@ def isolate_vocals(track: str, workdir: pathlib.Path) -> pathlib.Path:
 
 
 def transcribe(vocal_path: pathlib.Path, model_size: str = "large-v3") -> list[dict]:
+    import os
+
     from faster_whisper import WhisperModel
-    # CTranslate2 links cuBLAS 12; a cu13 torch in the same venv leaves it
-    # unloadable. CPU int8 is only ~realtime but fine for single tracks.
-    try:
-        model = WhisperModel(model_size, device="cuda", compute_type="float16")
-        _probe = model.model  # noqa: F841  (force lib load before we commit)
-        segments, _info = model.transcribe(str(vocal_path), word_timestamps=True,
-                                           vad_filter=True, beam_size=5)
-        segments = list(segments)
-    except (RuntimeError, OSError) as e:
-        print(f"  cuda unavailable to ctranslate2 ({e}); falling back to cpu",
-              flush=True)
-        model = WhisperModel(model_size, device="cpu", compute_type="int8")
-        segments, _info = model.transcribe(str(vocal_path), word_timestamps=True,
-                                           vad_filter=True, beam_size=5)
+
+    # CPU by default, and deliberately not "try CUDA then fall back": a failed
+    # CUDA init still allocates a context (~3GB measured) that is never
+    # released for the life of the process, which later starves ComfyUI of
+    # exactly the headroom the video model needs. Opt in only where CUDA is
+    # known to work — CTranslate2 links cuBLAS 12, so a cu13 torch in the same
+    # venv makes it unloadable regardless.
+    device = os.environ.get("MVGEN_WHISPER_DEVICE", "cpu")
+    compute = "float16" if device == "cuda" else "int8"
+    model = WhisperModel(model_size, device=device, compute_type=compute)
+    segments, _info = model.transcribe(str(vocal_path), word_timestamps=True,
+                                       vad_filter=True, beam_size=5)
     # faster-whisper hands back numpy scalars; coerce everything to plain
     # Python types or json.dump chokes downstream.
     out = []

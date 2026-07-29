@@ -50,9 +50,10 @@ def ensure_comfy(timeout: int = 120) -> None:
     if not start.exists():
         sys.exit(f"ComfyUI not running and {start} not found")
     print("starting comfyui...", flush=True)
-    subprocess.Popen(["nohup", str(start)],
-                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-                     start_new_session=True)
+    log = pathlib.Path.home() / ".cache/mvgen-comfyui.log"
+    log.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.Popen([str(start)], stdout=open(log, "a"),
+                     stderr=subprocess.STDOUT, start_new_session=True)
     deadline = time.time() + timeout
     while time.time() < deadline:
         if comfy_up():

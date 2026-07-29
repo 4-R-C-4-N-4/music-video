@@ -1,0 +1,76 @@
+{
+ "acoustic": {
+  "valence": 0.906,
+  "energy": 0.507,
+  "warmth": 0.412,
+  "scale": 0.746,
+  "tempo": 95.7,
+  "majorness": 1.0
+ },
+ "semantic": {
+  "valence": 0.3,
+  "energy": 0.4,
+  "warmth": 0.6,
+  "age": 0.2,
+  "tactility": 0.5,
+  "scale": 0.2,
+  "organic": 0.6,
+  "adjectives": [
+   "melancholic",
+   "longing",
+   "vulnerable",
+   "introverted",
+   "wistful"
+  ],
+  "imagery": [
+   "library bookshelves",
+   "denim fabric",
+   "moonlight",
+   "dungeons"
+  ]
+ },
+ "vector": {
+  "valence": 0.664,
+  "energy": 0.475,
+  "warmth": 0.487,
+  "age": 0.2,
+  "tactility": 0.5,
+  "scale": 0.528,
+  "organic": 0.6
+ },
+ "tension": 0.606,
+ "families": [
+  [
+   "linocut",
+   0.574
+  ],
+  [
+   "cutpaper",
+   0.603
+  ],
+  [
+   "silkscreen",
+   0.637
+  ],
+  [
+   "charcoal",
+   0.645
+  ],
+  [
+   "microbial",
+   0.653
+  ],
+  [
+   "chemigram",
+   0.66
+  ],
+  [
+   "batik",
+   0.676
+  ],
+  [
+   "ukiyoe",
+   0.694
+  ]
+ ]
+}
