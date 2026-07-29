@@ -222,3 +222,24 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def comfy_down() -> None:
+    """Stop ComfyUI and wait for the GPU to actually be released.
+
+    The local LLM needs ~14GB and ComfyUI holds ~18GB resident, so the two
+    cannot overlap even briefly. Any stage that wants the card must take it
+    explicitly rather than assuming the previous stage tidied up.
+    """
+    subprocess.run(["pkill", "-9", "-f", "main.py --listen 127.0.0.1 --port 8188"],
+                   capture_output=True)
+    for _ in range(20):
+        time.sleep(1)
+        r = subprocess.run(["nvidia-smi", "--query-gpu=memory.used",
+                            "--format=csv,noheader,nounits"],
+                           capture_output=True, text=True)
+        try:
+            if int(r.stdout.strip().splitlines()[0]) < 4000:
+                return
+        except (ValueError, IndexError):
+            return

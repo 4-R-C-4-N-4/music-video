@@ -21,6 +21,7 @@ import urllib.error
 import urllib.request
 
 from .materials import BY_LEVEL, MATERIALS
+from .render import comfy_down
 
 ENDPOINT = "http://127.0.0.1:8080/v1/chat/completions"
 
@@ -222,6 +223,9 @@ def direct(jobdir: str, model: str = "gemma4-nothink", keep_llm: bool = False) -
                          palette=palette, n=len(secs))
 
     print(f"starting {model}...", flush=True)
+    # Take the GPU from ComfyUI first — the two cannot share the card, and a
+    # resident ComfyUI leaves too little VRAM for the model to load at all.
+    comfy_down()
     llm_up(model)
     try:
         grams = lyric_ngrams(lyrics)

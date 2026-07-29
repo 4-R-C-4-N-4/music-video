@@ -95,6 +95,7 @@ def acoustic(track: str) -> dict:
 def semantic(title: str, lyrics: dict | None, model: str = "gemma4-nothink") -> dict:
     """Ask the local model how the song feels. Returns ratings, never text."""
     from .direct import ask, llm_down, llm_up
+    from .render import comfy_down
 
     if lyrics and lyrics.get("has_sung_lyrics"):
         text = " ".join(s["text"] for s in lyrics["segments"])
@@ -104,6 +105,7 @@ def semantic(title: str, lyrics: dict | None, model: str = "gemma4-nothink") -> 
         block = "This track is instrumental — judge from the title alone."
 
     prompt = SEMANTIC_USER.format(title=title, lyrics=block)
+    comfy_down()
     llm_up(model)
     try:
         raw = ask(prompt, system=SEMANTIC_SYSTEM)
