@@ -1,0 +1,131 @@
+{
+  "title": "Silver Viz",
+  "mode": "visualizer",
+  "concept": "A journey through conflicting states of matter, transitioning from archival stillness to chaotic chemical reactions and ultimately to a vast, indifferent cosmic suspension.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 5000,
+  "style": "No people, no figures, no buildings, no landscape, no horizon. No object with a visible outline \u2014 no vessel, bowl, panel or plate. The matter fills the frame edge to edge and continues past it.",
+  "scenes": [
+    {
+      "id": "cyanotype-archive",
+      "material": "cyanotype",
+      "material_seed": 9400,
+      "still_prompt": "a deep indigo expanse of suspended particulates drifting through a wash of pale blue light",
+      "beats": [
+        "extreme close-up of translucent blue grains settling",
+        "wide shot of drifting indigo clouds",
+        "medium shot of shifting cobalt gradients",
+        "close-up of micro-bubbles rising through a dark blue medium",
+        "wide shot of a vast, static blue void"
+      ],
+      "video_prompt": "a slow, rhythmic pulsing of light through the blue liquid The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "a glacial, almost imperceptible drift of pigment particles"
+      }
+    },
+    {
+      "id": "verdigris-decay",
+      "material": "verdigris",
+      "material_seed": 9401,
+      "still_prompt": "oxidized copper crusts blooming and fracturing in slow motion",
+      "beats": [
+        "macro view of pale green crystalline structures forming",
+        "medium shot of expanding turquoise veins",
+        "close-up of brittle edges cracking under pressure",
+        "extreme close-up of granular mineral textures",
+        "wide shot of a field of spreading corrosion"
+      ],
+      "video_prompt": "the constant, subtle flickering of light across metallic surfaces The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "the slow, organic expansion of mineral crusts"
+      }
+    },
+    {
+      "id": "chemigram-fever",
+      "material": "chemigram",
+      "material_seed": 9402,
+      "still_prompt": "swirling oily streaks of gold and black reacting in a caustic liquid",
+      "beats": [
+        "extreme close-up of a single drop of yellow oil spreading",
+        "medium shot of turbulent dark ribbons swirling",
+        "close-up of caustic chemical trails lacing together",
+        "wide shot of an agitated golden-black emulsion",
+        "extreme close-up of rapid, microscopic bubbling"
+      ],
+      "video_prompt": "erratic, shimmering heat distortions The material texture stays constant and visible throughout.",
+      "motion": {
+        "mid": "turbulent, swirling currents of contrasting fluids"
+      }
+    },
+    {
+      "id": "ferrofluid-tension",
+      "material": "ferrofluid",
+      "material_seed": 9403,
+      "still_prompt": "glossy black spikes undulating in a rhythmic, magnetic pulse",
+      "beats": [
+        "close-up of smooth black liquid surface",
+        "medium shot of sharp, geometric spikes emerging",
+        "extreme close-up of liquid columns stretching upward",
+        "wide shot of a landscape of shifting obsidian needles",
+        "close-up of the liquid collapsing back into a pool"
+      ],
+      "video_prompt": "a subtle, rhythmic warping of the black surface The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "a slow, heavy oscillation of liquid spikes"
+      }
+    },
+    {
+      "id": "microbial-proliferation",
+      "material": "microbial",
+      "material_seed": 9404,
+      "still_prompt": "a rapid, feverish bloom of translucent cellular membranes",
+      "beats": [
+        "macro view of dividing translucent spheres",
+        "medium shot of a dense web of white filaments",
+        "close-up of rapid, frantic cellular expansion",
+        "wide shot of a crowded, pulsating organic mass",
+        "extreme close-up of membrane rupturing and merging"
+      ],
+      "video_prompt": "a constant, jittery vibration of microscopic structures The material texture stays constant and visible throughout.",
+      "motion": {
+        "high": "violent, chaotic bursts of cellular division and fusion"
+      }
+    },
+    {
+      "id": "cryo-shatter",
+      "material": "cryo",
+      "material_seed": 9405,
+      "still_prompt": "fracturing sheets of translucent ice splintering under extreme cold",
+      "beats": [
+        "close-up of a single frost crystal growing",
+        "medium shot of white cracks spreading through blue ice",
+        "extreme close-up of microscopic ice shards exploding",
+        "wide shot of a cascading wall of frozen shards",
+        "extreme close-up of crystalline dust swirling"
+      ],
+      "video_prompt": "a shimmering cascade of suspended frost particles The material texture stays constant and visible throughout.",
+      "motion": {
+        "high": "rapid, jagged fractures snapping through the frame"
+      }
+    },
+    {
+      "id": "cosmic-void",
+      "material": "cosmic",
+      "material_seed": 9406,
+      "still_prompt": "vast nebulous clouds of stardust drifting in an endless expanse",
+      "beats": [
+        "wide shot of a dim, glowing gaseous cloud",
+        "medium shot of light filtering through stardust",
+        "close-up of luminous particles swirling in a vortex",
+        "extreme close-up of a singular, brilliant light flare",
+        "wide shot of the total, silent dark expanse"
+      ],
+      "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout.",
+      "motion": {
+        "mid": "a steady, majestic rotation of cosmic dust"
+      }
+    }
+  ]
+}

@@ -1007,6 +1007,9 @@ BY_LEVEL = {
 # Families that work without a figure or a place — pure phenomena. Visualizer
 # mode draws only from these, because an abstract cut sequence has no room to
 # establish a character or a location and shouldn't try.
+# Excludes families whose substrate implies a discrete object — raku means a
+# pot, stained glass means a panel, mosaic means a floor — because in an
+# abstract sequence the model photographs the object instead of filling the
+# frame with the matter.
 ABSTRACT = ["ferrofluid", "chemigram", "crystallographic", "mineral", "cryo",
-            "raku", "sem", "cosmic", "microbial", "verdigris", "risograph",
-            "silkscreen", "cyanotype"]
+            "sem", "cosmic", "microbial", "verdigris", "cyanotype"]

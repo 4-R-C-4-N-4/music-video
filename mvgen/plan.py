@@ -14,6 +14,20 @@ from .materials import FAMILIES, jitter
 # Fallback beats when a scene doesn't author its own: generic blocking that
 # leads the prompt (the image model follows lead content, so composition MUST
 # come first — a camera phrase appended after a long setting prompt is noise).
+# Abstract fields have strong compositional attractors — "cosmic" will render
+# the same spiral galaxy from any seed. Forcing a different framing per shot is
+# what actually breaks the repetition; varying the seed alone does not.
+VIZ_FRAMINGS = [
+    "Extreme macro, so close the structure is barely identifiable, filling the frame.",
+    "Wide field, the whole expanse visible, structure repeating to the edges.",
+    "Off-centre close view, the mass pushed hard to one side, empty space opposite.",
+    "Steep oblique angle across the material, receding into blur.",
+    "Tight crop on a single feature, everything else out of frame.",
+    "Symmetrical head-on view, the structure radiating from the centre.",
+    "Shallow focus with the near material dissolved, one plane sharp deep in.",
+    "Frame filled with the densest part of the mass, no edges or margins visible.",
+]
+
 FALLBACK_BEATS = [
     "Extreme wide establishing shot, the protagonist tiny in the landscape.",
     "Medium tracking shot from behind the protagonist as she moves deeper in.",
@@ -82,8 +96,12 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
     shots = []
     cum = 0.0  # seconds of video planned so far
     for si, sec in enumerate(analysis["sections"]):
-        # Linear allocation: scenes play through once, in order, across the
-        # whole song — a journey, not a cycle. No scene ever returns.
+        # Narrative mode: linear allocation, one scene per section, a journey
+        # rather than a cycle. Visualizer mode instead rotates material every
+        # shot — dwelling on one abstract family produces near-identical
+        # consecutive frames, because a strong attractor (a spiral galaxy, say)
+        # overrides any per-shot framing instruction. Rotation is the only
+        # thing that reliably makes successive cuts differ.
         scene = scenes[min(si * len(scenes) // n_sections, len(scenes) - 1)]
         level = sec["level"]
         step = bars_per_shot[level]
@@ -94,9 +112,10 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
             t1 = bars[b_end]["t0"] if b_end < len(bars) else duration
             t1, snapped = snap(t1, cuts, window, used_cuts, cum, min_shot)
             frames = quantize_frames(t1 - cum, fps)
+            shot_scene = scenes[len(shots) % len(scenes)] if visualizer else scene
             shots.append({
                 "idx": len(shots),
-                "scene": scene["id"],
+                "scene": shot_scene["id"],
                 "level": level,
                 "t0": round(cum, 3),
                 "frames": frames,
@@ -135,8 +154,11 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
             else:
                 scene_style = scene.get("style", style)
                 lead = scene.get("lead", "Cinematic film still:")
+            framing = (VIZ_FRAMINGS[k % len(VIZ_FRAMINGS)]
+                       if spec.get("mode") == "visualizer" else "")
             shot["still_prompt"] = " ".join(p for p in (
                 lead + " " + beat,
+                framing,
                 "Setting: " + scene["still_prompt"],
                 scene_style) if p)
 

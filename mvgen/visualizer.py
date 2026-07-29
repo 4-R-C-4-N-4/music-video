@@ -25,7 +25,10 @@ JSON matching the requested schema. No markdown, no commentary.
 Hard rules:
 - NO people, figures, characters or animals. NO buildings, rooms, landscapes or
   any recognisable place. NO text or writing.
-- Every scene is a PHENOMENON: matter doing something, filling the frame.
+- Every scene is a PHENOMENON: matter doing something, filling the frame edge
+  to edge. It is NOT an object photographed against a background — no vessels,
+  bowls, panels, plates, sheets or any thing with an outline in the frame. The
+  camera is inside the material, not looking at it.
 - Never quote or reproduce lyrics. Transcript context is for mood only.
 - Each scene must be a genuinely different phenomenon, not a variation."""
 
@@ -87,7 +90,9 @@ def build_spec(plan_json: dict, analysis: dict, title: str, seed: int = 5000) ->
         "height": 704,
         "seed": seed,
         # No figure clause at all — that is the point of this mode.
-        "style": "No people, no figures, no buildings, no landscape, no horizon. Abstract matter filling the frame.",
+        "style": ("No people, no figures, no buildings, no landscape, no horizon. "
+                  "No object with a visible outline — no vessel, bowl, panel or plate. "
+                  "The matter fills the frame edge to edge and continues past it."),
         "scenes": scenes,
     }
 
