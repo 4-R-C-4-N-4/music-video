@@ -1002,3 +1002,11 @@ BY_LEVEL = {
     "high": ["felted", "risograph", "stainedglass", "raku", "verdigris", "silkscreen",
              "chemigram", "linocut", "ferrofluid", "microbial", "crystallographic", "sem"],
 }
+
+
+# Families that work without a figure or a place — pure phenomena. Visualizer
+# mode draws only from these, because an abstract cut sequence has no room to
+# establish a character or a location and shouldn't try.
+ABSTRACT = ["ferrofluid", "chemigram", "crystallographic", "mineral", "cryo",
+            "raku", "sem", "cosmic", "microbial", "verdigris", "risograph",
+            "silkscreen", "cyanotype"]

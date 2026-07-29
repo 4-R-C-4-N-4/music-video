@@ -60,7 +60,12 @@ def snap(t: float, cuts: list[float], window: float, used: set[float],
 
 def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
     fps = spec.get("fps", 25)
-    bars_per_shot = spec.get("bars_per_shot", {"low": 4, "mid": 2, "high": 2})
+    # Visualizer mode cuts on the bar rather than every two-to-four bars, so
+    # the edit sits on the rhythm instead of on the song's sections.
+    visualizer = spec.get("mode") == "visualizer"
+    default_bps = ({"low": 2, "mid": 1, "high": 1} if visualizer
+                   else {"low": 4, "mid": 2, "high": 2})
+    bars_per_shot = spec.get("bars_per_shot", default_bps)
     base_seed = spec.get("seed", 1000)
     scenes = spec["scenes"]
     bars = analysis["bars"]
@@ -68,7 +73,7 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
 
     style = spec.get("style", "")
     n_sections = len(analysis["sections"])
-    cuts = phrase_cuts(lyrics)
+    cuts = [] if visualizer else phrase_cuts(lyrics)
     bar_secs = 240.0 / max(analysis["tempo"], 1)  # 4 beats
     window = spec.get("snap_window", bar_secs)
     min_shot = spec.get("min_shot_secs", 1.6)

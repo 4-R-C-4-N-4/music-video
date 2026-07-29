@@ -1,0 +1,76 @@
+{
+ "acoustic": {
+  "valence": 0.674,
+  "energy": 0.433,
+  "warmth": 0.901,
+  "scale": 0.538,
+  "tempo": 86.1,
+  "majorness": 0.795
+ },
+ "semantic": {
+  "valence": 0.2,
+  "energy": 0.4,
+  "warmth": 0.1,
+  "age": 0.7,
+  "tactility": 0.3,
+  "scale": 0.9,
+  "organic": 0.4,
+  "adjectives": [
+   "ethereal",
+   "ominous",
+   "unearthly",
+   "haunting",
+   "mystical"
+  ],
+  "imagery": [
+   "celestial lights",
+   "desert landscape",
+   "shadowy silhouette",
+   "starlight"
+  ]
+ },
+ "vector": {
+  "valence": 0.484,
+  "energy": 0.423,
+  "warmth": 0.581,
+  "age": 0.7,
+  "tactility": 0.3,
+  "scale": 0.683,
+  "organic": 0.4
+ },
+ "tension": 0.474,
+ "families": [
+  [
+   "ukiyoe",
+   0.267
+  ],
+  [
+   "lithograph",
+   0.454
+  ],
+  [
+   "charcoal",
+   0.513
+  ],
+  [
+   "linocut",
+   0.535
+  ],
+  [
+   "etching",
+   0.562
+  ],
+  [
+   "fresco",
+   0.584
+  ],
+  [
+   "stainedglass",
+   0.586
+  ],
+  [
+   "cosmic",
+   0.591
+  ]
+ ]
+}

@@ -1,0 +1,85 @@
+{
+  "title": "Plach",
+  "concept": "A series of voyeuristic observations of a pursuit through decaying urban and industrial landscapes.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 3000,
+  "bars_per_shot": {
+    "low": 4,
+    "mid": 2,
+    "high": 2
+  },
+  "style": "A recurring figure appears throughout: A young man in an oversized black leather trench coat and heavy combat boots..",
+  "scenes": [
+    {
+      "id": "the-basement-void",
+      "material": "ferrofluid",
+      "material_seed": 7400,
+      "still_prompt": "A dark, subterranean concrete bunker filled with shallow pools of black oil reflecting flickering overhead lights.",
+      "beats": [
+        "Extreme close-up: the figure's boots stepping into a black liquid surface.",
+        "Medium shot: the figure standing motionless in the center of the dark room.",
+        "Low angle shot: the figure tilting their head back toward the ceiling.",
+        "Close-up: the figure's hand dipping into the oily pool.",
+        "Wide shot: the figure walking slowly toward a heavy iron door."
+      ],
+      "video_prompt": "Thick oily ripples spreading across the dark floor. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A slow, creeping dolly shot following the figure's feet."
+      }
+    },
+    {
+      "id": "the-industrial-hall",
+      "material": "charcoal",
+      "material_seed": 7401,
+      "still_prompt": "A narrow, derelict factory corridor lined with soot-stained brick walls and rusted metal pipes.",
+      "beats": [
+        "Wide shot: the figure walking down the center of the long hallway.",
+        "Medium shot: the figure turning a corner sharply.",
+        "Close-up: the figure's hand brushing against a rough brick wall.",
+        "Low angle shot: the figure looking over their shoulder into the darkness.",
+        "Medium shot: the figure stopping abruptly to catch their breath."
+      ],
+      "video_prompt": "Fine grey dust falling from the ceiling beams. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "A steady handheld follow shot at walking pace."
+      }
+    },
+    {
+      "id": "the-interrogation-room",
+      "material": "radiographic",
+      "material_seed": 7402,
+      "still_prompt": "A cramped, windowless room containing a single metal table and two heavy steel chairs.",
+      "beats": [
+        "Overhead shot: the figure sitting perfectly still in a chair.",
+        "Close-up: the figure's hands gripped tightly on the metal table.",
+        "Medium shot: the figure staring at an empty chair opposite them.",
+        "Extreme close-up: the figure's eyes blinking slowly.",
+        "Wide shot: the figure slumped forward in the chair."
+      ],
+      "video_prompt": "A single overhead lightbulb vibrating slightly in its socket. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A very slow zoom into the figure's face."
+      }
+    },
+    {
+      "id": "the-neon-alleyway",
+      "material": "silkscreen",
+      "material_seed": 7403,
+      "still_prompt": "A narrow alleyway packed with glowing red and blue signage reflecting off wet asphalt.",
+      "beats": [
+        "Wide shot: the figure running through the narrow passage.",
+        "Medium shot: the figure stumbling against a wall of flickering neon tubes.",
+        "Close-up: the figure's face illuminated by harsh red light.",
+        "Low angle shot: the figure jumping over a large puddle.",
+        "Medium shot: the figure spinning around to face the camera.",
+        "Wide shot: the figure disappearing into a cloud of steam."
+      ],
+      "video_prompt": "Steam rising from heavy street vents in thick plumes. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "A frantic, shaky handheld camera tracking the figure's movement."
+      }
+    }
+  ]
+}

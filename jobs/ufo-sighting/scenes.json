@@ -1,0 +1,101 @@
+{
+  "title": "Ufo Sighting",
+  "concept": "A solitary observer wanders through shifting geological and celestial realms that oscillate between sacred permanence and cosmic indifference.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 3000,
+  "bars_per_shot": {
+    "low": 4,
+    "mid": 2,
+    "high": 2
+  },
+  "style": "A recurring figure appears throughout: An elderly person with weathered skin, wearing a heavy, oversized linen shroud in a pale cream color..",
+  "scenes": [
+    {
+      "id": "the-salt-flats",
+      "material": "fresco",
+      "material_seed": 7400,
+      "still_prompt": "An expansive white salt crust under a bruised lavender sky at twilight.",
+      "beats": [
+        "Wide shot: the figure stands motionless in the center of the vast white expanse",
+        "Medium shot: the figure slowly drags a hand across the cracked salt surface",
+        "Close up: the figure's feet sinking slightly into the crystalline crust",
+        "Low angle shot: the figure tilts their head toward the darkening horizon",
+        "Wide shot: the figure becomes a small speck against the monumental white ground"
+      ],
+      "video_prompt": "Fine white salt dust swirls in low, rhythmic gusts across the ground. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera drifts laterally across the flat horizon."
+      }
+    },
+    {
+      "id": "the-obsidian-canyon",
+      "material": "etching",
+      "material_seed": 7401,
+      "still_prompt": "A narrow gorge of polished black volcanic rock reflecting a sliver of moonlight.",
+      "beats": [
+        "Long shot: the figure enters the dark canyon from the top of the frame",
+        "Medium shot: the figure runs a hand along the sharp, reflective canyon wall",
+        "Close up: the figure's eyes reflecting the glint of wet stone",
+        "Medium shot: the figure stops to look upward at the narrow strip of sky",
+        "Wide shot: the figure walks deeper into the narrowing black crevice"
+      ],
+      "video_prompt": "Thin wisps of condensation drip from the high canyon walls. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "The camera tracks forward steadily behind the figure."
+      }
+    },
+    {
+      "id": "the-sunken-cathedral",
+      "material": "stainedglass",
+      "material_seed": 7402,
+      "still_prompt": "The ruins of a stone basilica where sunlight pierces through high, empty window frames.",
+      "beats": [
+        "Wide shot: the figure walks through a shaft of colored light on the stone floor",
+        "Medium shot: the figure reaches up toward a beam of crimson light",
+        "Close up: the figure's face illuminated by shifting patterns of sapphire and amber",
+        "Medium shot: the figure kneels on the debris-strewn floor",
+        "Wide shot: the figure stands amidst the rising dust motes in the light"
+      ],
+      "video_prompt": "Heavy beams of light dance with thick, suspended particles of dust. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "The camera circles the figure in a slow, sweeping arc."
+      }
+    },
+    {
+      "id": "the-desert-tempest",
+      "material": "charcoal",
+      "material_seed": 7403,
+      "still_prompt": "A vast, red sand dune sea under a sky filled with swirling dark storm clouds.",
+      "beats": [
+        "Wide shot: the figure struggles to walk against a heavy wind on a dune crest",
+        "Medium shot: the figure wraps the linen shroud tightly around their body",
+        "Close up: the figure's hands clawing into the shifting red sand",
+        "Low angle shot: the figure stumbles forward through the thickening haze",
+        "Wide shot: the figure disappears into a wall of dark, moving sand"
+      ],
+      "video_prompt": "A violent storm of red sand lashes across the landscape. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "The camera shakes and darts erratically through the wind."
+      }
+    },
+    {
+      "id": "the-void",
+      "material": "cosmic",
+      "material_seed": 7404,
+      "still_prompt": "An infinite expanse of deep violet space punctuated by distant, unblinking white stars.",
+      "beats": [
+        "Wide shot: the figure floats weightlessly in the center of the darkness",
+        "Medium shot: the figure reaches out toward a distant glowing nebula",
+        "Close up: the figure's eyes reflecting a bright, distant star cluster",
+        "Wide shot: the figure drifts slowly away from the camera into the void",
+        "Extreme wide shot: the figure becomes a single, tiny point of light"
+      ],
+      "video_prompt": "Faint, rhythmic pulses of light emanate from distant celestial bodies. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera pulls back extremely slowly into the darkness."
+      }
+    }
+  ]
+}

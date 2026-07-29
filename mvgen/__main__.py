@@ -1,6 +1,10 @@
 """One-command build: analyze -> lyrics -> direct -> render -> assemble.
 
     python -m mvgen build <track> jobs/<job> [limit] [--no-lyrics] [--model=X]
+                          [--visualizer]
+
+--visualizer builds an abstract, rhythm-cut visualiser instead of a narrative
+video: no figure, no locations, one-bar cuts, abstract material families only.
 
 Every stage is skipped if its output already exists, so re-running resumes.
 Delete a stage's output to redo it (analysis.json, lyrics.json, scenes.json,
@@ -64,7 +68,8 @@ def ensure_comfy(timeout: int = 120) -> None:
 
 
 def build(track: str, jobdir: str, limit: int | None = None,
-          do_lyrics: bool = True, model: str = "gemma4-nothink"):
+          do_lyrics: bool = True, model: str = "gemma4-nothink",
+          visualizer: bool = False):
     job = pathlib.Path(jobdir)
     job.mkdir(parents=True, exist_ok=True)
 
@@ -106,8 +111,13 @@ def build(track: str, jobdir: str, limit: int | None = None,
 
     spec_path = job / "scenes.json"
     if not spec_path.exists():
-        print("no scenes.json — directing automatically", flush=True)
-        spec = _direct.direct(str(job), model)
+        print("no scenes.json — directing automatically"
+              + (" (visualizer mode)" if visualizer else ""), flush=True)
+        if visualizer:
+            from . import visualizer as _vis
+            spec = _vis.direct(str(job), model)
+        else:
+            spec = _direct.direct(str(job), model)
         print(f"concept: {spec['concept']}", flush=True)
         for s in spec["scenes"]:
             print(f"  {s['id']} [{s['material']}]", flush=True)
@@ -142,7 +152,8 @@ def main():
     build(args[1], args[2],
           int(args[3]) if len(args) > 3 else None,
           do_lyrics="--no-lyrics" not in flags,
-          model=model)
+          model=model,
+          visualizer="--visualizer" in flags)
 
 
 if __name__ == "__main__":
