@@ -116,7 +116,8 @@ def grab_output(outputs, node, key, workdir, dest_name):
     return dest
 
 
-def render(manifest_path: str, workdir: str, limit: int | None = None):
+def render(manifest_path: str, workdir: str, limit: int | None = None,
+           stills_only: bool = False):
     manifest = json.load(open(manifest_path))
     workdir = pathlib.Path(workdir)
     workdir.mkdir(parents=True, exist_ok=True)
@@ -143,6 +144,8 @@ def render(manifest_path: str, workdir: str, limit: int | None = None):
             shutil.copy(dest, COMFY_IN / dest.name)
             state["stills"][key] = dest.name
             save_state()
+        if stills_only:
+            continue
         print(f"shot {i+1}/{len(manifest['shots'])} "
               f"(scene {shot['scene']}, {shot['frames']}f, {shot['level']})", flush=True)
         g = i2v_graph(state["stills"][key], shot["video_prompt"], shot["seed"],
@@ -156,9 +159,10 @@ def render(manifest_path: str, workdir: str, limit: int | None = None):
 
 
 def main():
-    manifest_path, workdir = sys.argv[1], sys.argv[2]
-    limit = int(sys.argv[3]) if len(sys.argv) > 3 else None
-    render(manifest_path, workdir, limit)
+    args = [a for a in sys.argv[1:] if a != "--stills-only"]
+    manifest_path, workdir = args[0], args[1]
+    limit = int(args[2]) if len(args) > 2 else None
+    render(manifest_path, workdir, limit, stills_only="--stills-only" in sys.argv)
 
 
 if __name__ == "__main__":

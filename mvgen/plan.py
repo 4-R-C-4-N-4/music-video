@@ -9,23 +9,16 @@ never accumulates (every cut stays within 4 frames of its target beat).
 import json
 import sys
 
-# Per-shot camera variation within a scene: same world, different setup.
-# Kills the "same keyframe looping" feel of naive one-still-per-scene.
-ANGLES = [
-    "Wide establishing shot.",
-    "Medium shot, closer to the figure.",
-    "Low angle looking up, foreground elements towering.",
-    "Detail close-up of the scene's central element.",
-    "Reverse angle, looking back the way we came.",
-    "Slightly elevated shot, the figure small in the landscape.",
-]
-
-# Progression through a scene: shot k of n moves through these stages.
-STAGES = [
-    "The scene at its threshold, just arrived.",
-    "Deeper in now, the scene fully surrounding.",
-    "At the heart of the scene, its central element close and dominant.",
-    "Passing through the far side, the scene beginning to open up.",
+# Fallback beats when a scene doesn't author its own: generic blocking that
+# leads the prompt (the image model follows lead content, so composition MUST
+# come first — a camera phrase appended after a long setting prompt is noise).
+FALLBACK_BEATS = [
+    "Extreme wide establishing shot, the protagonist tiny in the landscape.",
+    "Medium tracking shot from behind the protagonist as she moves deeper in.",
+    "Close-up on the protagonist's face in profile, the scene's light playing across it.",
+    "Overhead aerial shot, her figure a small dark point far below.",
+    "Detail close-up of the scene's central element, the protagonist blurred beyond it.",
+    "Reverse wide angle from deep within the scene, her small figure approaching.",
 ]
 
 
@@ -74,19 +67,23 @@ def plan(analysis: dict, spec: dict) -> dict:
         if cum >= duration:
             break
 
-    # Per-shot stills: each shot in a scene gets its own camera angle and a
-    # progression stage through the scene, plus the global style clause.
+    # Per-shot stills: shot k of n in a scene walks monotonically through the
+    # scene's authored `beats` (concrete blocking — these LEAD the prompt so
+    # they actually control composition), followed by the scene setting and
+    # the global style clause.
     by_scene: dict[str, list[dict]] = {}
     for s in shots:
         by_scene.setdefault(s["scene"], []).append(s)
     scene_map = {s["id"]: s for s in scenes}
     for sid, group in by_scene.items():
+        beats = scene_map[sid].get("beats", FALLBACK_BEATS)
         n = len(group)
         for k, shot in enumerate(group):
-            stage = STAGES[min(k * len(STAGES) // max(n, 1), len(STAGES) - 1)]
-            angle = ANGLES[k % len(ANGLES)]
-            shot["still_prompt"] = " ".join(
-                p for p in (scene_map[sid]["still_prompt"], stage, angle, style) if p)
+            beat = beats[min(k * len(beats) // max(n, 1), len(beats) - 1)]
+            shot["still_prompt"] = " ".join(p for p in (
+                "Cinematic film still: " + beat,
+                "Setting: " + scene_map[sid]["still_prompt"],
+                style) if p)
 
     return {
         "track": analysis["track"],
