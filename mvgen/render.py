@@ -364,20 +364,6 @@ def render(manifest_path: str, workdir: str, limit: int | None = None,
     print(f"rendered: {done}/{len(manifest['shots'])} shots complete", flush=True)
 
 
-def main():
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    manifest_path, workdir = args[0], args[1]
-    limit = int(args[2]) if len(args) > 2 else None
-    cands = next((int(a.split("=", 1)[1]) for a in sys.argv
-                  if a.startswith("--candidates=")), None)
-    render(manifest_path, workdir, limit,
-           stills_only="--stills-only" in sys.argv, candidates=cands)
-
-
-if __name__ == "__main__":
-    main()
-
-
 def comfy_down() -> None:
     """Stop ComfyUI and wait for the GPU to actually be released.
 
@@ -466,3 +452,17 @@ def tween_graph(img_a, img_b, prompt, seed, w, h, frames, fps, prefix,
     if audio_name:
         g["24"] = {"class_type": "LoadAudio", "inputs": {"audio": audio_name}}
     return g
+
+
+def main():
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    manifest_path, workdir = args[0], args[1]
+    limit = int(args[2]) if len(args) > 2 else None
+    cands = next((int(a.split("=", 1)[1]) for a in sys.argv
+                  if a.startswith("--candidates=")), None)
+    render(manifest_path, workdir, limit,
+           stills_only="--stills-only" in sys.argv, candidates=cands)
+
+
+if __name__ == "__main__":
+    main()
