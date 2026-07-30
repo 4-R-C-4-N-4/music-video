@@ -1,0 +1,392 @@
+{
+  "title": "Wedbecute",
+  "mode": "visualizer",
+  "concept": "A rhythmic journey through microscopic and elemental transformations, shifting from soft fluid dynamics to sharp geometric crystalline structures and back to ethereal vapors.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 5000,
+  "style": "No people, no figures, no buildings, no landscape, no horizon. No object with a visible outline \u2014 no vessel, bowl, panel or plate. The matter fills the frame edge to edge and continues past it.",
+  "scenes": [
+    {
+      "id": "viscous-gold",
+      "material": "ferrofluid",
+      "material_seed": 9400,
+      "still_prompt": "Golden liquid droplets oscillating in a magnetic field against a black void.",
+      "beats": [
+        "extreme close-up of a single shimmering bead",
+        "mid-shot of several spheres merging",
+        "wide shot of a complex web of golden spikes",
+        "macro shot of spikes vibrating rapidly",
+        "extreme macro of surface tension breaking"
+      ],
+      "video_prompt": "A constant, subtle shimmer on the liquid surface. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, heavy undulations of liquid mass.",
+        "mid": "Rhythmic pulsing of spike heights.",
+        "high": "Violent, jagged eruptions of metallic spikes."
+      }
+    },
+    {
+      "id": "prismatic-refraction",
+      "material": "crystallographic",
+      "material_seed": 9401,
+      "still_prompt": "Light refracting through a moving lattice of translucent mineral grains.",
+      "beats": [
+        "macro view of a single growing edge",
+        "medium shot of intersecting planes",
+        "wide shot of a complex geometric grid",
+        "close-up of light splintering through a vertex",
+        "extreme macro of a molecular junction"
+      ],
+      "video_prompt": "A soft, drifting glow through the crystalline structure. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow rotation of the lattice structure.",
+        "mid": "Steady growth of geometric facets.",
+        "high": "Rapid, chaotic splintering of light rays."
+      }
+    },
+    {
+      "id": "amber-swirl",
+      "material": "chemigram",
+      "material_seed": 9402,
+      "still_prompt": "Swirling clouds of ochre and gold pigments suspended in a liquid medium.",
+      "beats": [
+        "close-up of a single pigment swirl",
+        "mid-shot of colliding color clouds",
+        "wide shot of marbled textures filling the frame",
+        "extreme macro of a color gradient",
+        "close-up of pigment separation"
+      ],
+      "video_prompt": "Slow, drifting particulates in the fluid. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Languid, swirling currents of color.",
+        "mid": "Steady, rhythmic mixing of hues.",
+        "high": "Turbulent, frothing eddies of pigment."
+      }
+    },
+    {
+      "id": "golden-pulse",
+      "material": "ferrofluid",
+      "material_seed": 9403,
+      "still_prompt": "Golden liquid pillars rising and falling in time with a hidden frequency.",
+      "beats": [
+        "extreme macro of a rising spike",
+        "mid-shot of a rhythmic wave",
+        "wide shot of a landscape of spikes",
+        "close-up of a collapsing spire",
+        "extreme macro of surface tension ripples"
+      ],
+      "video_prompt": "A constant, micro-vibration of the liquid base. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Gentle, rhythmic breathing of the liquid surface.",
+        "mid": "Steady, melodic rising and falling.",
+        "high": "Staccato, explosive upward thrusts."
+      }
+    },
+    {
+      "id": "thermal-bloom",
+      "material": "thermal",
+      "material_seed": 9404,
+      "still_prompt": "Heat plumes of orange and yellow rising through a dark, cool medium.",
+      "beats": [
+        "close-up of a single heat tendril",
+        "mid-shot of rising convection currents",
+        "wide shot of a thermal field",
+        "extreme macro of heat diffusion",
+        "close-up of a thermal vortex"
+      ],
+      "video_prompt": "A soft, pervasive warmth radiating through the frame. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, drifting heat plumes.",
+        "mid": "Steady, upward convective flow.",
+        "high": "Rapid, turbulent heat eddies."
+      }
+    },
+    {
+      "id": "starlight-drift",
+      "material": "cosmic",
+      "material_seed": 9405,
+      "still_prompt": "Nebulous clouds of luminous dust swirling in a vacuum.",
+      "beats": [
+        "extreme macro of a single glowing particle",
+        "close-up of a gas filament",
+        "mid-shot of a swirling nebula cloud",
+        "wide shot of a luminous expanse",
+        "extreme wide shot of a star field"
+      ],
+      "video_prompt": "A faint, constant twinkling of distant light. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, cosmic drift of dust clouds.",
+        "mid": "Steady, swirling galactic patterns.",
+        "high": "Fast, swirling gas turbulences."
+      }
+    },
+    {
+      "id": "salt-geometry",
+      "material": "salt",
+      "material_seed": 9406,
+      "still_prompt": "Geometric salt crystals precipitating and interlocking.",
+      "beats": [
+        "extreme macro of a crystal edge",
+        "close-up of interlocking cubes",
+        "mid-shot of a growing salt crust",
+        "wide shot of a crystalline field",
+        "extreme macro of a salt grain"
+      ],
+      "video_prompt": "A subtle, shimmering light on the salt facets. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, incremental growth of crystal edges.",
+        "mid": "Steady accumulation of salt layers.",
+        "high": "Rapid, jagged crystal fracturing."
+      }
+    },
+    {
+      "id": "gold-bloom",
+      "material": "microbial",
+      "material_seed": 9407,
+      "still_prompt": "Golden-colored organic colonies proliferating rapidly across a wet surface.",
+      "beats": [
+        "extreme macro of a single cell dividing",
+        "close-up of a spreading colony",
+        "mid-shot of a dense microbial mat",
+        "wide shot of a proliferating mass",
+        "extreme macro of cellular textures"
+      ],
+      "video_prompt": "A constant, microscopic bubbling of the liquid. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, pulsating expansion of colonies.",
+        "mid": "Steady, rhythmic growth patterns.",
+        "high": "Rapid, chaotic cellular multiplication."
+      }
+    },
+    {
+      "id": "verdigris-flow",
+      "material": "verdigris",
+      "material_seed": 9408,
+      "still_prompt": "Thick, teal-colored oxidation spreading across a textured surface.",
+      "beats": [
+        "extreme macro of a single green speck",
+        "close-up of a spreading corrosion line",
+        "mid-shot of a heavy oxidation layer",
+        "wide shot of a complex patina",
+        "extreme macro of the textured surface"
+      ],
+      "video_prompt": "A slow, heavy settling of mineral particles. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, creeping spread of color.",
+        "mid": "Steady, rhythmic oxidation growth.",
+        "high": "Rapid, crackling expansion of the patina."
+      }
+    },
+    {
+      "id": "light-ribbon",
+      "material": "schlieren",
+      "material_seed": 9409,
+      "still_prompt": "Invisible air currents made visible as flowing, translucent ribbons.",
+      "beats": [
+        "extreme macro of a single ribbon",
+        "close-up of intersecting flows",
+        "mid-shot of swirling air currents",
+        "wide shot of a chaotic air field",
+        "extreme macro of a turbulence edge"
+      ],
+      "video_prompt": "A constant, subtle shimmering of the air. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, graceful gliding of air ribbons.",
+        "mid": "Steady, rhythmic air circulation.",
+        "high": "Violent, chaotic air turbulence."
+      }
+    },
+    {
+      "id": "spectrogram-pulse",
+      "material": "spectrogram",
+      "material_seed": 9410,
+      "still_prompt": "Vertical bands of light and shadow pulsing in response to frequency.",
+      "beats": [
+        "extreme macro of a single frequency line",
+        "close-up of a band edge",
+        "mid-shot of a rhythmic waveform",
+        "wide shot of a complex spectral field",
+        "extreme macro of a digital artifact"
+      ],
+      "video_prompt": "A constant, low-level background noise floor. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, gentle vertical oscillation.",
+        "mid": "Steady, rhythmic frequency pulsing.",
+        "high": "Violent, rapid frequency spikes."
+      }
+    },
+    {
+      "id": "crystalline-shatter",
+      "material": "cryo",
+      "material_seed": 9411,
+      "still_prompt": "Fracturing ice structures within a frozen, translucent medium.",
+      "beats": [
+        "extreme macro of a single frost needle",
+        "close-up of a crack spreading",
+        "mid-shot of an ice lattice",
+        "wide shot of a frozen field",
+        "extreme macro of a crystal fracture"
+      ],
+      "video_prompt": "A constant, freezing stillness. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, silent expansion of frost.",
+        "mid": "Steady, rhythmic ice cracking.",
+        "high": "Rapid, violent shattering of ice."
+      }
+    },
+    {
+      "id": "micro-fibre",
+      "material": "sem",
+      "material_seed": 9412,
+      "still_prompt": "Intricate, interwoven organic fibers viewed at extreme magnification.",
+      "beats": [
+        "extreme macro of a single fiber thread",
+        "close-up of an intersection",
+        "mid-shot of a dense weave",
+        "wide shot of a complex fiber mesh",
+        "extreme macro of a surface texture"
+      ],
+      "video_prompt": "A constant, microscopic movement of dust. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, subtle swaying of fibers.",
+        "mid": "Steady, rhythmic pulsing of the weave.",
+        "high": "Rapid, chaotic vibration of fibers."
+      }
+    },
+    {
+      "id": "rust-bloom",
+      "material": "rust",
+      "material_seed": 9413,
+      "still_prompt": "Expanding flakes of reddish-brown oxidation on a metal surface.",
+      "beats": [
+        "extreme macro of a single rust flake",
+        "close-up of a spreading corrosion edge",
+        "mid-shot of a heavy rust layer",
+        "wide shot of a complex patina",
+        "extreme macro of a pitted surface"
+      ],
+      "video_prompt": "A constant, subtle crumbling of the material. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, creeping spread of rust.",
+        "mid": "Steady, rhythmic oxidation growth.",
+        "high": "Rapid, flaking expansion of the crust."
+      }
+    },
+    {
+      "id": "gold-dust",
+      "material": "sand",
+      "material_seed": 9414,
+      "still_prompt": "Shimmering golden sand grains cascading through a void.",
+      "beats": [
+        "extreme macro of a single grain",
+        "close-up of a grain cascade",
+        "mid-shot of a shifting dune surface",
+        "wide shot of a flowing sand river",
+        "extreme macro of colliding grains"
+      ],
+      "video_prompt": "A constant, subtle hiss of moving grains. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, gentle drift of sand grains.",
+        "mid": "Steady, rhythmic grain flow.",
+        "high": "Violent, turbulent sand storm."
+      }
+    },
+    {
+      "id": "shadow-web",
+      "material": "web",
+      "material_seed": 9415,
+      "still_prompt": "Geometric patterns of fine, dark filaments stretching across space.",
+      "beats": [
+        "extreme macro of a single filament",
+        "close-up of a junction point",
+        "mid-shot of a complex web structure",
+        "wide shot of an intricate web field",
+        "extreme macro of a tension point"
+      ],
+      "video_prompt": "A constant, minute vibration of the strands. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, subtle swaying of threads.",
+        "mid": "Steady, rhythmic tensioning of the web.",
+        "high": "Violent, rapid vibration of the filaments."
+      }
+    },
+    {
+      "id": "cyan-mist",
+      "material": "cyanotype",
+      "material_seed": 9416,
+      "still_prompt": "Fading and intensifying blue light patterns in a liquid bath.",
+      "beats": [
+        "extreme macro of a blue pigment bloom",
+        "close-up of a light gradient",
+        "mid-shot of a swirling blue wash",
+        "wide shot of a blue light field",
+        "extreme macro of a chemical edge"
+      ],
+      "video_prompt": "A constant, subtle movement of liquid. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, gentle diffusion of blue color.",
+        "mid": "Steady, rhythmic light shifts.",
+        "high": "Rapid, turbulent chemical reactions."
+      }
+    },
+    {
+      "id": "velvet-smoke",
+      "material": "smoke",
+      "material_seed": 9417,
+      "still_prompt": "Dense, dark plumes of vapor curling through light.",
+      "beats": [
+        "extreme macro of a single curl",
+        "close-up of a rising plume",
+        "mid-shot of a swirling smoke cloud",
+        "wide shot of a thick smoke field",
+        "extreme macro of a vapor edge"
+      ],
+      "video_prompt": "A constant, drifting motion of vapor. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, languid curling of smoke.",
+        "mid": "Steady, rhythmic rising plumes.",
+        "high": "Violent, turbulent smoke swirls."
+      }
+    },
+    {
+      "id": "darkfield-spark",
+      "material": "darkfield",
+      "material_seed": 9418,
+      "still_prompt": "Luminous, jewel-like particles suspended in a pitch-black void.",
+      "beats": [
+        "extreme macro of a single glowing particle",
+        "close-up of a cluster of particles",
+        "mid-shot of a swirling particle cloud",
+        "wide shot of a luminous field",
+        "extreme macro of a particle's edge"
+      ],
+      "video_prompt": "A constant, subtle glimmer of light. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, drifting movement of particles.",
+        "mid": "Steady, rhythmic swirling of the field.",
+        "high": "Violent, rapid particle agitation."
+      }
+    },
+    {
+      "id": "final-vapor",
+      "material": "smoke",
+      "material_seed": 9419,
+      "still_prompt": "Fading, translucent wisps of gold and white vapor.",
+      "beats": [
+        "extreme macro of a dissolving wisp",
+        "close-up of a thinning cloud",
+        "mid-shot of a light vapor field",
+        "wide shot of a fading mist",
+        "extreme macro of a disappearing edge"
+      ],
+      "video_prompt": "A constant, very slow drift of air. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, gentle dissipation of vapor.",
+        "mid": "Steady, rhythmic fading of the mist.",
+        "high": "Rapid, chaotic dispersal of the vapor."
+      }
+    }
+  ]
+}
