@@ -16,6 +16,23 @@ muxes the original track back over the top.
 - `uv sync` for the analysis deps (librosa), ffmpeg on PATH.
 - Stop any resident LLM first (`llm stop`) — the GPU can't be shared.
 
+## Modes
+
+**Visualiser is the default.** Abstract phenomena, no figure, no locations, cuts
+on the bar. A generated human figure at this resolution reads as obviously
+synthetic — hands and faces are where the artifacts concentrate — while a
+texture field has no anatomy to get wrong, so the generator's granularity is
+better spent on matter.
+
+`--narrative` opts into the older mode: a recurring figure moving through
+locations, one scene per section, cuts every 2-4 bars.
+
+Every feature works in both modes: vibe matching, the 63-family palette with
+`suits` coherence, composed materials with per-shot flaw jitter, best-of-N
+judging with global dedup, and vocal phrase-end cutting. Visualiser uses a
+half-bar snap window rather than a full bar, so a cut lands on the sung phrase
+without halving or doubling a one-bar shot.
+
 ## Fully automatic
 
 ```bash

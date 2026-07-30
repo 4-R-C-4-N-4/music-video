@@ -1,10 +1,16 @@
 """One-command build: analyze -> lyrics -> direct -> render -> assemble.
 
     python -m mvgen build <track> jobs/<job> [limit] [--no-lyrics] [--model=X]
-                          [--visualizer]
+                          [--narrative]
 
---visualizer builds an abstract, rhythm-cut visualiser instead of a narrative
-video: no figure, no locations, one-bar cuts, abstract material families only.
+Visualiser mode is the DEFAULT: abstract phenomena, no figure, no locations,
+cuts on the bar, drawn from material families that work as pure matter. A
+generated human figure at this resolution reads as obviously synthetic — hands
+and faces are where the artifacts concentrate — while a texture field has no
+anatomy to get wrong.
+
+--narrative opts into the older mode: a recurring figure moving through
+locations, one scene per section, cuts every 2-4 bars.
 
 Every stage is skipped if its output already exists, so re-running resumes.
 Delete a stage's output to redo it (analysis.json, lyrics.json, scenes.json,
@@ -69,7 +75,7 @@ def ensure_comfy(timeout: int = 120) -> None:
 
 def build(track: str, jobdir: str, limit: int | None = None,
           do_lyrics: bool = True, model: str = "gemma4-nothink",
-          visualizer: bool = False):
+          visualizer: bool = True):
     job = pathlib.Path(jobdir)
     job.mkdir(parents=True, exist_ok=True)
 
@@ -112,7 +118,7 @@ def build(track: str, jobdir: str, limit: int | None = None,
     spec_path = job / "scenes.json"
     if not spec_path.exists():
         print("no scenes.json — directing automatically"
-              + (" (visualizer mode)" if visualizer else ""), flush=True)
+              + (" (visualizer)" if visualizer else " (narrative)"), flush=True)
         if visualizer:
             from . import visualizer as _vis
             spec = _vis.direct(str(job), model)
@@ -153,7 +159,7 @@ def main():
           int(args[3]) if len(args) > 3 else None,
           do_lyrics="--no-lyrics" not in flags,
           model=model,
-          visualizer="--visualizer" in flags)
+          visualizer="--narrative" not in flags)
 
 
 if __name__ == "__main__":

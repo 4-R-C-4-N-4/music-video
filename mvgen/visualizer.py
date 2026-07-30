@@ -43,7 +43,14 @@ MOOD CONTEXT
 {mood}
 
 MATERIAL PALETTE (choose one key per scene; each scene must differ)
+Each entry gives the material's feel, then what it can plausibly be.
 {palette}
+
+COHERENCE RULE: several of these are instruments with a fixed scale — an
+electron micrograph resolves microns, a spectrogram shows sound, a schlieren
+image shows air. The phenomenon must be something that instrument could
+actually be pointed at. If you cannot write one honestly, pick another
+material.
 
 Return JSON:
 {{
@@ -122,7 +129,9 @@ def direct(jobdir: str, model: str = "gemma4-nothink") -> dict:
         ranked = [k for k, _ in vibe["families"] if k in ABSTRACT]
         keys = ranked + [k for k in ABSTRACT if k not in ranked]
     keys = keys[:max(12, len(secs) + 6)]
-    palette = "\n".join(f"  {k}: {MATERIALS[k]['mood']}" for k in keys)
+    palette = "\n".join(
+        f"  {k}: {MATERIALS[k]['mood']}\n      suits: {MATERIALS[k]['suits']}"
+        for k in keys)
 
     prompt = USER.format(duration=analysis["duration"], tempo=analysis["tempo"],
                          sections="\n".join(lines),

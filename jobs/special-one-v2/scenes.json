@@ -1,0 +1,219 @@
+{
+  "title": "Special One V2",
+  "concept": "A journey through fragmented perceptions of memory and identity as a traveler navigates an ever-shifting labyrinthine reality.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 3000,
+  "bars_per_shot": {
+    "low": 4,
+    "mid": 2,
+    "high": 2
+  },
+  "style": "A recurring figure appears throughout: A person in their late 20s wearing an oversized, structured charcoal linen blazer and heavy boots..",
+  "scenes": [
+    {
+      "id": "the-empty-cavern",
+      "material": "smoke",
+      "material_seed": 7400,
+      "still_prompt": "A vast, limestone cavern with singular beams of light cutting through heavy, stationary fog.",
+      "beats": [
+        "Wide shot of the figure standing motionless in a light shaft",
+        "Medium shot of the figure reaching into a cloud of vapor",
+        "Close-up of the figure's profile through thick white mist",
+        "Low angle shot of the figure walking toward a dark corner",
+        "Wide shot of the figure becoming a silhouette in the gloom"
+      ],
+      "video_prompt": "Thick plumes of white vapor swirling in stagnant air. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A slow, drifting crane movement downwards."
+      }
+    },
+    {
+      "id": "the-urban-grid",
+      "material": "neon",
+      "material_seed": 7401,
+      "still_prompt": "A narrow alleyway between two brick buildings illuminated by flickering pink and blue gas tubes.",
+      "beats": [
+        "Medium shot of the figure walking past a buzzing light fixture",
+        "Close-up of the figure's boots stepping through a puddle reflecting neon",
+        "Over-the-shoulder shot of the figure looking up at a glowing sign",
+        "Medium shot of the figure leaning against a damp brick wall",
+        "Wide shot of the figure exiting the alley into a bright light"
+      ],
+      "video_prompt": "Erratic flickering of electric light tubes. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "A steady tracking shot following the figure from behind."
+      }
+    },
+    {
+      "id": "the-industrial-void",
+      "material": "sumi",
+      "material_seed": 7402,
+      "still_prompt": "A sterile, white warehouse containing only a single, heavy wooden chair.",
+      "beats": [
+        "Wide shot of the figure approaching the chair",
+        "Medium shot of the figure sitting down heavily",
+        "Close-up of the figure's hands gripping the wooden seat",
+        "High angle shot of the figure looking upward into the white void",
+        "Wide shot of the figure standing and walking away"
+      ],
+      "video_prompt": "Fine white dust particles floating in a vacuum. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A slow, circular dolly movement around the chair."
+      }
+    },
+    {
+      "id": "the-digital-corridor",
+      "material": "cutpaper",
+      "material_seed": 7403,
+      "still_prompt": "A dark hallway lined with stacked, vintage television monitors displaying static.",
+      "beats": [
+        "Medium shot of the figure walking past a row of glowing screens",
+        "Close-up of the figure's eye reflected in a glass monitor",
+        "Wide shot of the figure standing amidst a wall of flickering static",
+        "Medium shot of the figure touching a warm glass screen"
+      ],
+      "video_prompt": "Static electricity and electronic humming from the screens. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "A rhythmic handheld shake following the figure's stride."
+      }
+    },
+    {
+      "id": "the-thermal-chamber",
+      "material": "thermal",
+      "material_seed": 7404,
+      "still_prompt": "A dark, high-tech server room with glowing red heat signatures emanating from hardware.",
+      "beats": [
+        "Wide shot of the figure entering the heat haze",
+        "Medium shot of the figure's hands glowing bright orange",
+        "Close-up of the figure's face showing heat patterns",
+        "Wide shot of the figure standing amidst a sea of red light",
+        "Medium shot of the figure turning away from the camera"
+      ],
+      "video_prompt": "Heat waves shimmering above the metal surfaces. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A slow, sweeping pan across the heat gradients."
+      }
+    },
+    {
+      "id": "the-railway-stretch",
+      "material": "linocut",
+      "material_seed": 7405,
+      "still_prompt": "A stark, high-contrast landscape of straight iron train tracks cutting through a flat field.",
+      "beats": [
+        "Wide shot of the figure walking along the iron rail",
+        "Medium shot of the figure's feet stepping over a wooden tie",
+        "Close-up of the figure's face looking toward the horizon",
+        "Low angle shot of the tracks receding into the distance",
+        "Wide shot of the figure walking toward the sunset"
+      ],
+      "video_prompt": "Dry wind blowing through the tall grass. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "A fast tracking shot parallel to the tracks."
+      }
+    },
+    {
+      "id": "the-maze-of-mirrors",
+      "material": "charcoal",
+      "material_seed": 7406,
+      "still_prompt": "A labyrinthine structure made of dark, smudged stone walls and reflective glass shards.",
+      "beats": [
+        "Wide shot of the figure entering the stone maze",
+        "Medium shot of the figure seeing multiple reflections",
+        "Close-up of the figure's hands tracing a rough stone wall",
+        "Medium shot of the figure turning a sharp corner",
+        "Wide shot of the figure running through a narrow passage",
+        "High angle shot of the figure lost in the geometry"
+      ],
+      "video_prompt": "Falling grit and crumbling stone dust. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "A frantic, handheld camera weaving through the turns."
+      }
+    },
+    {
+      "id": "the-sky-void",
+      "material": "cosmic",
+      "material_seed": 7407,
+      "still_prompt": "A vast, dark expanse of a nebula with swirling violet and gold gases.",
+      "beats": [
+        "Wide shot of the figure floating in the center of the nebula",
+        "Medium shot of the figure reaching for a light cluster",
+        "Close-up of the figure's eyes reflecting starlight",
+        "Wide shot of the figure drifting into a dark void"
+      ],
+      "video_prompt": "Luminous gas clouds swirling in slow motion. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "A slow, weightless rotation of the frame."
+      }
+    },
+    {
+      "id": "the-data-stream",
+      "material": "dotmatrix",
+      "material_seed": 7408,
+      "still_prompt": "A narrow concrete tunnel with continuous strips of paper hanging from the ceiling.",
+      "beats": [
+        "Medium shot of the figure pushing through hanging paper",
+        "Close-up of the figure's hand grabbing a strip of paper",
+        "Wide shot of the figure walking through the paper forest",
+        "Medium shot of the figure looking up at the ceiling",
+        "Wide shot of the figure at the end of the tunnel"
+      ],
+      "video_prompt": "Paper strips fluttering in a draft. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "A steady forward-pushing gimbal shot."
+      }
+    },
+    {
+      "id": "the-glitch-plaza",
+      "material": "risograph",
+      "material_seed": 7409,
+      "still_prompt": "An open urban plaza with bright, overlapping layers of primary colors.",
+      "beats": [
+        "Wide shot of the figure running through the plaza",
+        "Medium shot of the figure jumping over a brightly colored curb",
+        "Close-up of the figure's face in bright pink light",
+        "Medium shot of the figure spinning in place",
+        "Wide shot of the figure disappearing into a color block"
+      ],
+      "video_prompt": "Vibrant, saturated light pulses. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "A rapid, whip-pan camera movement."
+      }
+    },
+    {
+      "id": "the-glitch-echo",
+      "material": "halftone",
+      "material_seed": 7410,
+      "still_prompt": "A street corner at dusk with heavy grain and high-contrast shadows.",
+      "beats": [
+        "Medium shot of the figure leaning against a lamp post",
+        "Close-up of the figure's eyes blinking",
+        "Wide shot of the figure walking away into the grain",
+        "Medium shot of the figure turning back once"
+      ],
+      "video_prompt": "Grainy, flickering shadows on the pavement. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "A jittery, rhythmic tracking shot."
+      }
+    },
+    {
+      "id": "the-final-ascent",
+      "material": "silkscreen",
+      "material_seed": 7411,
+      "still_prompt": "A mountain peak overlooking a vast, flat horizon under a bright, solid sun.",
+      "beats": [
+        "Wide shot of the figure standing at the peak",
+        "Medium shot of the figure spreading their arms",
+        "Close-up of the figure's face looking upward",
+        "Low angle shot of the figure silhouetted against the sun",
+        "Wide shot of the figure walking toward the edge",
+        "Extreme wide shot of the figure as a tiny speck on the horizon"
+      ],
+      "video_prompt": "Intense, blinding white light radiating from the center. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "A fast, sweeping aerial drone shot rising upward."
+      }
+    }
+  ]
+}

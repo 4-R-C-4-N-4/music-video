@@ -87,9 +87,12 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
 
     style = spec.get("style", "")
     n_sections = len(analysis["sections"])
-    cuts = [] if visualizer else phrase_cuts(lyrics)
+    cuts = phrase_cuts(lyrics) if spec.get("snap_phrases", True) else []
     bar_secs = 240.0 / max(analysis["tempo"], 1)  # 4 beats
-    window = spec.get("snap_window", bar_secs)
+    # Visualizer shots are about one bar long, so a full-bar snap window could
+    # halve or double a shot and break the grid the mode exists to sit on. Half
+    # a bar still lands cuts on sung phrases without that damage.
+    window = spec.get("snap_window", bar_secs / 2 if visualizer else bar_secs)
     min_shot = spec.get("min_shot_secs", 1.6)
     used_cuts: set[float] = set()
 
