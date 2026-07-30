@@ -16,7 +16,8 @@
    "video_prompt": "a slow, rhythmic pulsing of light through the blue liquid The material texture stays constant and visible throughout. a glacial, almost imperceptible drift of pigment particles",
    "still_seed": 14000,
    "phrase_cut": false,
-   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: extreme close-up of translucent blue grains settling Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: pale fingerprints at the sheet margin; a bleached halo where the sheet lifted during exposure. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: extreme close-up of translucent blue grains settling Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: pale fingerprints at the sheet margin; a bleached halo where the sheet lifted during exposure. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cyanotype. extreme close-up of translucent blue grains settling a deep indigo expanse of suspended particulates drifting through a wash of pale blue light"
   },
   {
    "idx": 1,
@@ -28,7 +29,8 @@
    "video_prompt": "a slow, rhythmic pulsing of light through the blue liquid The material texture stays constant and visible throughout. a glacial, almost imperceptible drift of pigment particles",
    "still_seed": 14001,
    "phrase_cut": false,
-   "still_prompt": "Oxidised copper relief panel, under flat overcast light: macro view of pale green crystalline structures forming Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: salt bloom crusting one edge; a dent distorting the relief. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Oxidised copper relief panel, under flat overcast light: macro view of pale green crystalline structures forming Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: salt bloom crusting one edge; a dent distorting the relief. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "verdigris. macro view of pale green crystalline structures forming oxidized copper crusts blooming and fracturing in slow motion"
   },
   {
    "idx": 2,
@@ -40,7 +42,8 @@
    "video_prompt": "a slow, rhythmic pulsing of light through the blue liquid The material texture stays constant and visible throughout. a glacial, almost imperceptible drift of pigment particles",
    "still_seed": 14002,
    "phrase_cut": false,
-   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: extreme close-up of a single drop of yellow oil spreading Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: fingerprints developed into the image; drips running against the composition. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: extreme close-up of a single drop of yellow oil spreading Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: fingerprints developed into the image; drips running against the composition. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "chemigram. extreme close-up of a single drop of yellow oil spreading swirling oily streaks of gold and black reacting in a caustic liquid"
   },
   {
    "idx": 3,
@@ -52,7 +55,8 @@
    "video_prompt": "a slow, rhythmic pulsing of light through the blue liquid The material texture stays constant and visible throughout. a glacial, almost imperceptible drift of pigment particles",
    "still_seed": 14003,
    "phrase_cut": false,
-   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: close-up of smooth black liquid surface Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: the fluid slumping as the field weakens; residue trails left on the base plate. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: close-up of smooth black liquid surface Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: the fluid slumping as the field weakens; residue trails left on the base plate. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "ferrofluid. close-up of smooth black liquid surface glossy black spikes undulating in a rhythmic, magnetic pulse"
   },
   {
    "idx": 4,
@@ -64,7 +68,8 @@
    "video_prompt": "the constant, subtle flickering of light across metallic surfaces The material texture stays constant and visible throughout. the slow, organic expansion of mineral crusts",
    "still_seed": 14004,
    "phrase_cut": false,
-   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: macro view of dividing translucent spheres Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: the agar cracked and pulling from the dish wall; handwriting on the dish base showing through. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: macro view of dividing translucent spheres Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: the agar cracked and pulling from the dish wall; handwriting on the dish base showing through. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "microbial. macro view of dividing translucent spheres a rapid, feverish bloom of translucent cellular membranes"
   },
   {
    "idx": 5,
@@ -76,7 +81,8 @@
    "video_prompt": "the constant, subtle flickering of light across metallic surfaces The material texture stays constant and visible throughout. the slow, organic expansion of mineral crusts",
    "still_seed": 14005,
    "phrase_cut": false,
-   "still_prompt": "Everything grown as frozen breath crystallising, macro on the frost feathers: close-up of a single frost crystal growing Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: fracturing sheets of translucent ice splintering under extreme cold The forms grown as ice crystal \u2014 feathered, faceted, and full of trapped air. Colour: grey-white rime against a flat white sky. Surface: the surface subliming to a matte bloom. Condition: freshly formed overnight. Flaws: debris frozen into the surface; refrozen meltwater glazing one region. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Everything grown as frozen breath crystallising, macro on the frost feathers: close-up of a single frost crystal growing Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: fracturing sheets of translucent ice splintering under extreme cold The forms grown as ice crystal \u2014 feathered, faceted, and full of trapped air. Colour: grey-white rime against a flat white sky. Surface: the surface subliming to a matte bloom. Condition: freshly formed overnight. Flaws: debris frozen into the surface; refrozen meltwater glazing one region. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cryo. close-up of a single frost crystal growing fracturing sheets of translucent ice splintering under extreme cold"
   },
   {
    "idx": 6,
@@ -88,7 +94,8 @@
    "video_prompt": "the constant, subtle flickering of light across metallic surfaces The material texture stays constant and visible throughout. the slow, organic expansion of mineral crusts",
    "still_seed": 14006,
    "phrase_cut": false,
-   "still_prompt": "Long-exposure astrophotograph, the scene formed of a spiral galaxy's arms, as a narrowband three-channel composite: wide shot of a dim, glowing gaseous cloud Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: vast nebulous clouds of stardust drifting in an endless expanse The forms made of luminous gas, dust and stars at impossible scale, glowing from within rather than lit. Colour: cold blue reflection nebula with white stars. Surface: dust lanes eating black holes out of the glow. Condition: a clean deep integration. Flaws: a cosmic ray hit as a bright pixel streak; one channel misregistered leaving colour fringes. A touch overexposed. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Long-exposure astrophotograph, the scene formed of a spiral galaxy's arms, as a narrowband three-channel composite: wide shot of a dim, glowing gaseous cloud Extreme macro, so close the structure is barely identifiable, filling the frame. Setting: vast nebulous clouds of stardust drifting in an endless expanse The forms made of luminous gas, dust and stars at impossible scale, glowing from within rather than lit. Colour: cold blue reflection nebula with white stars. Surface: dust lanes eating black holes out of the glow. Condition: a clean deep integration. Flaws: a cosmic ray hit as a bright pixel streak; one channel misregistered leaving colour fringes. A touch overexposed. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cosmic. wide shot of a dim, glowing gaseous cloud vast nebulous clouds of stardust drifting in an endless expanse"
   },
   {
    "idx": 7,
@@ -100,7 +107,8 @@
    "video_prompt": "erratic, shimmering heat distortions The material texture stays constant and visible throughout. turbulent, swirling currents of contrasting fluids",
    "still_seed": 14007,
    "phrase_cut": false,
-   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: extreme close-up of translucent blue grains settling Wide field, the whole expanse visible, structure repeating to the edges. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: pale fingerprints at the sheet margin; a bleached halo where the sheet lifted during exposure. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: extreme close-up of translucent blue grains settling Wide field, the whole expanse visible, structure repeating to the edges. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: pale fingerprints at the sheet margin; a bleached halo where the sheet lifted during exposure. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cyanotype. extreme close-up of translucent blue grains settling a deep indigo expanse of suspended particulates drifting through a wash of pale blue light"
   },
   {
    "idx": 8,
@@ -112,7 +120,8 @@
    "video_prompt": "erratic, shimmering heat distortions The material texture stays constant and visible throughout. turbulent, swirling currents of contrasting fluids",
    "still_seed": 14008,
    "phrase_cut": false,
-   "still_prompt": "Oxidised copper relief panel, under flat overcast light: macro view of pale green crystalline structures forming Wide field, the whole expanse visible, structure repeating to the edges. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: a repair patch soldered across one area; drips of green running down from the recesses. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Oxidised copper relief panel, under flat overcast light: macro view of pale green crystalline structures forming Wide field, the whole expanse visible, structure repeating to the edges. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: a repair patch soldered across one area; drips of green running down from the recesses. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "verdigris. macro view of pale green crystalline structures forming oxidized copper crusts blooming and fracturing in slow motion"
   },
   {
    "idx": 9,
@@ -124,7 +133,8 @@
    "video_prompt": "erratic, shimmering heat distortions The material texture stays constant and visible throughout. turbulent, swirling currents of contrasting fluids",
    "still_seed": 14009,
    "phrase_cut": false,
-   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: extreme close-up of a single drop of yellow oil spreading Wide field, the whole expanse visible, structure repeating to the edges. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: spatter across one corner; fingerprints developed into the image. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: extreme close-up of a single drop of yellow oil spreading Wide field, the whole expanse visible, structure repeating to the edges. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: spatter across one corner; fingerprints developed into the image. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "chemigram. extreme close-up of a single drop of yellow oil spreading swirling oily streaks of gold and black reacting in a caustic liquid"
   },
   {
    "idx": 10,
@@ -136,7 +146,8 @@
    "video_prompt": "erratic, shimmering heat distortions The material texture stays constant and visible throughout. turbulent, swirling currents of contrasting fluids",
    "still_seed": 14010,
    "phrase_cut": false,
-   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: close-up of smooth black liquid surface Wide field, the whole expanse visible, structure repeating to the edges. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: an air bubble surfacing and bursting; a stray droplet flung clear of the mass. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: close-up of smooth black liquid surface Wide field, the whole expanse visible, structure repeating to the edges. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: an air bubble surfacing and bursting; a stray droplet flung clear of the mass. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "ferrofluid. close-up of smooth black liquid surface glossy black spikes undulating in a rhythmic, magnetic pulse"
   },
   {
    "idx": 11,
@@ -148,7 +159,8 @@
    "video_prompt": "erratic, shimmering heat distortions The material texture stays constant and visible throughout. turbulent, swirling currents of contrasting fluids",
    "still_seed": 14011,
    "phrase_cut": false,
-   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: macro view of dividing translucent spheres Wide field, the whole expanse visible, structure repeating to the edges. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: the inoculation loop's streak lines still visible; handwriting on the dish base showing through. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: macro view of dividing translucent spheres Wide field, the whole expanse visible, structure repeating to the edges. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: the inoculation loop's streak lines still visible; handwriting on the dish base showing through. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "microbial. macro view of dividing translucent spheres a rapid, feverish bloom of translucent cellular membranes"
   },
   {
    "idx": 12,
@@ -160,7 +172,8 @@
    "video_prompt": "a subtle, rhythmic warping of the black surface The material texture stays constant and visible throughout. a slow, heavy oscillation of liquid spikes",
    "still_seed": 14012,
    "phrase_cut": false,
-   "still_prompt": "Everything grown as frozen breath crystallising, macro on the frost feathers: medium shot of white cracks spreading through blue ice Wide field, the whole expanse visible, structure repeating to the edges. Setting: fracturing sheets of translucent ice splintering under extreme cold The forms grown as ice crystal \u2014 feathered, faceted, and full of trapped air. Colour: grey-white rime against a flat white sky. Surface: the surface subliming to a matte bloom. Condition: freshly formed overnight. Flaws: a crack propagating through the ice with a white feather; refrozen meltwater glazing one region. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Everything grown as frozen breath crystallising, macro on the frost feathers: medium shot of white cracks spreading through blue ice Wide field, the whole expanse visible, structure repeating to the edges. Setting: fracturing sheets of translucent ice splintering under extreme cold The forms grown as ice crystal \u2014 feathered, faceted, and full of trapped air. Colour: grey-white rime against a flat white sky. Surface: the surface subliming to a matte bloom. Condition: freshly formed overnight. Flaws: a crack propagating through the ice with a white feather; refrozen meltwater glazing one region. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cryo. medium shot of white cracks spreading through blue ice fracturing sheets of translucent ice splintering under extreme cold"
   },
   {
    "idx": 13,
@@ -172,7 +185,8 @@
    "video_prompt": "a subtle, rhythmic warping of the black surface The material texture stays constant and visible throughout. a slow, heavy oscillation of liquid spikes",
    "still_seed": 14013,
    "phrase_cut": false,
-   "still_prompt": "Long-exposure astrophotograph, the scene formed of a spiral galaxy's arms, as a narrowband three-channel composite: medium shot of light filtering through stardust Wide field, the whole expanse visible, structure repeating to the edges. Setting: vast nebulous clouds of stardust drifting in an endless expanse The forms made of luminous gas, dust and stars at impossible scale, glowing from within rather than lit. Colour: cold blue reflection nebula with white stars. Surface: dust lanes eating black holes out of the glow. Condition: a clean deep integration. Flaws: stacking artefacts ghosting the bright stars; vignetting darkening the corners. A touch overexposed. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Long-exposure astrophotograph, the scene formed of a spiral galaxy's arms, as a narrowband three-channel composite: medium shot of light filtering through stardust Wide field, the whole expanse visible, structure repeating to the edges. Setting: vast nebulous clouds of stardust drifting in an endless expanse The forms made of luminous gas, dust and stars at impossible scale, glowing from within rather than lit. Colour: cold blue reflection nebula with white stars. Surface: dust lanes eating black holes out of the glow. Condition: a clean deep integration. Flaws: stacking artefacts ghosting the bright stars; vignetting darkening the corners. A touch overexposed. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cosmic. medium shot of light filtering through stardust vast nebulous clouds of stardust drifting in an endless expanse"
   },
   {
    "idx": 14,
@@ -184,7 +198,8 @@
    "video_prompt": "a subtle, rhythmic warping of the black surface The material texture stays constant and visible throughout. a slow, heavy oscillation of liquid spikes",
    "still_seed": 14014,
    "phrase_cut": false,
-   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: wide shot of drifting indigo clouds Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: pale fingerprints at the sheet margin; uneven wash-out leaving a tidemark. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: wide shot of drifting indigo clouds Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: pale fingerprints at the sheet margin; uneven wash-out leaving a tidemark. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cyanotype. wide shot of drifting indigo clouds a deep indigo expanse of suspended particulates drifting through a wash of pale blue light"
   },
   {
    "idx": 15,
@@ -196,7 +211,8 @@
    "video_prompt": "a subtle, rhythmic warping of the black surface The material texture stays constant and visible throughout. a slow, heavy oscillation of liquid spikes",
    "still_seed": 14015,
    "phrase_cut": false,
-   "still_prompt": "Oxidised copper relief panel, under flat overcast light: medium shot of expanding turquoise veins Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: a dent distorting the relief; rivet heads punching through the design. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Oxidised copper relief panel, under flat overcast light: medium shot of expanding turquoise veins Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: a dent distorting the relief; rivet heads punching through the design. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "verdigris. medium shot of expanding turquoise veins oxidized copper crusts blooming and fracturing in slow motion"
   },
   {
    "idx": 16,
@@ -208,7 +224,8 @@
    "video_prompt": "a constant, jittery vibration of microscopic structures The material texture stays constant and visible throughout. violent, chaotic bursts of cellular division and fusion",
    "still_seed": 14016,
    "phrase_cut": false,
-   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: medium shot of turbulent dark ribbons swirling Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: spatter across one corner; the emulsion lifting and wrinkling. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: medium shot of turbulent dark ribbons swirling Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: spatter across one corner; the emulsion lifting and wrinkling. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "chemigram. medium shot of turbulent dark ribbons swirling swirling oily streaks of gold and black reacting in a caustic liquid"
   },
   {
    "idx": 17,
@@ -220,7 +237,8 @@
    "video_prompt": "a constant, jittery vibration of microscopic structures The material texture stays constant and visible throughout. violent, chaotic bursts of cellular division and fusion",
    "still_seed": 14017,
    "phrase_cut": false,
-   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: medium shot of sharp, geometric spikes emerging Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: dust motes stuck in the surface tension; an air bubble surfacing and bursting. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: medium shot of sharp, geometric spikes emerging Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: dust motes stuck in the surface tension; an air bubble surfacing and bursting. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "ferrofluid. medium shot of sharp, geometric spikes emerging glossy black spikes undulating in a rhythmic, magnetic pulse"
   },
   {
    "idx": 18,
@@ -232,7 +250,8 @@
    "video_prompt": "a constant, jittery vibration of microscopic structures The material texture stays constant and visible throughout. violent, chaotic bursts of cellular division and fusion",
    "still_seed": 14018,
    "phrase_cut": false,
-   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: medium shot of a dense web of white filaments Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: a contaminating mould colony taking over one corner; the inoculation loop's streak lines still visible. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: medium shot of a dense web of white filaments Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: a contaminating mould colony taking over one corner; the inoculation loop's streak lines still visible. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "microbial. medium shot of a dense web of white filaments a rapid, feverish bloom of translucent cellular membranes"
   },
   {
    "idx": 19,
@@ -244,7 +263,8 @@
    "video_prompt": "a constant, jittery vibration of microscopic structures The material texture stays constant and visible throughout. violent, chaotic bursts of cellular division and fusion",
    "still_seed": 14019,
    "phrase_cut": false,
-   "still_prompt": "Everything grown as frozen breath crystallising, macro on the frost feathers: extreme close-up of microscopic ice shards exploding Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: fracturing sheets of translucent ice splintering under extreme cold The forms grown as ice crystal \u2014 feathered, faceted, and full of trapped air. Colour: grey-white rime against a flat white sky. Surface: the surface subliming to a matte bloom. Condition: freshly formed overnight. Flaws: debris frozen into the surface; a crack propagating through the ice with a white feather. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Everything grown as frozen breath crystallising, macro on the frost feathers: extreme close-up of microscopic ice shards exploding Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: fracturing sheets of translucent ice splintering under extreme cold The forms grown as ice crystal \u2014 feathered, faceted, and full of trapped air. Colour: grey-white rime against a flat white sky. Surface: the surface subliming to a matte bloom. Condition: freshly formed overnight. Flaws: debris frozen into the surface; a crack propagating through the ice with a white feather. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cryo. extreme close-up of microscopic ice shards exploding fracturing sheets of translucent ice splintering under extreme cold"
   },
   {
    "idx": 20,
@@ -256,7 +276,8 @@
    "video_prompt": "a constant, jittery vibration of microscopic structures The material texture stays constant and visible throughout. violent, chaotic bursts of cellular division and fusion",
    "still_seed": 14020,
    "phrase_cut": false,
-   "still_prompt": "Long-exposure astrophotograph, the scene formed of a spiral galaxy's arms, as a narrowband three-channel composite: close-up of luminous particles swirling in a vortex Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: vast nebulous clouds of stardust drifting in an endless expanse The forms made of luminous gas, dust and stars at impossible scale, glowing from within rather than lit. Colour: cold blue reflection nebula with white stars. Surface: dust lanes eating black holes out of the glow. Condition: a clean deep integration. Flaws: vignetting darkening the corners; stacking artefacts ghosting the bright stars. A touch overexposed. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Long-exposure astrophotograph, the scene formed of a spiral galaxy's arms, as a narrowband three-channel composite: close-up of luminous particles swirling in a vortex Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: vast nebulous clouds of stardust drifting in an endless expanse The forms made of luminous gas, dust and stars at impossible scale, glowing from within rather than lit. Colour: cold blue reflection nebula with white stars. Surface: dust lanes eating black holes out of the glow. Condition: a clean deep integration. Flaws: vignetting darkening the corners; stacking artefacts ghosting the bright stars. A touch overexposed. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cosmic. close-up of luminous particles swirling in a vortex vast nebulous clouds of stardust drifting in an endless expanse"
   },
   {
    "idx": 21,
@@ -268,7 +289,8 @@
    "video_prompt": "a constant, jittery vibration of microscopic structures The material texture stays constant and visible throughout. violent, chaotic bursts of cellular division and fusion",
    "still_seed": 14021,
    "phrase_cut": false,
-   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: medium shot of shifting cobalt gradients Steep oblique angle across the material, receding into blur. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: foxing spots blooming through the blue; uneven wash-out leaving a tidemark. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: medium shot of shifting cobalt gradients Steep oblique angle across the material, receding into blur. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: foxing spots blooming through the blue; uneven wash-out leaving a tidemark. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cyanotype. medium shot of shifting cobalt gradients a deep indigo expanse of suspended particulates drifting through a wash of pale blue light"
   },
   {
    "idx": 22,
@@ -280,7 +302,8 @@
    "video_prompt": "a constant, jittery vibration of microscopic structures The material texture stays constant and visible throughout. violent, chaotic bursts of cellular division and fusion",
    "still_seed": 14022,
    "phrase_cut": false,
-   "still_prompt": "Oxidised copper relief panel, under flat overcast light: close-up of brittle edges cracking under pressure Steep oblique angle across the material, receding into blur. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: salt bloom crusting one edge; drips of green running down from the recesses. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Oxidised copper relief panel, under flat overcast light: close-up of brittle edges cracking under pressure Steep oblique angle across the material, receding into blur. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: salt bloom crusting one edge; drips of green running down from the recesses. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "verdigris. close-up of brittle edges cracking under pressure oxidized copper crusts blooming and fracturing in slow motion"
   },
   {
    "idx": 23,
@@ -292,7 +315,8 @@
    "video_prompt": "a constant, jittery vibration of microscopic structures The material texture stays constant and visible throughout. violent, chaotic bursts of cellular division and fusion",
    "still_seed": 14023,
    "phrase_cut": false,
-   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: close-up of caustic chemical trails lacing together Steep oblique angle across the material, receding into blur. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: a bleached hole burnt through; fingerprints developed into the image. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: close-up of caustic chemical trails lacing together Steep oblique angle across the material, receding into blur. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: a bleached hole burnt through; fingerprints developed into the image. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "chemigram. close-up of caustic chemical trails lacing together swirling oily streaks of gold and black reacting in a caustic liquid"
   },
   {
    "idx": 24,
@@ -304,7 +328,8 @@
    "video_prompt": "a shimmering cascade of suspended frost particles The material texture stays constant and visible throughout. rapid, jagged fractures snapping through the frame",
    "still_seed": 14024,
    "phrase_cut": false,
-   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: extreme close-up of liquid columns stretching upward Steep oblique angle across the material, receding into blur. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: residue trails left on the base plate; dust motes stuck in the surface tension. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: extreme close-up of liquid columns stretching upward Steep oblique angle across the material, receding into blur. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: residue trails left on the base plate; dust motes stuck in the surface tension. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "ferrofluid. extreme close-up of liquid columns stretching upward glossy black spikes undulating in a rhythmic, magnetic pulse"
   },
   {
    "idx": 25,
@@ -316,7 +341,8 @@
    "video_prompt": "a shimmering cascade of suspended frost particles The material texture stays constant and visible throughout. rapid, jagged fractures snapping through the frame",
    "still_seed": 14025,
    "phrase_cut": false,
-   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: close-up of rapid, frantic cellular expansion Steep oblique angle across the material, receding into blur. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: the agar cracked and pulling from the dish wall; a contaminating mould colony taking over one corner. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: close-up of rapid, frantic cellular expansion Steep oblique angle across the material, receding into blur. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: the agar cracked and pulling from the dish wall; a contaminating mould colony taking over one corner. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "microbial. close-up of rapid, frantic cellular expansion a rapid, feverish bloom of translucent cellular membranes"
   },
   {
    "idx": 26,
@@ -328,7 +354,8 @@
    "video_prompt": "a shimmering cascade of suspended frost particles The material texture stays constant and visible throughout. rapid, jagged fractures snapping through the frame",
    "still_seed": 14026,
    "phrase_cut": false,
-   "still_prompt": "Everything grown as frozen breath crystallising, macro on the frost feathers: wide shot of a cascading wall of frozen shards Steep oblique angle across the material, receding into blur. Setting: fracturing sheets of translucent ice splintering under extreme cold The forms grown as ice crystal \u2014 feathered, faceted, and full of trapped air. Colour: grey-white rime against a flat white sky. Surface: the surface subliming to a matte bloom. Condition: freshly formed overnight. Flaws: refrozen meltwater glazing one region; debris frozen into the surface. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Everything grown as frozen breath crystallising, macro on the frost feathers: wide shot of a cascading wall of frozen shards Steep oblique angle across the material, receding into blur. Setting: fracturing sheets of translucent ice splintering under extreme cold The forms grown as ice crystal \u2014 feathered, faceted, and full of trapped air. Colour: grey-white rime against a flat white sky. Surface: the surface subliming to a matte bloom. Condition: freshly formed overnight. Flaws: refrozen meltwater glazing one region; debris frozen into the surface. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cryo. wide shot of a cascading wall of frozen shards fracturing sheets of translucent ice splintering under extreme cold"
   },
   {
    "idx": 27,
@@ -340,7 +367,8 @@
    "video_prompt": "a shimmering cascade of suspended frost particles The material texture stays constant and visible throughout. rapid, jagged fractures snapping through the frame",
    "still_seed": 14027,
    "phrase_cut": false,
-   "still_prompt": "Long-exposure astrophotograph, the scene formed of a spiral galaxy's arms, as a narrowband three-channel composite: extreme close-up of a singular, brilliant light flare Steep oblique angle across the material, receding into blur. Setting: vast nebulous clouds of stardust drifting in an endless expanse The forms made of luminous gas, dust and stars at impossible scale, glowing from within rather than lit. Colour: cold blue reflection nebula with white stars. Surface: dust lanes eating black holes out of the glow. Condition: a clean deep integration. Flaws: a cosmic ray hit as a bright pixel streak; stacking artefacts ghosting the bright stars. A touch overexposed. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Long-exposure astrophotograph, the scene formed of a spiral galaxy's arms, as a narrowband three-channel composite: extreme close-up of a singular, brilliant light flare Steep oblique angle across the material, receding into blur. Setting: vast nebulous clouds of stardust drifting in an endless expanse The forms made of luminous gas, dust and stars at impossible scale, glowing from within rather than lit. Colour: cold blue reflection nebula with white stars. Surface: dust lanes eating black holes out of the glow. Condition: a clean deep integration. Flaws: a cosmic ray hit as a bright pixel streak; stacking artefacts ghosting the bright stars. A touch overexposed. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cosmic. extreme close-up of a singular, brilliant light flare vast nebulous clouds of stardust drifting in an endless expanse"
   },
   {
    "idx": 28,
@@ -352,7 +380,8 @@
    "video_prompt": "a shimmering cascade of suspended frost particles The material texture stays constant and visible throughout. rapid, jagged fractures snapping through the frame",
    "still_seed": 14028,
    "phrase_cut": false,
-   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: close-up of micro-bubbles rising through a dark blue medium Tight crop on a single feature, everything else out of frame. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: streaks where the emulsion was brushed unevenly; a bleached halo where the sheet lifted during exposure. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: close-up of micro-bubbles rising through a dark blue medium Tight crop on a single feature, everything else out of frame. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: streaks where the emulsion was brushed unevenly; a bleached halo where the sheet lifted during exposure. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cyanotype. close-up of micro-bubbles rising through a dark blue medium a deep indigo expanse of suspended particulates drifting through a wash of pale blue light"
   },
   {
    "idx": 29,
@@ -364,7 +393,8 @@
    "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout. a steady, majestic rotation of cosmic dust",
    "still_seed": 14029,
    "phrase_cut": false,
-   "still_prompt": "Oxidised copper relief panel, under flat overcast light: extreme close-up of granular mineral textures Tight crop on a single feature, everything else out of frame. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: drips of green running down from the recesses; rivet heads punching through the design. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Oxidised copper relief panel, under flat overcast light: extreme close-up of granular mineral textures Tight crop on a single feature, everything else out of frame. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: drips of green running down from the recesses; rivet heads punching through the design. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "verdigris. extreme close-up of granular mineral textures oxidized copper crusts blooming and fracturing in slow motion"
   },
   {
    "idx": 30,
@@ -376,7 +406,8 @@
    "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout. a steady, majestic rotation of cosmic dust",
    "still_seed": 14030,
    "phrase_cut": false,
-   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: wide shot of an agitated golden-black emulsion Tight crop on a single feature, everything else out of frame. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: fingerprints developed into the image; the emulsion lifting and wrinkling. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: wide shot of an agitated golden-black emulsion Tight crop on a single feature, everything else out of frame. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: fingerprints developed into the image; the emulsion lifting and wrinkling. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "chemigram. wide shot of an agitated golden-black emulsion swirling oily streaks of gold and black reacting in a caustic liquid"
   },
   {
    "idx": 31,
@@ -388,7 +419,8 @@
    "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout. a steady, majestic rotation of cosmic dust",
    "still_seed": 14031,
    "phrase_cut": false,
-   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: wide shot of a landscape of shifting obsidian needles Tight crop on a single feature, everything else out of frame. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: residue trails left on the base plate; a stray droplet flung clear of the mass. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: wide shot of a landscape of shifting obsidian needles Tight crop on a single feature, everything else out of frame. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: residue trails left on the base plate; a stray droplet flung clear of the mass. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "ferrofluid. wide shot of a landscape of shifting obsidian needles glossy black spikes undulating in a rhythmic, magnetic pulse"
   },
   {
    "idx": 32,
@@ -400,7 +432,8 @@
    "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout. a steady, majestic rotation of cosmic dust",
    "still_seed": 14032,
    "phrase_cut": false,
-   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: wide shot of a crowded, pulsating organic mass Tight crop on a single feature, everything else out of frame. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: the inoculation loop's streak lines still visible; a bubble trapped in the medium. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: wide shot of a crowded, pulsating organic mass Tight crop on a single feature, everything else out of frame. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: the inoculation loop's streak lines still visible; a bubble trapped in the medium. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "microbial. wide shot of a crowded, pulsating organic mass a rapid, feverish bloom of translucent cellular membranes"
   },
   {
    "idx": 33,
@@ -412,7 +445,8 @@
    "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout. a steady, majestic rotation of cosmic dust",
    "still_seed": 14033,
    "phrase_cut": false,
-   "still_prompt": "Everything grown as frozen breath crystallising, macro on the frost feathers: extreme close-up of crystalline dust swirling Tight crop on a single feature, everything else out of frame. Setting: fracturing sheets of translucent ice splintering under extreme cold The forms grown as ice crystal \u2014 feathered, faceted, and full of trapped air. Colour: grey-white rime against a flat white sky. Surface: the surface subliming to a matte bloom. Condition: freshly formed overnight. Flaws: refrozen meltwater glazing one region; a partly thawed area gone slushy. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Everything grown as frozen breath crystallising, macro on the frost feathers: extreme close-up of crystalline dust swirling Tight crop on a single feature, everything else out of frame. Setting: fracturing sheets of translucent ice splintering under extreme cold The forms grown as ice crystal \u2014 feathered, faceted, and full of trapped air. Colour: grey-white rime against a flat white sky. Surface: the surface subliming to a matte bloom. Condition: freshly formed overnight. Flaws: refrozen meltwater glazing one region; a partly thawed area gone slushy. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cryo. extreme close-up of crystalline dust swirling fracturing sheets of translucent ice splintering under extreme cold"
   },
   {
    "idx": 34,
@@ -424,7 +458,8 @@
    "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout. a steady, majestic rotation of cosmic dust",
    "still_seed": 14034,
    "phrase_cut": false,
-   "still_prompt": "Long-exposure astrophotograph, the scene formed of a spiral galaxy's arms, as a narrowband three-channel composite: wide shot of the total, silent dark expanse Tight crop on a single feature, everything else out of frame. Setting: vast nebulous clouds of stardust drifting in an endless expanse The forms made of luminous gas, dust and stars at impossible scale, glowing from within rather than lit. Colour: cold blue reflection nebula with white stars. Surface: dust lanes eating black holes out of the glow. Condition: a clean deep integration. Flaws: vignetting darkening the corners; a satellite trail crossing the frame. A touch overexposed. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Long-exposure astrophotograph, the scene formed of a spiral galaxy's arms, as a narrowband three-channel composite: wide shot of the total, silent dark expanse Tight crop on a single feature, everything else out of frame. Setting: vast nebulous clouds of stardust drifting in an endless expanse The forms made of luminous gas, dust and stars at impossible scale, glowing from within rather than lit. Colour: cold blue reflection nebula with white stars. Surface: dust lanes eating black holes out of the glow. Condition: a clean deep integration. Flaws: vignetting darkening the corners; a satellite trail crossing the frame. A touch overexposed. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cosmic. wide shot of the total, silent dark expanse vast nebulous clouds of stardust drifting in an endless expanse"
   },
   {
    "idx": 35,
@@ -436,7 +471,8 @@
    "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout. a steady, majestic rotation of cosmic dust",
    "still_seed": 14035,
    "phrase_cut": false,
-   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: wide shot of a vast, static blue void Symmetrical head-on view, the structure radiating from the centre. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: streaks where the emulsion was brushed unevenly; a bleached halo where the sheet lifted during exposure. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Blueprint-process sun exposure on heavy watercolour paper: wide shot of a vast, static blue void Symmetrical head-on view, the structure radiating from the centre. Setting: a deep indigo expanse of suspended particulates drifting through a wash of pale blue light Prussian blue where the light struck and bare substrate where it did not, no true midtones. Colour: deep Prussian blue and raw paper white only. Surface: visible paper fibre in the highlights. Condition: decades old and sun-faded. Flaws: streaks where the emulsion was brushed unevenly; a bleached halo where the sheet lifted during exposure. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "cyanotype. wide shot of a vast, static blue void a deep indigo expanse of suspended particulates drifting through a wash of pale blue light"
   },
   {
    "idx": 36,
@@ -448,7 +484,8 @@
    "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout. a steady, majestic rotation of cosmic dust",
    "still_seed": 14036,
    "phrase_cut": false,
-   "still_prompt": "Oxidised copper relief panel, under flat overcast light: wide shot of a field of spreading corrosion Symmetrical head-on view, the structure radiating from the centre. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: a repair patch soldered across one area; drips of green running down from the recesses. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Oxidised copper relief panel, under flat overcast light: wide shot of a field of spreading corrosion Symmetrical head-on view, the structure radiating from the centre. Setting: oxidized copper crusts blooming and fracturing in slow motion Raised metal forms worked in relief, the surface eaten by patina. Colour: bright polished metal against corroded areas. Surface: hammer facets across the flat areas. Condition: weathered outdoors for decades. Flaws: a repair patch soldered across one area; drips of green running down from the recesses. High contrast and clean. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "verdigris. wide shot of a field of spreading corrosion oxidized copper crusts blooming and fracturing in slow motion"
   },
   {
    "idx": 37,
@@ -460,7 +497,8 @@
    "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout. a steady, majestic rotation of cosmic dust",
    "still_seed": 14037,
    "phrase_cut": false,
-   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: extreme close-up of rapid, microscopic bubbling Symmetrical head-on view, the structure radiating from the centre. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: the emulsion lifting and wrinkling; a bleached hole burnt through. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Darkroom chemigram, developer and fixer painted onto fibre-based silver gelatin paper: extreme close-up of rapid, microscopic bubbling Symmetrical head-on view, the structure radiating from the centre. Setting: swirling oily streaks of gold and black reacting in a caustic liquid Form emerging from chemistry eating into the emulsion, not from a lens. Colour: cold blue-black with bleached voids. Surface: the resist's mark where it held the developer off. Condition: dried and cockled. Flaws: the emulsion lifting and wrinkling; a bleached hole burnt through. The whole image slightly warm. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "chemigram. extreme close-up of rapid, microscopic bubbling swirling oily streaks of gold and black reacting in a caustic liquid"
   },
   {
    "idx": 38,
@@ -472,7 +510,8 @@
    "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout. a steady, majestic rotation of cosmic dust",
    "still_seed": 14038,
    "phrase_cut": false,
-   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: close-up of the liquid collapsing back into a pool Symmetrical head-on view, the structure radiating from the centre. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: dust motes stuck in the surface tension; a stray droplet flung clear of the mass. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "Non-Newtonian thick oobleck standing in frozen peaks pulled into the shape of the scene, high-speed flash freezing the motion: close-up of the liquid collapsing back into a pool Symmetrical head-on view, the structure radiating from the centre. Setting: glossy black spikes undulating in a rhythmic, magnetic pulse The forms held in a fluid that behaves like a solid \u2014 spiked, beading, tearing and reflowing rather than sculpted. Colour: liquid black with hard specular highlights. Surface: perfect mirror reflections curving over every bulge. Condition: collapsing back into a pool. Flaws: dust motes stuck in the surface tension; a stray droplet flung clear of the mass. A touch dark and dense. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "ferrofluid. close-up of the liquid collapsing back into a pool glossy black spikes undulating in a rhythmic, magnetic pulse"
   },
   {
    "idx": 39,
@@ -484,7 +523,8 @@
    "video_prompt": "the slow, eternal drift of light and shadow The material texture stays constant and visible throughout. a steady, majestic rotation of cosmic dust",
    "still_seed": 14039,
    "phrase_cut": false,
-   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: extreme close-up of membrane rupturing and merging Symmetrical head-on view, the structure radiating from the centre. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: a contaminating mould colony taking over one corner; handwriting on the dish base showing through. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject."
+   "still_prompt": "The image rendered as colony growth across agar poured over a photographic mask, photographed straight down through the lid: extreme close-up of membrane rupturing and merging Symmetrical head-on view, the structure radiating from the centre. Setting: a rapid, feverish bloom of translucent cellular membranes The forms drawn by living colonies spreading across a culture plate, edges lobed and creeping. Colour: vivid pigmented strains \u2014 violet, gold and coral. Surface: the lobed irregular margin of each spreading colony. Condition: overgrown, colonies merged into a mat. Flaws: a contaminating mould colony taking over one corner; handwriting on the dish base showing through. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "microbial. extreme close-up of membrane rupturing and merging a rapid, feverish bloom of translucent cellular membranes"
   }
  ]
 }

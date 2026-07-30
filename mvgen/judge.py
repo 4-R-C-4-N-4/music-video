@@ -118,6 +118,56 @@ def score_candidates(paths: list[str], description: str,
     return out
 
 
+def rank_with_dedup(paths: list[str], description: str, picked=None,
+                    sim_max: float = 0.95, w_margin: float = 1.0,
+                    w_novelty: float = 0.5) -> list[dict]:
+    """Rank candidates and flag any that duplicate an already-picked still.
+
+    `picked` is a stacked tensor of every winning embedding so far, not just
+    the previous shot's: the same image can resurface many shots later from a
+    different seed, and a previous-shot-only check misses that entirely.
+
+    Duplicates are sorted last rather than dropped, so a shot where every
+    candidate is a near-duplicate still yields something (the least similar)
+    instead of stalling the build.
+    """
+    import torch
+
+    img = embed_images(paths)
+    txt = embed_texts([description] + ANTI_PATTERNS)
+    want, avoid = txt[0:1], txt[1:]
+
+    adherence = (img @ want.T).squeeze(-1)
+    anti = (img @ avoid.T).max(dim=-1).values
+    margin = adherence - anti
+
+    out = []
+    for i, p in enumerate(paths):
+        dup = 0.0
+        if picked is not None and len(picked):
+            dup = float((img[i:i + 1] @ picked.T).max())
+        novelty = 1.0 - dup
+        out.append({
+            "path": p,
+            "adherence": round(float(adherence[i]), 4),
+            "margin": round(float(margin[i]), 4),
+            "dup_sim": round(dup, 4),
+            "duplicate": dup > sim_max,
+            "score": round(w_margin * float(margin[i]) + w_novelty * novelty, 4),
+            "embedding": img[i:i + 1],
+        })
+    # non-duplicates first, then by score within each group
+    out.sort(key=lambda d: (d["duplicate"], -d["score"]))
+    return out
+
+
+def stack(embeddings: list):
+    """Stack a list of (1, D) embeddings into one (N, D) tensor, or None."""
+    import torch
+
+    return torch.cat(embeddings, dim=0) if embeddings else None
+
+
 def similarity(path_a: str, path_b: str) -> float:
     """Cosine similarity between two stills — the repetition detector."""
     e = embed_images([path_a, path_b])

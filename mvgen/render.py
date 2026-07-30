@@ -5,6 +5,7 @@ on re-run, so a killed render resumes and editing one shot's prompt/seed in
 the manifest re-renders only that shot (delete its state entry or use --redo).
 """
 import json
+import os
 import pathlib
 import shutil
 import subprocess
@@ -176,8 +177,57 @@ def grab_output(outputs, node, key, workdir, dest_name):
     return dest
 
 
+def pick_still(shot, i, total, w, h, job, workdir, picked,
+               candidates: int, sim_max: float):
+    """Render N candidate stills, score them, keep the best non-duplicate.
+
+    Stills are ~8s against ~90s for the video they seed, so spending 3x here
+    is the cheapest possible place to buy quality — the shot inherits whatever
+    the still got wrong.
+
+    Appends the winner's embedding to `picked` so later shots are checked
+    against every frame already chosen, not just the previous one.
+    """
+    from .judge import rank_with_dedup, stack
+
+    print(f"still {i+1}/{total} (scene {shot['scene']}, "
+          f"best of {candidates})", flush=True)
+    paths = []
+    for c in range(candidates):
+        seed = shot["still_seed"] + c * 7919
+        out = run_graph(still_graph(shot["still_prompt"], seed, w, h,
+                                    f"mv-{job}-s{i:03d}c{c}"), f"still:{i}.{c}")
+        paths.append(str(grab_output(out, "10", "images", workdir,
+                                     f"cand-{i:03d}-{c}.png")))
+
+    if candidates == 1:
+        winner = pathlib.Path(paths[0])
+        final = winner.with_name(f"still-{i:03d}.png")
+        winner.rename(final)
+        return final
+
+    desc = shot.get("judge_text") or shot["still_prompt"][:300]
+    ranked = rank_with_dedup(paths, desc, stack(picked), sim_max=sim_max)
+    best = ranked[0]
+    dupes = sum(1 for r in ranked if r["duplicate"])
+    note = f", {dupes} dup" if dupes else ""
+    if best["duplicate"]:
+        note += " (ALL duplicates — kept least similar)"
+    print(f"  picked score {best['score']:+.3f} "
+          f"(adh {best['adherence']:.3f}, dup {best['dup_sim']:.3f}{note})",
+          flush=True)
+
+    picked.append(best["embedding"])
+    final = pathlib.Path(workdir) / f"still-{i:03d}.png"
+    pathlib.Path(best["path"]).rename(final)
+    for r in ranked[1:]:  # discard the losers, keep the directory readable
+        pathlib.Path(r["path"]).unlink(missing_ok=True)
+    return final
+
+
 def render(manifest_path: str, workdir: str, limit: int | None = None,
-           stills_only: bool = False):
+           stills_only: bool = False, candidates: int | None = None,
+           sim_max: float = 0.95):
     manifest = json.load(open(manifest_path))
     workdir = pathlib.Path(workdir)
     workdir.mkdir(parents=True, exist_ok=True)
@@ -189,6 +239,22 @@ def render(manifest_path: str, workdir: str, limit: int | None = None,
 
     w, h, fps = manifest["width"], manifest["height"], manifest["fps"]
     job = pathlib.Path(manifest_path).parent.name
+    if candidates is None:
+        candidates = int(os.environ.get("MVGEN_CANDIDATES", "3"))
+
+    # Dedup is against every still already chosen, so on resume the existing
+    # winners have to be re-embedded — cheap on CPU and it keeps a resumed
+    # build held to the same uniqueness bar as a fresh one.
+    picked: list = []
+    if candidates > 1 and state["stills"]:
+        from .judge import embed_images
+        existing = [str(workdir / n) for n in state["stills"].values()
+                    if (workdir / n).exists()]
+        if existing:
+            print(f"re-embedding {len(existing)} already-picked stills for dedup",
+                  flush=True)
+            emb = embed_images(existing)
+            picked = [emb[j:j + 1] for j in range(len(existing))]
 
     todo = [s for s in manifest["shots"] if str(s["idx"]) not in state["shots"]]
     if limit:
@@ -197,10 +263,8 @@ def render(manifest_path: str, workdir: str, limit: int | None = None,
         i = shot["idx"]
         key = str(i)
         if key not in state["stills"]:
-            print(f"still {i+1}/{len(manifest['shots'])} (scene {shot['scene']})", flush=True)
-            out = run_graph(still_graph(shot["still_prompt"], shot["still_seed"], w, h,
-                                        f"mv-{job}-s{i:03d}"), f"still:{i}")
-            dest = grab_output(out, "10", "images", workdir, f"still-{i:03d}.png")
+            dest = pick_still(shot, i, len(manifest["shots"]), w, h, job,
+                              workdir, picked, candidates, sim_max)
             shutil.copy(dest, COMFY_IN / dest.name)
             state["stills"][key] = dest.name
             save_state()
@@ -219,10 +283,13 @@ def render(manifest_path: str, workdir: str, limit: int | None = None,
 
 
 def main():
-    args = [a for a in sys.argv[1:] if a != "--stills-only"]
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
     manifest_path, workdir = args[0], args[1]
     limit = int(args[2]) if len(args) > 2 else None
-    render(manifest_path, workdir, limit, stills_only="--stills-only" in sys.argv)
+    cands = next((int(a.split("=", 1)[1]) for a in sys.argv
+                  if a.startswith("--candidates=")), None)
+    render(manifest_path, workdir, limit,
+           stills_only="--stills-only" in sys.argv, candidates=cands)
 
 
 if __name__ == "__main__":

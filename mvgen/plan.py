@@ -161,6 +161,10 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
                 framing,
                 "Setting: " + scene["still_prompt"],
                 scene_style) if p)
+            # What the shot is *meant* to be, compactly — the judge scores
+            # against this, not the full prompt whose flaw and wear clauses
+            # would crowd out the subject inside SigLIP's token limit.
+            shot["judge_text"] = f"{fam or 'photograph'}. {beat} {scene['still_prompt'][:140]}"
 
     return {
         "track": analysis["track"],

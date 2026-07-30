@@ -40,6 +40,37 @@ The director is constrained, not trusted: it picks material *keys* from the
 tested palette rather than writing its own treatment prompts, and its output
 is rejected and regenerated if it echoes the transcript's wording.
 
+## Best-of-N stills with a judge
+
+Stills cost ~8s against ~90s for the video they seed, so the still stage is the
+cheapest place to buy quality — the shot inherits whatever the still got wrong.
+Each shot renders `MVGEN_CANDIDATES` candidates (default 3) and keeps the best.
+
+`mvgen/judge.py` runs SigLIP on **CPU, in-process**. That is deliberate: every
+serious failure in this pipeline came from two things wanting the GPU, and an
+800MB vision tower scoring 40 stills does not need the card.
+
+Three signals, each aimed at an observed failure rather than at a general
+notion of quality:
+
+- **adherence** — image vs the shot's compact intent (`judge_text`, not the
+  full prompt, whose flaw and wear clauses would crowd out the subject inside
+  SigLIP's token limit).
+- **margin** — adherence minus the closest anti-pattern ("a single object on a
+  plain studio background", "an ordinary photorealistic photograph"). Catches
+  the vessel-instead-of-field and photoreal-drift failures.
+- **dup_sim** — cosine similarity against *every* still already picked, not
+  just the previous shot: the same image resurfaces many shots later from a
+  different seed. Above `sim_max` (0.95) a candidate is flagged a duplicate and
+  sorted last. Measured: frames that looked identical score 0.96-0.97 while
+  genuinely different materials sit at 0.55-0.71, so the threshold separates
+  cleanly.
+
+Duplicates are sorted last, never dropped — a shot whose every candidate is a
+near-duplicate still yields the least similar one rather than stalling. On
+resume, already-picked stills are re-embedded so a resumed build is held to the
+same uniqueness bar as a fresh one.
+
 ## Vibe matching
 
 `mvgen.vibe` reads the song two independent ways and blends them into a
