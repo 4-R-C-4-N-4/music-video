@@ -1,0 +1,240 @@
+{
+  "title": "Special One Viz",
+  "mode": "visualizer",
+  "concept": "A journey through the transformative stages of material entropy and structural reorganization, moving from microscopic chaos to cosmic expansion.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 5000,
+  "style": "No people, no figures, no buildings, no landscape, no horizon. No object with a visible outline \u2014 no vessel, bowl, panel or plate. The matter fills the frame edge to edge and continues past it.",
+  "scenes": [
+    {
+      "id": "microbial-stasis",
+      "material": "microbial",
+      "material_seed": 9400,
+      "still_prompt": "a dense suspension of translucent organic membranes drifting in a viscous fluid",
+      "beats": [
+        "extreme close-up of a single pulsating membrane",
+        "macro view of drifting cellular clusters",
+        "medium shot of a swirling colony of microbes",
+        "wide view of a vast, murky biological soup",
+        "full frame saturation of dividing cellular walls"
+      ],
+      "video_prompt": "tiny, microscopic bubbles rising through the medium The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, heavy drifting through thick liquid",
+        "mid": "rhythmic undulating of soft edges",
+        "high": "rapid, frantic cellular division and collision"
+      }
+    },
+    {
+      "id": "ferrofluid-tension",
+      "material": "ferrofluid",
+      "material_seed": 9401,
+      "still_prompt": "black liquid spikes erupting and receding in response to magnetic pulses",
+      "beats": [
+        "extreme macro of a single obsidian spike",
+        "close-up of sharp geometric peaks forming",
+        "medium view of rhythmic spiking patterns",
+        "wide view of undulating liquid mountains",
+        "full frame of churning black spikes"
+      ],
+      "video_prompt": "a subtle, oily shimmer on the liquid surface The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "gentle swelling of liquid surface",
+        "mid": "sharp, rhythmic spiking and collapsing",
+        "high": "violent, chaotic erupting of liquid needles"
+      }
+    },
+    {
+      "id": "crystallographic-lattice",
+      "material": "crystallographic",
+      "material_seed": 9402,
+      "still_prompt": "a rigid atomic lattice undergoing slow, geometric shifts",
+      "beats": [
+        "extreme macro of a single vibrating atom",
+        "close-up of intersecting crystal planes",
+        "medium view of a repeating geometric grid",
+        "wide view of a massive structural lattice",
+        "full frame of shifting crystalline geometry"
+      ],
+      "video_prompt": "a faint, constant shimmer of light diffraction The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "minute, microscopic vibrations",
+        "mid": "controlled geometric sliding of planes",
+        "high": "shattering and rapid re-forming of the grid"
+      }
+    },
+    {
+      "id": "schlieren-flow",
+      "material": "schlieren",
+      "material_seed": 9403,
+      "still_prompt": "invisible air currents made visible through light refraction",
+      "beats": [
+        "extreme close-up of a faint heat ripple",
+        "close-up of swirling convection plumes",
+        "medium view of turbulent air currents",
+        "wide view of complex thermal vortices",
+        "full frame of chaotic refractive waves"
+      ],
+      "video_prompt": "a constant, subtle shimmering of refractive index The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, ethereal drifting of light",
+        "mid": "swirling, fluid-like air movements",
+        "high": "violent, rapid turbulent air shear"
+      }
+    },
+    {
+      "id": "cyanotype-exposure",
+      "material": "cyanotype",
+      "material_seed": 9404,
+      "still_prompt": "deep blue pigment developing across a saturated surface",
+      "beats": [
+        "extreme macro of blue pigment blooming",
+        "close-up of darkening chemical stains",
+        "medium view of deep blue washes",
+        "wide view of gradient saturation",
+        "full frame of intense, solid cobalt"
+      ],
+      "video_prompt": "the slow, even darkening of the blue hues The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, creeping chemical seepage",
+        "mid": "expanding pools of blue pigment",
+        "high": "sudden, aggressive dark saturation"
+      }
+    },
+    {
+      "id": "verdigris-corrosion",
+      "material": "verdigris",
+      "material_seed": 9405,
+      "still_prompt": "crusty green oxidation spreading over a textured surface",
+      "beats": [
+        "extreme macro of a single green crystal",
+        "close-up of spreading chemical crust",
+        "medium view of textured corrosion",
+        "wide view of a vast oxidized landscape",
+        "full frame of heavy, matte green texture"
+      ],
+      "video_prompt": "a fine, constant dusting of mineral particles The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "extremely slow chemical growth",
+        "mid": "creeping patterns of oxidation",
+        "high": "rapid, erupting flakes of corrosion"
+      }
+    },
+    {
+      "id": "bubblechamber-decay",
+      "material": "bubblechamber",
+      "material_seed": 9406,
+      "still_prompt": "glowing particle tracks spiraling through a dark void",
+      "beats": [
+        "extreme macro of a single ionizing track",
+        "close-up of intersecting light paths",
+        "medium view of complex particle decays",
+        "wide view of a dense cloud of tracks",
+        "full frame of luminous, chaotic lines"
+      ],
+      "video_prompt": "a constant, faint glow of ionizing energy The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "straight, slow-moving linear paths",
+        "mid": "spiraling, curving trajectories",
+        "high": "violent, chaotic scattering of light paths"
+      }
+    },
+    {
+      "id": "salt-evaporation",
+      "material": "salt",
+      "material_seed": 9407,
+      "still_prompt": "geometric salt crystals precipitating from a brine",
+      "beats": [
+        "extreme macro of a single growing cube",
+        "close-up of interlocking salt structures",
+        "medium view of a crystalline crust",
+        "wide view of a vast, white geometric field",
+        "full frame of blinding white geometry"
+      ],
+      "video_prompt": "a constant, subtle shimmer of salt grains The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, rhythmic crystal growth",
+        "mid": "expanding geometric patterns",
+        "high": "rapid, sharp crystalline expansion"
+      }
+    },
+    {
+      "id": "spectrogram-signal",
+      "material": "spectrogram",
+      "material_seed": 9408,
+      "still_prompt": "bands of digital frequency data rippling through space",
+      "beats": [
+        "extreme macro of a single frequency spike",
+        "close-up of rhythmic signal bands",
+        "medium view of dancing spectral lines",
+        "wide view of a complex wave landscape",
+        "full frame of overwhelming data interference"
+      ],
+      "video_prompt": "a constant, low-level hum of background noise The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, sweeping horizontal waves",
+        "mid": "rhythmic, pulsing frequency bands",
+        "high": "violent, jagged bursts of white noise"
+      }
+    },
+    {
+      "id": "cosmic-nebula",
+      "material": "cosmic",
+      "material_seed": 9409,
+      "still_prompt": "vast clouds of luminous gas and stardust swirling in a void",
+      "beats": [
+        "extreme macro of a singular glowing gas filament",
+        "close-up of swirling stardust clouds",
+        "medium view of a luminous nebula",
+        "wide view of a vast galactic structure",
+        "full frame of blinding cosmic light"
+      ],
+      "video_prompt": "the constant, slow drift of interstellar dust The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, massive swirling motions",
+        "mid": "rotating, luminous gas currents",
+        "high": "violent, explosive supernova expansion"
+      }
+    },
+    {
+      "id": "sem-microstructure",
+      "material": "sem",
+      "material_seed": 9410,
+      "still_prompt": "topographical scanning of a jagged, alien surface",
+      "beats": [
+        "extreme macro of a singular microscopic ridge",
+        "close-up of complex, fractured terrain",
+        "medium view of a vast, alien landscape",
+        "wide view of a massive structural expanse",
+        "full frame of overwhelming, jagged detail"
+      ],
+      "video_prompt": "a constant, high-frequency digital scan hum The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, steady scan of the surface",
+        "mid": "rapid, sweeping camera movement",
+        "high": "violent, jittery scanning of textures"
+      }
+    },
+    {
+      "id": "cryo-fracture",
+      "material": "cryo",
+      "material_seed": 9411,
+      "still_prompt": "deep blue ice cracking and fracturing under extreme cold",
+      "beats": [
+        "extreme macro of a single frost crystal",
+        "close-up of a spreading ice crack",
+        "medium view of a fractured glacial surface",
+        "wide view of a massive frozen abyss",
+        "full frame of blinding, shattered ice"
+      ],
+      "video_prompt": "a constant, low-frequency structural groan The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, creeping frost formation",
+        "mid": "rhythmic, snapping cracks in the ice",
+        "high": "violent, explosive shattering of the surface"
+      }
+    }
+  ]
+}

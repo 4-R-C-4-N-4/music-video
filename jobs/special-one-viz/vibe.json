@@ -1,0 +1,139 @@
+{
+ "acoustic": {
+  "valence": 0.83,
+  "energy": 0.766,
+  "warmth": 0.324,
+  "scale": 0.708,
+  "tempo": 143.6,
+  "majorness": 0.869
+ },
+ "semantic": {
+  "valence": 0.65,
+  "energy": 0.6,
+  "warmth": 0.5,
+  "age": 0.2,
+  "tactility": 0.3,
+  "scale": 0.5,
+  "organic": 0.4,
+  "adjectives": [
+   "resolute",
+   "yearning",
+   "conflicted",
+   "resilient"
+  ],
+  "imagery": [
+   "maze",
+   "cave",
+   "faces",
+   "rail"
+  ]
+ },
+ "vector": {
+  "valence": 0.758,
+  "energy": 0.716,
+  "warmth": 0.394,
+  "age": 0.2,
+  "tactility": 0.3,
+  "scale": 0.625,
+  "organic": 0.4
+ },
+ "tension": 0.18,
+ "families": [
+  [
+   "schlieren",
+   0.455
+  ],
+  [
+   "silkscreen",
+   0.478
+  ],
+  [
+   "neon",
+   0.517
+  ],
+  [
+   "smoke",
+   0.526
+  ],
+  [
+   "linocut",
+   0.528
+  ],
+  [
+   "risograph",
+   0.531
+  ],
+  [
+   "spectrogram",
+   0.544
+  ],
+  [
+   "cathoderay",
+   0.55
+  ],
+  [
+   "scratchboard",
+   0.61
+  ],
+  [
+   "lidar",
+   0.615
+  ],
+  [
+   "thermal",
+   0.621
+  ],
+  [
+   "chemigram",
+   0.623
+  ],
+  [
+   "cosmic",
+   0.626
+  ],
+  [
+   "dotmatrix",
+   0.632
+  ],
+  [
+   "halftone",
+   0.659
+  ],
+  [
+   "charcoal",
+   0.708
+  ],
+  [
+   "sumi",
+   0.711
+  ],
+  [
+   "ukiyoe",
+   0.713
+  ],
+  [
+   "ferrofluid",
+   0.78
+  ],
+  [
+   "crystallographic",
+   0.783
+  ],
+  [
+   "stainedglass",
+   0.816
+  ],
+  [
+   "cutpaper",
+   0.825
+  ],
+  [
+   "bubblechamber",
+   0.825
+  ],
+  [
+   "cryo",
+   0.834
+  ]
+ ]
+}

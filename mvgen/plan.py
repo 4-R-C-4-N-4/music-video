@@ -85,6 +85,15 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
     bars = analysis["bars"]
     duration = analysis["duration"]
 
+    # Compliance to the still, keyed to dynamics rather than applied flat: a
+    # quiet passage should hold the composed frame, a loud one should be allowed
+    # to tear away from it. Defaults are deliberately conservative pending
+    # calibration — the usable floor is not yet measured.
+    strength_by_level = spec.get("strength_by_level",
+                                 {"low": 1.0, "mid": 0.92, "high": 0.85})
+    compression_by_level = spec.get("compression_by_level",
+                                    {"low": 33, "mid": 36, "high": 40})
+
     style = spec.get("style", "")
     n_sections = len(analysis["sections"])
     cuts = phrase_cuts(lyrics) if spec.get("snap_phrases", True) else []
@@ -126,6 +135,11 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
                 "video_prompt": scene["video_prompt"] + " " + scene["motion"][level],
                 "still_seed": base_seed + 9000 + len(shots),
                 "phrase_cut": snapped,
+                "strength": strength_by_level.get(level, 1.0),
+                "img_compression": compression_by_level.get(level, 33),
+                # Window of the track this shot covers, for audio conditioning.
+                "audio_t0": round(cum, 3),
+                "audio_dur": round(frames / fps, 3),
             })
             cum += frames / fps
             b = b_end

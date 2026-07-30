@@ -133,7 +133,20 @@ def still_graph(prompt, seed, w, h, prefix):
     }
 
 
-def i2v_graph(image_name, prompt, seed, w, h, frames, fps, prefix):
+def i2v_graph(image_name, prompt, seed, w, h, frames, fps, prefix,
+              audio_name=None, strength=1.0, img_compression=33):
+    """Image-to-video graph.
+
+    `audio_name` is a wav in ComfyUI's input dir covering exactly this shot's
+    window. When given, the real audio is encoded and conditioned on instead of
+    a silent latent, so motion answers the music rather than merely being cut
+    to it. Its duration must equal frames/fps or the audio and video latents
+    disagree in length.
+
+    `strength` is how hard the video is pinned to the still. 1.0 leaves almost
+    no licence to depart from the keyframe, which reads as a slow drift;
+    lowering it buys motion at the cost of fidelity to the composed frame.
+    """
     return {
         "1": {"class_type": "UnetLoaderGGUF", "inputs": {"unet_name": MODELS["ltx"]}},
         "2": {"class_type": "DualCLIPLoader", "inputs": {
@@ -144,11 +157,17 @@ def i2v_graph(image_name, prompt, seed, w, h, frames, fps, prefix):
         "5": {"class_type": "VAELoader", "inputs": {"vae_name": MODELS["vvae"]}},
         "6": {"class_type": "LTXVAudioVAELoader", "inputs": {"ckpt_name": MODELS["avae"]}},
         "7": {"class_type": "EmptyLTXVLatentVideo", "inputs": {"width": w, "height": h, "length": frames, "batch_size": 1}},
-        "8": {"class_type": "LTXVEmptyLatentAudio", "inputs": {"frames_number": frames, "frame_rate": fps, "batch_size": 1, "audio_vae": ["6", 0]}},
+        "8": ({"class_type": "LTXVAudioVAEEncode",
+               "inputs": {"audio": ["24", 0], "audio_vae": ["6", 0]}}
+              if audio_name else
+              {"class_type": "LTXVEmptyLatentAudio",
+               "inputs": {"frames_number": frames, "frame_rate": fps,
+                          "batch_size": 1, "audio_vae": ["6", 0]}}),
         "21": {"class_type": "LoadImage", "inputs": {"image": image_name}},
-        "22": {"class_type": "LTXVPreprocess", "inputs": {"image": ["21", 0], "img_compression": 33}},
+        "22": {"class_type": "LTXVPreprocess", "inputs": {"image": ["21", 0], "img_compression": img_compression}},
         "23": {"class_type": "LTXVImgToVideoInplace", "inputs": {
-            "vae": ["5", 0], "image": ["22", 0], "latent": ["7", 0], "strength": 1.0, "bypass": False}},
+            "vae": ["5", 0], "image": ["22", 0], "latent": ["7", 0],
+            "strength": strength, "bypass": False}},
         "9": {"class_type": "LTXVConcatAVLatent", "inputs": {"video_latent": ["23", 0], "audio_latent": ["8", 0]}},
         "10": {"class_type": "LTXVConditioning", "inputs": {"positive": ["3", 0], "negative": ["4", 0], "frame_rate": fps}},
         "11": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "euler_ancestral"}},
@@ -165,6 +184,8 @@ def i2v_graph(image_name, prompt, seed, w, h, frames, fps, prefix):
         "18": {"class_type": "LTXVAudioVAEDecode", "inputs": {"samples": ["16", 1], "audio_vae": ["6", 0]}},
         "19": {"class_type": "CreateVideo", "inputs": {"images": ["17", 0], "fps": fps, "audio": ["18", 0]}},
         "20": {"class_type": "SaveVideo", "inputs": {"video": ["19", 0], "filename_prefix": "video/" + prefix, "format": "auto", "codec": "auto"}},
+        **({"24": {"class_type": "LoadAudio", "inputs": {"audio": audio_name}}}
+           if audio_name else {}),
     }
 
 
@@ -175,6 +196,23 @@ def grab_output(outputs, node, key, workdir, dest_name):
     dest = workdir / dest_name
     shutil.copy(src, dest)
     return dest
+
+
+def slice_audio(track: str, t0: float, dur: float, dest_name: str) -> str | None:
+    """Cut the shot's own window out of the track, into ComfyUI's input dir.
+
+    The slice must be exactly frames/fps long: the audio VAE derives its latent
+    length from duration, and a mismatch puts the audio and video latents out of
+    step when they are concatenated. Padded with silence if the track ends mid
+    shot.
+    """
+    out = COMFY_IN / dest_name
+    r = subprocess.run(
+        ["ffmpeg", "-y", "-v", "error", "-ss", f"{t0:.3f}", "-i", track,
+         "-t", f"{dur:.3f}", "-ac", "2", "-ar", "44100",
+         "-af", f"apad=whole_dur={dur:.3f}", str(out)],
+        capture_output=True)
+    return dest_name if r.returncode == 0 and out.exists() else None
 
 
 def pick_still(shot, i, total, w, h, job, workdir, picked,
@@ -227,7 +265,7 @@ def pick_still(shot, i, total, w, h, job, workdir, picked,
 
 def render(manifest_path: str, workdir: str, limit: int | None = None,
            stills_only: bool = False, candidates: int | None = None,
-           sim_max: float = 0.95):
+           sim_max: float = 0.95, use_audio: bool | None = None):
     manifest = json.load(open(manifest_path))
     workdir = pathlib.Path(workdir)
     workdir.mkdir(parents=True, exist_ok=True)
@@ -241,6 +279,11 @@ def render(manifest_path: str, workdir: str, limit: int | None = None,
     job = pathlib.Path(manifest_path).parent.name
     if candidates is None:
         candidates = int(os.environ.get("MVGEN_CANDIDATES", "3"))
+    if use_audio is None:
+        use_audio = os.environ.get("MVGEN_AUDIO_COND", "0") == "1"
+    track = manifest.get("track")
+    if use_audio:
+        print(f"audio conditioning ON (slices cut per shot from {track})", flush=True)
 
     # Dedup is against every still already chosen, so on resume the existing
     # winners have to be re-embedded — cheap on CPU and it keeps a resumed
@@ -272,8 +315,15 @@ def render(manifest_path: str, workdir: str, limit: int | None = None,
             continue
         print(f"shot {i+1}/{len(manifest['shots'])} "
               f"(scene {shot['scene']}, {shot['frames']}f, {shot['level']})", flush=True)
+        audio_name = None
+        if use_audio and track and shot.get("audio_dur"):
+            audio_name = slice_audio(track, shot["audio_t0"], shot["audio_dur"],
+                                     f"mv-{job}-a{i:03d}.wav")
         g = i2v_graph(state["stills"][key], shot["video_prompt"], shot["seed"],
-                      w, h, shot["frames"], fps, f"mv-{job}-{i:03d}")
+                      w, h, shot["frames"], fps, f"mv-{job}-{i:03d}",
+                      audio_name=audio_name,
+                      strength=shot.get("strength", 1.0),
+                      img_compression=shot.get("img_compression", 33))
         out = run_graph(g, f"shot:{i}")
         dest = grab_output(out, "20", "images", workdir, f"shot-{i:03d}.mp4")
         state["shots"][str(i)] = dest.name
