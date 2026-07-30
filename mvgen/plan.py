@@ -162,6 +162,34 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
         if cum >= duration:
             break
 
+    # Beat tracking can stop well before the audio does — an ambient outro or
+    # a fade leaves no detectable beat, so the last bar may sit tens of seconds
+    # from the end. A single shot is capped at 241 frames, so without this the
+    # remainder is silently dropped and the assembled video ends early against
+    # its own soundtrack.
+    if scenes and cum < duration - 0.5:
+        tail_scene = scenes[-1]
+        level = analysis["sections"][-1]["level"] if analysis["sections"] else "low"
+        while cum < duration - 0.5:
+            frames = quantize_frames(min(duration - cum, 9.6), fps)
+            shots.append({
+                "idx": len(shots),
+                "scene": tail_scene["id"],
+                "level": level,
+                "t0": round(cum, 3),
+                "frames": frames,
+                "seed": base_seed + len(shots),
+                "video_prompt": tail_scene["video_prompt"] + " " + tail_scene["motion"][level],
+                "still_seed": base_seed + 9000 + len(shots),
+                "phrase_cut": False,
+                "strength": strength_by_level.get(level, 1.0),
+                "img_compression": compression_by_level.get(level, 33),
+                "audio_t0": round(cum, 3),
+                "audio_dur": round(frames / fps, 3),
+                "tail": True,
+            })
+            cum += frames / fps
+
     # Per-shot stills: shot k of n in a scene walks monotonically through the
     # scene's authored `beats` (concrete blocking — these LEAD the prompt so
     # they actually control composition), followed by the scene setting and
@@ -198,34 +226,6 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
             # against this, not the full prompt whose flaw and wear clauses
             # would crowd out the subject inside SigLIP's token limit.
             shot["judge_text"] = f"{fam or 'photograph'}. {beat} {scene['still_prompt'][:140]}"
-
-    # Beat tracking can stop well before the audio does — an ambient outro or
-    # a fade leaves no detectable beat, so the last bar may sit tens of seconds
-    # from the end. A single shot is capped at 241 frames, so without this the
-    # remainder is silently dropped and the assembled video ends early against
-    # its own soundtrack.
-    if scenes and cum < duration - 0.5:
-        tail_scene = scenes[-1]
-        level = analysis["sections"][-1]["level"] if analysis["sections"] else "low"
-        while cum < duration - 0.5:
-            frames = quantize_frames(min(duration - cum, 9.6), fps)
-            shots.append({
-                "idx": len(shots),
-                "scene": tail_scene["id"],
-                "level": level,
-                "t0": round(cum, 3),
-                "frames": frames,
-                "seed": base_seed + len(shots),
-                "video_prompt": tail_scene["video_prompt"] + " " + tail_scene["motion"][level],
-                "still_seed": base_seed + 9000 + len(shots),
-                "phrase_cut": False,
-                "strength": strength_by_level.get(level, 1.0),
-                "img_compression": compression_by_level.get(level, 33),
-                "audio_t0": round(cum, 3),
-                "audio_dur": round(frames / fps, 3),
-                "tail": True,
-            })
-            cum += frames / fps
 
     return {
         "track": analysis["track"],

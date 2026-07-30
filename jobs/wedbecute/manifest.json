@@ -1006,8 +1006,8 @@
    "img_compression": 33,
    "audio_t0": 164.88,
    "audio_dur": 4.84,
-   "still_prompt": "Everything rendered as dense white smoke in still air, in a single shaft of daylight: close-up of a thinning cloud Wide field, the whole expanse visible, structure repeating to the edges. Setting: Fading, translucent wisps of gold and white vapor. The forms existing only as suspended particulate \u2014 laminar curls collapsing into turbulence. Colour: white smoke against pure black. Surface: the shaft of light making the smoke visible only where it passes. Condition: collapsed into full turbulence. Flaws: dust motes glittering in the same beam; the source visible at the frame edge. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
-   "judge_text": "smoke. close-up of a thinning cloud Fading, translucent wisps of gold and white vapor."
+   "still_prompt": "Everything rendered as dense white smoke in still air, in a single shaft of daylight: extreme macro of a dissolving wisp Wide field, the whole expanse visible, structure repeating to the edges. Setting: Fading, translucent wisps of gold and white vapor. The forms existing only as suspended particulate \u2014 laminar curls collapsing into turbulence. Colour: white smoke against pure black. Surface: the shaft of light making the smoke visible only where it passes. Condition: collapsed into full turbulence. Flaws: dust motes glittering in the same beam; the source visible at the frame edge. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "smoke. extreme macro of a dissolving wisp Fading, translucent wisps of gold and white vapor."
   },
   {
    "idx": 59,
@@ -1023,8 +1023,8 @@
    "img_compression": 33,
    "audio_t0": 169.72,
    "audio_dur": 4.52,
-   "still_prompt": "Everything rendered as dense white smoke in still air, in a single shaft of daylight: mid-shot of a light vapor field Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: Fading, translucent wisps of gold and white vapor. The forms existing only as suspended particulate \u2014 laminar curls collapsing into turbulence. Colour: white smoke against pure black. Surface: the shaft of light making the smoke visible only where it passes. Condition: collapsed into full turbulence. Flaws: dust motes glittering in the same beam; the source visible at the frame edge. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
-   "judge_text": "smoke. mid-shot of a light vapor field Fading, translucent wisps of gold and white vapor."
+   "still_prompt": "Everything rendered as dense white smoke in still air, in a single shaft of daylight: close-up of a thinning cloud Off-centre close view, the mass pushed hard to one side, empty space opposite. Setting: Fading, translucent wisps of gold and white vapor. The forms existing only as suspended particulate \u2014 laminar curls collapsing into turbulence. Colour: white smoke against pure black. Surface: the shaft of light making the smoke visible only where it passes. Condition: collapsed into full turbulence. Flaws: dust motes glittering in the same beam; the source visible at the frame edge. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "smoke. close-up of a thinning cloud Fading, translucent wisps of gold and white vapor."
   },
   {
    "idx": 60,
@@ -1040,8 +1040,8 @@
    "img_compression": 33,
    "audio_t0": 174.24,
    "audio_dur": 9.64,
-   "still_prompt": "Everything rendered as dense white smoke in still air, in a single shaft of daylight: wide shot of a fading mist Steep oblique angle across the material, receding into blur. Setting: Fading, translucent wisps of gold and white vapor. The forms existing only as suspended particulate \u2014 laminar curls collapsing into turbulence. Colour: white smoke against pure black. Surface: the shaft of light making the smoke visible only where it passes. Condition: collapsed into full turbulence. Flaws: the plume broken by a passing movement; the source visible at the frame edge. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
-   "judge_text": "smoke. wide shot of a fading mist Fading, translucent wisps of gold and white vapor."
+   "still_prompt": "Everything rendered as dense white smoke in still air, in a single shaft of daylight: mid-shot of a light vapor field Steep oblique angle across the material, receding into blur. Setting: Fading, translucent wisps of gold and white vapor. The forms existing only as suspended particulate \u2014 laminar curls collapsing into turbulence. Colour: white smoke against pure black. Surface: the shaft of light making the smoke visible only where it passes. Condition: collapsed into full turbulence. Flaws: the plume broken by a passing movement; the source visible at the frame edge. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "smoke. mid-shot of a light vapor field Fading, translucent wisps of gold and white vapor."
   },
   {
    "idx": 61,
@@ -1057,7 +1057,9 @@
    "img_compression": 33,
    "audio_t0": 183.88,
    "audio_dur": 9.64,
-   "tail": true
+   "tail": true,
+   "still_prompt": "Everything rendered as dense white smoke in still air, in a single shaft of daylight: mid-shot of a light vapor field Tight crop on a single feature, everything else out of frame. Setting: Fading, translucent wisps of gold and white vapor. The forms existing only as suspended particulate \u2014 laminar curls collapsing into turbulence. Colour: white smoke against pure black. Surface: the shaft of light making the smoke visible only where it passes. Condition: collapsed into full turbulence. Flaws: the source visible at the frame edge; a draught tearing the column sideways. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "smoke. mid-shot of a light vapor field Fading, translucent wisps of gold and white vapor."
   },
   {
    "idx": 62,
@@ -1073,7 +1075,9 @@
    "img_compression": 33,
    "audio_t0": 193.52,
    "audio_dur": 9.64,
-   "tail": true
+   "tail": true,
+   "still_prompt": "Everything rendered as dense white smoke in still air, in a single shaft of daylight: wide shot of a fading mist Symmetrical head-on view, the structure radiating from the centre. Setting: Fading, translucent wisps of gold and white vapor. The forms existing only as suspended particulate \u2014 laminar curls collapsing into turbulence. Colour: white smoke against pure black. Surface: the shaft of light making the smoke visible only where it passes. Condition: collapsed into full turbulence. Flaws: the source visible at the frame edge; dust motes glittering in the same beam. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "smoke. wide shot of a fading mist Fading, translucent wisps of gold and white vapor."
   },
   {
    "idx": 63,
@@ -1089,7 +1093,9 @@
    "img_compression": 33,
    "audio_t0": 203.16,
    "audio_dur": 9.32,
-   "tail": true
+   "tail": true,
+   "still_prompt": "Everything rendered as dense white smoke in still air, in a single shaft of daylight: extreme macro of a disappearing edge Shallow focus with the near material dissolved, one plane sharp deep in. Setting: Fading, translucent wisps of gold and white vapor. The forms existing only as suspended particulate \u2014 laminar curls collapsing into turbulence. Colour: white smoke against pure black. Surface: the shaft of light making the smoke visible only where it passes. Condition: collapsed into full turbulence. Flaws: a draught tearing the column sideways; dust motes glittering in the same beam. The whole image slightly cool. No photorealism \u2014 the material and the process that made it are the subject.",
+   "judge_text": "smoke. extreme macro of a disappearing edge Fading, translucent wisps of gold and white vapor."
   }
  ]
 }
