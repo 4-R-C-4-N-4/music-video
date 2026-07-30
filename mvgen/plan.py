@@ -7,6 +7,7 @@ chosen against the *absolute* track-time boundary so quantization error
 never accumulates (every cut stays within 4 frames of its target beat).
 """
 import json
+import random
 import sys
 
 from .materials import FAMILIES, jitter
@@ -112,13 +113,18 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
 
     shots = []
     cum = 0.0  # seconds of video planned so far
+    # Both modes progress through the scene list once and never return. In
+    # narrative mode a scene is a place, so it spans a whole section. In
+    # visualizer mode a scene is a single phenomenon with no reason to be
+    # dwelt in, so scenes are many and each gets a short run of shots —
+    # progression, not rotation. Cycling a handful of phenomena reads as an
+    # obvious loop; clustering many shots on one produces near-identical
+    # frames. A short run of each, moving forward, avoids both.
+    total_shots_est = max(1, sum(
+        max(1, (sec["end_bar"] - sec["start_bar"]) // bars_per_shot[sec["level"]])
+        for sec in analysis["sections"]))
+
     for si, sec in enumerate(analysis["sections"]):
-        # Narrative mode: linear allocation, one scene per section, a journey
-        # rather than a cycle. Visualizer mode instead rotates material every
-        # shot — dwelling on one abstract family produces near-identical
-        # consecutive frames, because a strong attractor (a spiral galaxy, say)
-        # overrides any per-shot framing instruction. Rotation is the only
-        # thing that reliably makes successive cuts differ.
         scene = scenes[min(si * len(scenes) // n_sections, len(scenes) - 1)]
         level = sec["level"]
         step = bars_per_shot[level]
@@ -129,7 +135,12 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
             t1 = bars[b_end]["t0"] if b_end < len(bars) else duration
             t1, snapped = snap(t1, cuts, window, used_cuts, cum, min_shot)
             frames = quantize_frames(t1 - cum, fps)
-            shot_scene = scenes[len(shots) % len(scenes)] if visualizer else scene
+            if visualizer:
+                # position through the track -> position through the phenomena
+                pos = len(shots) / max(total_shots_est, 1)
+                shot_scene = scenes[min(int(pos * len(scenes)), len(scenes) - 1)]
+            else:
+                shot_scene = scene
             shots.append({
                 "idx": len(shots),
                 "scene": shot_scene["id"],

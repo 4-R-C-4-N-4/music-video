@@ -1,0 +1,140 @@
+{
+ "acoustic": {
+  "valence": 0.835,
+  "energy": 0.423,
+  "warmth": 0.804,
+  "scale": 0.525,
+  "tempo": 92.3,
+  "majorness": 1.0
+ },
+ "semantic": {
+  "valence": 0.2,
+  "energy": 0.1,
+  "warmth": 0.4,
+  "age": 0.6,
+  "tactility": 0.7,
+  "scale": 0.3,
+  "organic": 0.8,
+  "adjectives": [
+   "hushed",
+   "solitary",
+   "reverent",
+   "muffled",
+   "stilled"
+  ],
+  "imagery": [
+   "velvet",
+   "dust",
+   "candlelight",
+   "shadows"
+  ]
+ },
+ "vector": {
+  "valence": 0.581,
+  "energy": 0.326,
+  "warmth": 0.642,
+  "age": 0.6,
+  "tactility": 0.7,
+  "scale": 0.435,
+  "organic": 0.8
+ },
+ "tension": 0.635,
+ "families": [
+  [
+   "botanical",
+   0.273
+  ],
+  [
+   "nacre",
+   0.318
+  ],
+  [
+   "coral",
+   0.323
+  ],
+  [
+   "web",
+   0.362
+  ],
+  [
+   "feather",
+   0.376
+  ],
+  [
+   "mycology",
+   0.427
+  ],
+  [
+   "pyrography",
+   0.436
+  ],
+  [
+   "lichen",
+   0.454
+  ],
+  [
+   "entomological",
+   0.504
+  ],
+  [
+   "batik",
+   0.527
+  ],
+  [
+   "amber",
+   0.54
+  ],
+  [
+   "microbial",
+   0.541
+  ],
+  [
+   "encaustic",
+   0.555
+  ],
+  [
+   "darkfield",
+   0.559
+  ],
+  [
+   "embroidery",
+   0.597
+  ],
+  [
+   "tapestry",
+   0.599
+  ],
+  [
+   "lacework",
+   0.603
+  ],
+  [
+   "wax",
+   0.615
+  ],
+  [
+   "cutpaper",
+   0.643
+  ],
+  [
+   "ukiyoe",
+   0.664
+  ],
+  [
+   "tempera",
+   0.683
+  ],
+  [
+   "smoke",
+   0.687
+  ],
+  [
+   "sumi",
+   0.692
+  ],
+  [
+   "felted",
+   0.706
+  ]
+ ]
+}

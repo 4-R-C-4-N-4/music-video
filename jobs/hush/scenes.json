@@ -1,0 +1,69 @@
+{
+  "title": "Hush",
+  "mode": "visualizer",
+  "concept": "A study of light struggling through evolving states of suspended particulate and crystalline growth, moving from muffled stillness to violent structural fracture.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 5000,
+  "style": "No people, no figures, no buildings, no landscape, no horizon. No object with a visible outline \u2014 no vessel, bowl, panel or plate. The matter fills the frame edge to edge and continues past it.",
+  "scenes": [
+    {
+      "id": "muffled-nacre",
+      "material": "nacre",
+      "material_seed": 9400,
+      "still_prompt": "Iridescent layers of microscopic calcium carbonate platelets drifting in a thick, viscous fluid.",
+      "beats": [
+        "Extreme macro: pale, milky surfaces sliding past the lens at a crawl.",
+        "Close-up: thin ribbons of pearlescent light curling through a heavy, opalescent medium.",
+        "Macro: overlapping translucent scales swirling in a slow, silent rotation.",
+        "Medium: a dense cloud of shimmering, milky flakes suspended in deep amber light.",
+        "Wide: an expanse of swirling, multi-chromatic silt filling the entire field of vision."
+      ],
+      "video_prompt": "Fine, dust-like particles catch glints of light as they descend through the murk. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "A slow, heavy drift of pale particles through a thick, warm liquid.",
+        "mid": "Gentle, rhythmic undulations of iridescent layers sliding over one another.",
+        "high": "Turbulent swirling of pearlescent flakes caught in a sudden internal current."
+      }
+    },
+    {
+      "id": "kinetic-ferrofluid",
+      "material": "ferrofluid",
+      "material_seed": 9401,
+      "still_prompt": "Sleek, obsidian-black liquid forming sharp, geometric spikes under an invisible magnetic force.",
+      "beats": [
+        "Macro: a single, glossy black spike rising vertically from a dark plane.",
+        "Close-up: a forest of sharp, needle-like protrusions vibrating rapidly.",
+        "Medium: a chaotic landscape of obsidian spikes surging and receding in rhythmic pulses.",
+        "Wide: a violent, undulating field of black spikes colliding and merging.",
+        "Extreme wide: a frenetic, jagged sea of liquid geometry churning in total darkness."
+      ],
+      "video_prompt": "Tiny, microscopic beads of black oil skittering across a dark surface. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "A slow, viscous thickening of dark liquid surfaces.",
+        "mid": "The rhythmic rising and falling of sharp, oily columns.",
+        "high": "Violent, jagged spikes erupting and collapsing in rapid succession."
+      }
+    },
+    {
+      "id": "fracturing-cryo",
+      "material": "cryo",
+      "material_seed": 9402,
+      "still_prompt": "Brittle, crystalline structures undergoing rapid thermal stress and internal fracturing.",
+      "beats": [
+        "Macro: a single, translucent ice grain expanding as a white crack forms inside.",
+        "Close-up: a web of frost-white fractures racing through a clear, frozen mass.",
+        "Medium: large sheets of crystalline structure splintering into thousands of jagged shards.",
+        "Wide: an explosive network of white fissures tearing through a dense, frozen void.",
+        "Extreme wide: a chaotic, blinding spray of crystalline shards rushing toward the lens."
+      ],
+      "video_prompt": "Microscopic shards of ice glittering in the light as they settle. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "The slow, creeping growth of white frost along internal planes.",
+        "mid": "A steady, rhythmic spider-webbing of cracks through a transparent mass.",
+        "high": "Violent, explosive shattering of crystalline structures into flying fragments."
+      }
+    }
+  ]
+}

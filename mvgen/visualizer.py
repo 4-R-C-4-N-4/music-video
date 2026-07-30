@@ -67,14 +67,15 @@ Return JSON:
  ]
 }}
 
-Exactly {n} scenes, in order, matching the sections above."""
+Exactly {n} scenes. There may be more scenes than sections — that is intended,
+the extra phenomena keep an abstract sequence from visibly cycling."""
 
 
 def build_spec(plan_json: dict, analysis: dict, title: str, seed: int = 5000) -> dict:
     levels = [s["level"] for s in analysis["sections"]]
     scenes = []
     for i, sc in enumerate(plan_json["scenes"]):
-        level = levels[i] if i < len(levels) else "mid"
+        level = levels[i] if i < len(levels) else levels[i % len(levels)]
         key = sc.get("material")
         if key not in MATERIALS or key not in ABSTRACT:
             key = ABSTRACT[i % len(ABSTRACT)]
@@ -133,10 +134,23 @@ def direct(jobdir: str, model: str = "gemma4-nothink") -> dict:
         f"  {k}: {MATERIALS[k]['mood']}\n      suits: {MATERIALS[k]['suits']}"
         for k in keys)
 
+    # A visualiser rotates material every shot, so the number of phenomena
+    # governs how long before the eye sees a cycle — not the song's section
+    # count. Ask for enough that the rotation never visibly repeats: roughly
+    # one phenomenon per three shots, bounded by the palette on offer.
+    bar_secs = 240.0 / max(analysis["tempo"], 1)
+    est_shots = max(1, int(analysis["duration"] / (bar_secs * 1.2)))
+    # One phenomenon per ~2 shots: enough that each gets a short run and the
+    # sequence never revisits one, few enough that the model reliably returns
+    # them all in a single well-formed response.
+    n_scenes = max(len(secs), min(max(4, est_shots // 2), len(keys), 20))
+    print(f"  {n_scenes} phenomena for ~{est_shots} shots "
+          f"({len(secs)} sections)", flush=True)
+
     prompt = USER.format(duration=analysis["duration"], tempo=analysis["tempo"],
                          sections="\n".join(lines),
                          mood=mood_context(lyrics, vibe),
-                         palette=palette, n=len(secs))
+                         palette=palette, n=n_scenes)
     comfy_down()
     llm_up(model)
     try:
