@@ -1,13 +1,17 @@
 """One-command build: analyze -> lyrics -> direct -> render -> assemble.
 
     python -m mvgen build <track> jobs/<job> [limit] [--no-lyrics] [--model=X]
-                          [--narrative]
+                          [--narrative] [--tween] [--audio]
 
 Visualiser mode is the DEFAULT: abstract phenomena, no figure, no locations,
 cuts on the bar, drawn from material families that work as pure matter. A
 generated human figure at this resolution reads as obviously synthetic — hands
 and faces are where the artifacts concentrate — while a texture field has no
 anatomy to get wrong.
+
+--tween guides each shot's final frame with the next shot's still, so cuts are
+continuations rather than jumps. --audio conditions each shot on its own slice
+of the track. Both are opt-in; without them the pipeline behaves as before.
 
 --narrative opts into the older mode: a recurring figure moving through
 locations, one scene per section, cuts every 2-4 bars.
@@ -75,7 +79,8 @@ def ensure_comfy(timeout: int = 120) -> None:
 
 def build(track: str, jobdir: str, limit: int | None = None,
           do_lyrics: bool = True, model: str = "gemma4-nothink",
-          visualizer: bool = True):
+          visualizer: bool = True, use_audio: bool | None = None,
+          use_tween: bool | None = None):
     job = pathlib.Path(jobdir)
     job.mkdir(parents=True, exist_ok=True)
 
@@ -139,7 +144,8 @@ def build(track: str, jobdir: str, limit: int | None = None,
               f"~{2*len(manifest['shots'])} min render", flush=True)
 
     ensure_comfy()
-    _render.render(str(manifest_path), str(job / "work"), limit)
+    _render.render(str(manifest_path), str(job / "work"), limit,
+                   use_audio=use_audio, use_tween=use_tween)
 
     if limit is None:
         outdir = pathlib.Path(os.environ.get("MVGEN_OUTPUT_DIR", DEFAULT_OUTPUT_DIR))
@@ -159,7 +165,9 @@ def main():
           int(args[3]) if len(args) > 3 else None,
           do_lyrics="--no-lyrics" not in flags,
           model=model,
-          visualizer="--narrative" not in flags)
+          visualizer="--narrative" not in flags,
+          use_audio=True if "--audio" in flags else None,
+          use_tween=True if "--tween" in flags else None)
 
 
 if __name__ == "__main__":

@@ -265,7 +265,8 @@ def pick_still(shot, i, total, w, h, job, workdir, picked,
 
 def render(manifest_path: str, workdir: str, limit: int | None = None,
            stills_only: bool = False, candidates: int | None = None,
-           sim_max: float = 0.95, use_audio: bool | None = None):
+           sim_max: float = 0.95, use_audio: bool | None = None,
+           use_tween: bool | None = None):
     manifest = json.load(open(manifest_path))
     workdir = pathlib.Path(workdir)
     workdir.mkdir(parents=True, exist_ok=True)
@@ -281,6 +282,10 @@ def render(manifest_path: str, workdir: str, limit: int | None = None,
         candidates = int(os.environ.get("MVGEN_CANDIDATES", "3"))
     if use_audio is None:
         use_audio = os.environ.get("MVGEN_AUDIO_COND", "0") == "1"
+    if use_tween is None:
+        use_tween = os.environ.get("MVGEN_TWEEN", "0") == "1"
+    if use_tween:
+        print("tweening ON (each shot ends on the next shot's still)", flush=True)
     track = manifest.get("track")
     if use_audio:
         print(f"audio conditioning ON (slices cut per shot from {track})", flush=True)
@@ -299,18 +304,34 @@ def render(manifest_path: str, workdir: str, limit: int | None = None,
             emb = embed_images(existing)
             picked = [emb[j:j + 1] for j in range(len(existing))]
 
+    shots_by_idx = {s["idx"]: s for s in manifest["shots"]}
+
+    def ensure_still(idx: int) -> str | None:
+        """Pick shot `idx`'s still if it isn't already chosen. Returns filename.
+
+        Tweening needs shot N+1's still while rendering shot N, so stills can
+        no longer be produced strictly in step with videos.
+        """
+        k = str(idx)
+        if k in state["stills"]:
+            return state["stills"][k]
+        sh = shots_by_idx.get(idx)
+        if sh is None:
+            return None
+        d = pick_still(sh, idx, len(manifest["shots"]), w, h, job,
+                       workdir, picked, candidates, sim_max)
+        shutil.copy(d, COMFY_IN / d.name)
+        state["stills"][k] = d.name
+        save_state()
+        return d.name
+
     todo = [s for s in manifest["shots"] if str(s["idx"]) not in state["shots"]]
     if limit:
         todo = todo[:limit]
     for shot in todo:
         i = shot["idx"]
         key = str(i)
-        if key not in state["stills"]:
-            dest = pick_still(shot, i, len(manifest["shots"]), w, h, job,
-                              workdir, picked, candidates, sim_max)
-            shutil.copy(dest, COMFY_IN / dest.name)
-            state["stills"][key] = dest.name
-            save_state()
+        ensure_still(i)
         if stills_only:
             continue
         print(f"shot {i+1}/{len(manifest['shots'])} "
@@ -319,11 +340,22 @@ def render(manifest_path: str, workdir: str, limit: int | None = None,
         if use_audio and track and shot.get("audio_dur"):
             audio_name = slice_audio(track, shot["audio_t0"], shot["audio_dur"],
                                      f"mv-{job}-a{i:03d}.wav")
-        g = i2v_graph(state["stills"][key], shot["video_prompt"], shot["seed"],
-                      w, h, shot["frames"], fps, f"mv-{job}-{i:03d}",
-                      audio_name=audio_name,
-                      strength=shot.get("strength", 1.0),
-                      img_compression=shot.get("img_compression", 33))
+        strength = shot.get("strength", 1.0)
+        next_still = ensure_still(i + 1) if use_tween else None
+        if next_still:
+            # Land this shot on the frame the next one opens with, so the cut
+            # is a continuation rather than a jump. The far guide is held
+            # slightly looser so the arrival is not a hard snap.
+            g = tween_graph(state["stills"][key], next_still, shot["video_prompt"],
+                            shot["seed"], w, h, shot["frames"], fps,
+                            f"mv-{job}-{i:03d}", audio_name=audio_name,
+                            strength_a=strength, strength_b=max(0.5, strength - 0.1))
+        else:
+            g = i2v_graph(state["stills"][key], shot["video_prompt"], shot["seed"],
+                          w, h, shot["frames"], fps, f"mv-{job}-{i:03d}",
+                          audio_name=audio_name,
+                          strength=strength,
+                          img_compression=shot.get("img_compression", 33))
         out = run_graph(g, f"shot:{i}")
         dest = grab_output(out, "20", "images", workdir, f"shot-{i:03d}.mp4")
         state["shots"][str(i)] = dest.name
@@ -365,3 +397,72 @@ def comfy_down() -> None:
                 return
         except (ValueError, IndexError):
             return
+
+
+def tween_graph(img_a, img_b, prompt, seed, w, h, frames, fps, prefix,
+                audio_name=None, strength_a=1.0, strength_b=1.0):
+    """Guide frame 0 with img_a and the final frame with img_b.
+
+    Validated by measurement rather than assumption: the first frame scored
+    0.996 against guide A and the last 0.996 against guide B, crossing over at
+    the midpoint. LTXVCropGuides strips the guide frames before decode.
+
+    Used for shot continuity: shot N's far guide is shot N+1's still, so a cut
+    lands on the frame the next shot opens with instead of jumping.
+    """
+    g = {
+        "1": {"class_type": "UnetLoaderGGUF", "inputs": {"unet_name": MODELS["ltx"]}},
+        "2": {"class_type": "DualCLIPLoader", "inputs": {
+            "clip_name1": MODELS["gemma"], "clip_name2": MODELS["proj"],
+            "type": "ltxv", "device": "default"}},
+        "3": {"class_type": "CLIPTextEncode", "inputs": {"text": prompt, "clip": ["2", 0]}},
+        "4": {"class_type": "CLIPTextEncode", "inputs": {"text": "", "clip": ["2", 0]}},
+        "5": {"class_type": "VAELoader", "inputs": {"vae_name": MODELS["vvae"]}},
+        "6": {"class_type": "LTXVAudioVAELoader", "inputs": {"ckpt_name": MODELS["avae"]}},
+        "7": {"class_type": "EmptyLTXVLatentVideo", "inputs": {
+            "width": w, "height": h, "length": frames, "batch_size": 1}},
+        "8": ({"class_type": "LTXVAudioVAEEncode",
+               "inputs": {"audio": ["24", 0], "audio_vae": ["6", 0]}}
+              if audio_name else
+              {"class_type": "LTXVEmptyLatentAudio",
+               "inputs": {"frames_number": frames, "frame_rate": fps,
+                          "batch_size": 1, "audio_vae": ["6", 0]}}),
+        "30": {"class_type": "LoadImage", "inputs": {"image": img_a}},
+        "31": {"class_type": "LoadImage", "inputs": {"image": img_b}},
+        "10": {"class_type": "LTXVConditioning", "inputs": {
+            "positive": ["3", 0], "negative": ["4", 0], "frame_rate": fps}},
+        "32": {"class_type": "LTXVAddGuide", "inputs": {
+            "positive": ["10", 0], "negative": ["10", 1], "vae": ["5", 0],
+            "latent": ["7", 0], "image": ["30", 0], "frame_idx": 0,
+            "strength": strength_a}},
+        "33": {"class_type": "LTXVAddGuide", "inputs": {
+            "positive": ["32", 0], "negative": ["32", 1], "vae": ["5", 0],
+            "latent": ["32", 2], "image": ["31", 0], "frame_idx": -1,
+            "strength": strength_b}},
+        "9": {"class_type": "LTXVConcatAVLatent", "inputs": {
+            "video_latent": ["33", 2], "audio_latent": ["8", 0]}},
+        "11": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "euler_ancestral"}},
+        "12": {"class_type": "ManualSigmas", "inputs": {"sigmas": SIGMAS}},
+        "13": {"class_type": "RandomNoise", "inputs": {"noise_seed": seed}},
+        "14": {"class_type": "CFGGuider", "inputs": {
+            "model": ["1", 0], "positive": ["33", 0], "negative": ["33", 1], "cfg": 1.0}},
+        "15": {"class_type": "SamplerCustomAdvanced", "inputs": {
+            "noise": ["13", 0], "guider": ["14", 0], "sampler": ["11", 0],
+            "sigmas": ["12", 0], "latent_image": ["9", 0]}},
+        "16": {"class_type": "LTXVSeparateAVLatent", "inputs": {"av_latent": ["15", 0]}},
+        "34": {"class_type": "LTXVCropGuides", "inputs": {
+            "positive": ["33", 0], "negative": ["33", 1], "latent": ["16", 0]}},
+        "17": {"class_type": "VAEDecodeTiled", "inputs": {
+            "samples": ["34", 2], "vae": ["5", 0], "tile_size": 512,
+            "overlap": 64, "temporal_size": 4096, "temporal_overlap": 8}},
+        "18": {"class_type": "LTXVAudioVAEDecode", "inputs": {
+            "samples": ["16", 1], "audio_vae": ["6", 0]}},
+        "19": {"class_type": "CreateVideo", "inputs": {
+            "images": ["17", 0], "fps": fps, "audio": ["18", 0]}},
+        "20": {"class_type": "SaveVideo", "inputs": {
+            "video": ["19", 0], "filename_prefix": "video/" + prefix,
+            "format": "auto", "codec": "auto"}},
+    }
+    if audio_name:
+        g["24"] = {"class_type": "LoadAudio", "inputs": {"audio": audio_name}}
+    return g

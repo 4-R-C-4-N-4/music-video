@@ -1,0 +1,139 @@
+{
+ "acoustic": {
+  "valence": 0.594,
+  "energy": 0.502,
+  "warmth": 0.711,
+  "scale": 0.543,
+  "tempo": 136.0,
+  "majorness": 0.632
+ },
+ "semantic": {
+  "valence": 0.4,
+  "energy": 0.3,
+  "warmth": 0.4,
+  "age": 0.5,
+  "tactility": 0.3,
+  "scale": 0.2,
+  "organic": 0.5,
+  "adjectives": [
+   "disillusioned",
+   "cynical",
+   "pensive",
+   "melancholic"
+  ],
+  "imagery": [
+   "clocks",
+   "concrete",
+   "cityscape",
+   "shadows"
+  ]
+ },
+ "vector": {
+  "valence": 0.516,
+  "energy": 0.441,
+  "warmth": 0.587,
+  "age": 0.5,
+  "tactility": 0.3,
+  "scale": 0.406,
+  "organic": 0.5
+ },
+ "tension": 0.194,
+ "families": [
+  [
+   "smoke",
+   0.376
+  ],
+  [
+   "sumi",
+   0.383
+  ],
+  [
+   "ukiyoe",
+   0.387
+  ],
+  [
+   "linocut",
+   0.423
+  ],
+  [
+   "charcoal",
+   0.431
+  ],
+  [
+   "thermal",
+   0.44
+  ],
+  [
+   "lithograph",
+   0.49
+  ],
+  [
+   "halftone",
+   0.496
+  ],
+  [
+   "platinum",
+   0.504
+  ],
+  [
+   "scratchboard",
+   0.514
+  ],
+  [
+   "pyrography",
+   0.518
+  ],
+  [
+   "schlieren",
+   0.535
+  ],
+  [
+   "batik",
+   0.544
+  ],
+  [
+   "photogravure",
+   0.552
+  ],
+  [
+   "tempera",
+   0.576
+  ],
+  [
+   "dotmatrix",
+   0.608
+  ],
+  [
+   "silkscreen",
+   0.616
+  ],
+  [
+   "darkfield",
+   0.623
+  ],
+  [
+   "chemigram",
+   0.626
+  ],
+  [
+   "radiographic",
+   0.627
+  ],
+  [
+   "neon",
+   0.629
+  ],
+  [
+   "etching",
+   0.631
+  ],
+  [
+   "web",
+   0.631
+  ],
+  [
+   "spectrogram",
+   0.64
+  ]
+ ]
+}

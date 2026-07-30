@@ -1,0 +1,126 @@
+{
+  "title": "Sitg",
+  "mode": "visualizer",
+  "concept": "A journey through the disintegration of structured order into entropic, microscopic, and thermal chaos.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 5000,
+  "style": "No people, no figures, no buildings, no landscape, no horizon. No object with a visible outline \u2014 no vessel, bowl, panel or plate. The matter fills the frame edge to edge and continues past it.",
+  "scenes": [
+    {
+      "id": "microscopic-order",
+      "material": "darkfield",
+      "material_seed": 9400,
+      "still_prompt": "luminous crystalline fibers suspended in a void, refracting light at sharp angles",
+      "beats": [
+        "extreme close-up of a single shimmering filament",
+        "medium shot of several intersecting lines of light",
+        "wide view of a dense network of glowing, needle-like structures",
+        "macro view of the fibers vibrating with internal light",
+        "extreme macro of light bleeding through a jagged edge"
+      ],
+      "video_prompt": "tiny, unidentifiable particles drift through the light The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, drifting suspension",
+        "mid": "rhythmic pulsing of light along the filaments",
+        "high": "rapid, chaotic shimmering and snapping of light"
+      }
+    },
+    {
+      "id": "thermal-expansion",
+      "material": "thermal",
+      "material_seed": 9401,
+      "still_prompt": "shifting plumes of heat rising through a dark, invisible medium",
+      "beats": [
+        "close-up of a single warm orange bloom expanding",
+        "medium shot of several turbulent heat currents colliding",
+        "wide view of a swirling vortex of thermal energy",
+        "extreme wide of the frame saturated in hot, spectral colors",
+        "macro of rapid, sharp temperature fluctuations"
+      ],
+      "video_prompt": "a constant, faint heat shimmer permeates the frame The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, steady convection currents",
+        "mid": "swirling, overlapping heat plumes",
+        "high": "violent, turbulent thermal eruptions"
+      }
+    },
+    {
+      "id": "chemical-decay",
+      "material": "chemigram",
+      "material_seed": 9402,
+      "still_prompt": "acidic, dark fluids bleeding and corroding through a translucent substrate",
+      "beats": [
+        "macro of a single dark drop spreading into a web",
+        "medium shot of caustic lines etching through the frame",
+        "wide view of a chaotic, mottled texture of chemical reactions",
+        "extreme close-up of bubbling, dark edges",
+        "macro of the material turning opaque and crusty"
+      ],
+      "video_prompt": "subtle, constant darkening of the background The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, creeping edge of a chemical stain",
+        "mid": "rhythmic spreading of dark liquid patterns",
+        "high": "frenetic, bubbling chemical dissolution"
+      }
+    },
+    {
+      "id": "ferrofluid-tension",
+      "material": "ferrofluid",
+      "material_seed": 9403,
+      "still_prompt": "black liquid spikes reacting to an unseen magnetic field",
+      "beats": [
+        "close-up of a single sharp spike emerging from a surface",
+        "medium shot of a rhythmic wave of spikes",
+        "wide view of a chaotic landscape of black columns",
+        "extreme macro of the liquid tension breaking",
+        "macro of the spikes collapsing into a smooth void"
+      ],
+      "video_prompt": "a subtle, oily sheen shifts across the surface The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, heavy thickening of the liquid",
+        "mid": "pulsing upward and downward movement of spikes",
+        "high": "violent, jagged spikes erupting and shattering"
+      }
+    },
+    {
+      "id": "crystalline-lattice",
+      "material": "crystallographic",
+      "material_seed": 9404,
+      "still_prompt": "a rigid, geometric grid of atoms undergoing structural distortion",
+      "beats": [
+        "extreme macro of a single atomic junction",
+        "medium shot of a perfect, repetitive lattice structure",
+        "wide view of a vast, repeating geometric field",
+        "macro of the grid warping under stress",
+        "extreme macro of the lattice edges fracturing"
+      ],
+      "video_prompt": "microscopic jittering within the atomic structure The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, infinitesimal shifts in the grid",
+        "mid": "rhythmic, wave-like compression of the lattice",
+        "high": "rapid, structural vibration and geometric distortion"
+      }
+    },
+    {
+      "id": "smoke-void",
+      "material": "smoke",
+      "material_seed": 9405,
+      "still_prompt": "weightless, translucent grey vapor dissipating into nothingness",
+      "beats": [
+        "macro of a single, thin wisp of smoke",
+        "medium shot of curling, ghostly tendrils",
+        "wide view of a thick, hazy fog filling the frame",
+        "extreme macro of smoke particles separating",
+        "wide view of the frame clearing to total emptiness"
+      ],
+      "video_prompt": "a continuous, soft fading of density The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, languid drifting of vapor",
+        "mid": "constant, gentle swirling of smoke",
+        "high": "chaotic, rapid dissipation of gas"
+      }
+    }
+  ]
+}
