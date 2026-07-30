@@ -1,0 +1,75 @@
+{
+ "acoustic": {
+  "valence": 0.83,
+  "energy": 0.766,
+  "warmth": 0.324,
+  "scale": 0.708,
+  "tempo": 143.6,
+  "majorness": 0.869
+ },
+ "semantic": {
+  "valence": 0.6,
+  "energy": 0.7,
+  "warmth": 0.4,
+  "age": 0.1,
+  "tactility": 0.3,
+  "scale": 0.5,
+  "organic": 0.4,
+  "adjectives": [
+   "resilient",
+   "obsessive",
+   "ecstatic",
+   "turbulent"
+  ],
+  "imagery": [
+   "mirrors",
+   "mazes",
+   "caves",
+   "neon"
+  ]
+ },
+ "vector": {
+  "valence": 0.738,
+  "energy": 0.746,
+  "warmth": 0.354,
+  "age": 0.1,
+  "tactility": 0.3,
+  "scale": 0.625,
+  "organic": 0.4
+ },
+ "tension": 0.23,
+ "families": [
+  [
+   "silkscreen",
+   0.517
+  ],
+  [
+   "risograph",
+   0.555
+  ],
+  [
+   "linocut",
+   0.593
+  ],
+  [
+   "chemigram",
+   0.645
+  ],
+  [
+   "cosmic",
+   0.679
+  ],
+  [
+   "ferrofluid",
+   0.761
+  ],
+  [
+   "charcoal",
+   0.762
+  ],
+  [
+   "crystallographic",
+   0.786
+  ]
+ ]
+}

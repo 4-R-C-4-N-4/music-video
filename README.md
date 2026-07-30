@@ -152,6 +152,9 @@ delete them to force a re-plan after editing scenes.json.
 - LTX frame counts must be 8n+1, so exact bar-boundary cuts are impossible;
   each shot is quantized against its *absolute* track-time boundary so error
   never accumulates (every cut lands within 4 frames of its beat).
+- 63 families: 33 craft, 20 substance, 10 instrument. The palette offered to
+  the director scales with section count (`max(12, sections + 6)`) — offering
+  only a handful forces material reuse on a many-sectioned track.
 - Families come in three kinds. **craft** — a human process leaving an
   artifact (cyanotype, etching, felted wool, silkscreen). **substance** — the
   scene is *constituted* from matter (mycelium, chitin, crystal, carved stone,

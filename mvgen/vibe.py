@@ -144,7 +144,7 @@ def tension(ac: dict, sem: dict) -> float:
     return round(float(abs(ac["valence"] - sem["valence"])), 3)
 
 
-def rank_families(vec: dict, top: int = 8) -> list[tuple[str, float]]:
+def rank_families(vec: dict, top: int = 24) -> list[tuple[str, float]]:
     """Rank material families by distance to the song's vibe vector."""
     from .materials import FAMILIES
 

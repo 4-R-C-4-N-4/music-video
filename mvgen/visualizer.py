@@ -121,7 +121,7 @@ def direct(jobdir: str, model: str = "gemma4-nothink") -> dict:
     if vibe:
         ranked = [k for k, _ in vibe["families"] if k in ABSTRACT]
         keys = ranked + [k for k in ABSTRACT if k not in ranked]
-    keys = keys[:10]
+    keys = keys[:max(12, len(secs) + 6)]
     palette = "\n".join(f"  {k}: {MATERIALS[k]['mood']}" for k in keys)
 
     prompt = USER.format(duration=analysis["duration"], tempo=analysis["tempo"],

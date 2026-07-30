@@ -1,0 +1,219 @@
+{
+  "title": "Special One",
+  "concept": "A journey through fractured dimensions and shifting scales, tracing a path from internal darkness toward a luminous, structured clarity.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 3000,
+  "bars_per_shot": {
+    "low": 4,
+    "mid": 2,
+    "high": 2
+  },
+  "style": "A recurring figure appears throughout: A young adult with short-cropped hair, wearing a heavy, oversized charcoal-grey linen tunic..",
+  "scenes": [
+    {
+      "id": "the-hollow-cave",
+      "material": "charcoal",
+      "material_seed": 7400,
+      "still_prompt": "A damp limestone cavern with jagged stalactites and deep shadows.",
+      "beats": [
+        "Wide shot of the figure sitting motionless against a wet rock wall",
+        "Medium shot of the figure tracing a line in the soot on the ground",
+        "Close up of the figure's hand smudging a dark streak on a stone",
+        "Low angle shot of the figure looking upward at the dark ceiling",
+        "Extreme close up of the figure's eye reflecting a single light source"
+      ],
+      "video_prompt": "Water drips rhythmically from the ceiling into small pools. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera drifts forward with agonizing slowness."
+      }
+    },
+    {
+      "id": "the-corroded-void",
+      "material": "chemigram",
+      "material_seed": 7401,
+      "still_prompt": "A dark industrial basement filled with oxidizing copper pipes and chemical spills.",
+      "beats": [
+        "Wide shot of the figure walking between heavy metal pillars",
+        "Medium shot of the figure touching a bubbling, iridescent liquid",
+        "Close up of the figure's face illuminated by a sudden chemical flare",
+        "High angle shot of the figure stumbling through thick, colorful smoke",
+        "Medium shot of the figure spinning slowly in a patch of swirling light"
+      ],
+      "video_prompt": "Thick, multicolored vapor swirls around the floor. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "The camera follows the figure with a steady, rhythmic stride."
+      }
+    },
+    {
+      "id": "the-liquid-chamber",
+      "material": "ferrofluid",
+      "material_seed": 7402,
+      "still_prompt": "A sterile, pitch-black laboratory room with a floor of black, magnetic liquid.",
+      "beats": [
+        "Wide shot of the figure standing at the edge of a black pool",
+        "Close up of the figure's feet creating spikes in the liquid",
+        "Medium shot of the figure reaching toward a rising black spire",
+        "Low angle shot of the figure staring at their own distorted reflection",
+        "Extreme close up of the liquid forming sharp, geometric peaks"
+      ],
+      "video_prompt": "Spikes of black liquid rise and fall in response to unseen magnets. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera pans horizontally across the dark surface."
+      }
+    },
+    {
+      "id": "the-graphic-hall",
+      "material": "risograph",
+      "material_seed": 7403,
+      "still_prompt": "A bright, sun-drenched studio filled with stacked paper and vibrant ink canisters.",
+      "beats": [
+        "Wide shot of the figure running through rows of tall paper reams",
+        "Medium shot of the figure grabbing a handful of bright yellow pigment",
+        "Close up of the figure's hand throwing powder into the air",
+        "Medium shot of the figure laughing while covered in blue ink"
+      ],
+      "video_prompt": "Dust motes dance in heavy shafts of sunlight. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "The camera pans quickly to track the figure's movement."
+      }
+    },
+    {
+      "id": "the-mirror-maze",
+      "material": "silkscreen",
+      "material_seed": 7404,
+      "still_prompt": "A labyrinth of floor-to-ceiling glass panels arranged in a grid.",
+      "beats": [
+        "Wide shot of the figure entering the glass corridor",
+        "Medium shot of the figure stopping to look at a secondary reflection",
+        "Close up of the figure's hand pressing against the glass",
+        "Low angle shot of the figure looking up at a ceiling of mirrors",
+        "Medium shot of the figure walking away into a vanishing point"
+      ],
+      "video_prompt": "Light glints off the polished glass edges. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera glides forward on a straight, unwavering track."
+      }
+    },
+    {
+      "id": "the-atomic-lattice",
+      "material": "crystallographic",
+      "material_seed": 7405,
+      "still_prompt": "A microscopic view of a repeating calcium carbonate crystal structure.",
+      "beats": [
+        "Extreme close up of the figure's eye moving through a lattice",
+        "Medium shot of the figure standing amidst massive, translucent cubes",
+        "Close up of the figure's hand touching a geometric corner",
+        "Wide shot of the figure looking tiny against a wall of repeating prisms"
+      ],
+      "video_prompt": "Prismatic light pulses through the crystalline structures. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "The camera weaves through the geometric structures."
+      }
+    },
+    {
+      "id": "the-nebula-void",
+      "material": "cosmic",
+      "material_seed": 7406,
+      "still_prompt": "A vast expanse of violet and gold interstellar gas and star clusters.",
+      "beats": [
+        "Wide shot of the figure floating in the center of a nebula",
+        "Medium shot of the figure reaching for a passing streak of light",
+        "Extreme close up of the figure's face illuminated by a supernova",
+        "Wide shot of the figure spinning through a cloud of gold dust",
+        "Medium shot of the figure drifting toward a bright star cluster",
+        "Close up of the figure's hand dissipating into light"
+      ],
+      "video_prompt": "Swirling clouds of gas drift across the frame. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "The camera orbits the figure in a rapid, sweeping circle."
+      }
+    },
+    {
+      "id": "the-linocut-forest",
+      "material": "linocut",
+      "material_seed": 7407,
+      "still_prompt": "A stark, high-contrast forest of thick, black tree trunks against a white sky.",
+      "beats": [
+        "Wide shot of the figure walking through heavy, black shadows",
+        "Medium shot of the figure leaping over a thick, carved root",
+        "Close up of the figure's feet stepping on textured bark",
+        "Medium shot of the figure looking up at the jagged canopy",
+        "Wide shot of the figure running into the deep darkness"
+      ],
+      "video_prompt": "Heavy shadows shift across the forest floor. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "low": "The camera tilts upward slowly toward the branches."
+      }
+    },
+    {
+      "id": "the-pop-gallery",
+      "material": "silkscreen",
+      "material_seed": 7408,
+      "still_prompt": "An art gallery with massive, flat-colored canvases on white walls.",
+      "beats": [
+        "Wide shot of the figure walking past large red rectangles",
+        "Medium shot of the figure leaning against a bright blue wall",
+        "Close up of the figure's face framed by a yellow shape",
+        "Medium shot of the figure running down a long, brightly colored corridor",
+        "Wide shot of the figure standing in a room of intersecting primary colors"
+      ],
+      "video_prompt": "Sharp, colorful shadows move across the white floor. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "The camera tracks sideways alongside the figure."
+      }
+    },
+    {
+      "id": "the-pulsing-core",
+      "material": "ferrofluid",
+      "material_seed": 7409,
+      "still_prompt": "A massive, dark liquid sphere suspended in a high-tech vacuum chamber.",
+      "beats": [
+        "Wide shot of the figure standing before the massive black orb",
+        "Medium shot of the figure watching the orb pulsate",
+        "Close up of the figure's face reflecting in the black surface",
+        "Medium shot of the figure touching the vibrating liquid surface"
+      ],
+      "video_prompt": "The black liquid erupts in rhythmic, sharp spikes. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "The camera rushes toward the center of the black sphere."
+      }
+    },
+    {
+      "id": "the-charcoal-storm",
+      "material": "charcoal",
+      "material_seed": 7410,
+      "still_prompt": "A desolate, wind-swept plain covered in thick black dust.",
+      "beats": [
+        "Wide shot of the figure walking through the black haze",
+        "Medium shot of the figure shielding their eyes from the dust",
+        "Close up of the figure's feet sinking into the dark powder",
+        "Medium shot of the figure spinning in the wind"
+      ],
+      "video_prompt": "Black dust swirls violently through the air. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "mid": "The camera moves through the dust at a walking pace."
+      }
+    },
+    {
+      "id": "the-final-prism",
+      "material": "crystallographic",
+      "material_seed": 7411,
+      "still_prompt": "An infinite expanse of interlocking, glowing diamond-like structures.",
+      "beats": [
+        "Wide shot of the figure running through a canyon of light",
+        "Medium shot of the figure jumping between two glowing planes",
+        "Close up of the figure's face looking ecstatic in the light",
+        "Medium shot of the figure reaching for the camera",
+        "Wide shot of the figure becoming a point of light in the lattice",
+        "Extreme wide shot of the entire geometric universe expanding",
+        "Close up of a single, perfect light refraction"
+      ],
+      "video_prompt": "Blinding light pulses through the crystalline geometric grid. The material texture of the image stays constant and visible throughout.",
+      "motion": {
+        "high": "The camera flies through the structures at extreme speed."
+      }
+    }
+  ]
+}

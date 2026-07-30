@@ -209,8 +209,13 @@ def direct(jobdir: str, model: str = "gemma4-nothink", keep_llm: bool = False) -
     vibe_path = job / "vibe.json"
     vibe = json.load(open(vibe_path)) if vibe_path.exists() else None
     if vibe:
-        keys = [k for k, _ in vibe["families"]]
-        print("  vibe-matched palette: " + ", ".join(keys), flush=True)
+        # Offer comfortably more materials than there are sections, or the
+        # director is forced to reuse one — which is what produced four
+        # duplicated materials on a twelve-section track.
+        want = max(12, len(secs) + 6)
+        keys = [k for k, _ in vibe["families"]][:want]
+        print(f"  vibe-matched palette ({len(keys)} of {len(MATERIALS)}): "
+              + ", ".join(keys), flush=True)
     else:
         keys = list(MATERIALS)
     palette = "\n".join(
