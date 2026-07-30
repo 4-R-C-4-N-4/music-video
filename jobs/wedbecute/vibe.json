@@ -1,0 +1,139 @@
+{
+ "acoustic": {
+  "valence": 0.672,
+  "energy": 0.565,
+  "warmth": 0.626,
+  "scale": 0.683,
+  "tempo": 103.4,
+  "majorness": 0.721
+ },
+ "semantic": {
+  "valence": 0.6,
+  "energy": 0.7,
+  "warmth": 0.5,
+  "age": 0.3,
+  "tactility": 0.4,
+  "scale": 0.6,
+  "organic": 0.5,
+  "adjectives": [
+   "playful",
+   "abstract",
+   "whimsical",
+   "rhythmic"
+  ],
+  "imagery": [
+   "streetlights",
+   "manhattan skyline",
+   "winding paths",
+   "golden boxes"
+  ]
+ },
+ "vector": {
+  "valence": 0.643,
+  "energy": 0.605,
+  "warmth": 0.576,
+  "age": 0.3,
+  "tactility": 0.4,
+  "scale": 0.65,
+  "organic": 0.5
+ },
+ "tension": 0.072,
+ "families": [
+  [
+   "smoke",
+   0.42
+  ],
+  [
+   "linocut",
+   0.499
+  ],
+  [
+   "thermal",
+   0.517
+  ],
+  [
+   "schlieren",
+   0.527
+  ],
+  [
+   "silkscreen",
+   0.566
+  ],
+  [
+   "ukiyoe",
+   0.584
+  ],
+  [
+   "chemigram",
+   0.593
+  ],
+  [
+   "sumi",
+   0.596
+  ],
+  [
+   "neon",
+   0.596
+  ],
+  [
+   "scratchboard",
+   0.597
+  ],
+  [
+   "charcoal",
+   0.601
+  ],
+  [
+   "risograph",
+   0.635
+  ],
+  [
+   "cosmic",
+   0.635
+  ],
+  [
+   "pyrography",
+   0.645
+  ],
+  [
+   "halftone",
+   0.655
+  ],
+  [
+   "batik",
+   0.66
+  ],
+  [
+   "cathoderay",
+   0.675
+  ],
+  [
+   "spectrogram",
+   0.676
+  ],
+  [
+   "cutpaper",
+   0.695
+  ],
+  [
+   "dotmatrix",
+   0.697
+  ],
+  [
+   "lidar",
+   0.707
+  ],
+  [
+   "stainedglass",
+   0.71
+  ],
+  [
+   "platinum",
+   0.759
+  ],
+  [
+   "lithograph",
+   0.771
+  ]
+ ]
+}

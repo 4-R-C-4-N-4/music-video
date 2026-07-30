@@ -1,7 +1,7 @@
 {
   "title": "Hush",
   "mode": "visualizer",
-  "concept": "A study of light struggling through evolving states of suspended particulate and crystalline growth, moving from muffled stillness to violent structural fracture.",
+  "concept": "A descent from suspended, frozen particles into a state of agitated, glowing chemical decay, concluding in a silent, crystalline suspension.",
   "fps": 25,
   "width": 1280,
   "height": 704,
@@ -9,60 +9,155 @@
   "style": "No people, no figures, no buildings, no landscape, no horizon. No object with a visible outline \u2014 no vessel, bowl, panel or plate. The matter fills the frame edge to edge and continues past it.",
   "scenes": [
     {
-      "id": "muffled-nacre",
-      "material": "nacre",
-      "material_seed": 9400,
-      "still_prompt": "Iridescent layers of microscopic calcium carbonate platelets drifting in a thick, viscous fluid.",
-      "beats": [
-        "Extreme macro: pale, milky surfaces sliding past the lens at a crawl.",
-        "Close-up: thin ribbons of pearlescent light curling through a heavy, opalescent medium.",
-        "Macro: overlapping translucent scales swirling in a slow, silent rotation.",
-        "Medium: a dense cloud of shimmering, milky flakes suspended in deep amber light.",
-        "Wide: an expanse of swirling, multi-chromatic silt filling the entire field of vision."
-      ],
-      "video_prompt": "Fine, dust-like particles catch glints of light as they descend through the murk. The material texture stays constant and visible throughout.",
-      "motion": {
-        "low": "A slow, heavy drift of pale particles through a thick, warm liquid.",
-        "mid": "Gentle, rhythmic undulations of iridescent layers sliding over one another.",
-        "high": "Turbulent swirling of pearlescent flakes caught in a sudden internal current."
-      }
-    },
-    {
-      "id": "kinetic-ferrofluid",
-      "material": "ferrofluid",
-      "material_seed": 9401,
-      "still_prompt": "Sleek, obsidian-black liquid forming sharp, geometric spikes under an invisible magnetic force.",
-      "beats": [
-        "Macro: a single, glossy black spike rising vertically from a dark plane.",
-        "Close-up: a forest of sharp, needle-like protrusions vibrating rapidly.",
-        "Medium: a chaotic landscape of obsidian spikes surging and receding in rhythmic pulses.",
-        "Wide: a violent, undulating field of black spikes colliding and merging.",
-        "Extreme wide: a frenetic, jagged sea of liquid geometry churning in total darkness."
-      ],
-      "video_prompt": "Tiny, microscopic beads of black oil skittering across a dark surface. The material texture stays constant and visible throughout.",
-      "motion": {
-        "low": "A slow, viscous thickening of dark liquid surfaces.",
-        "mid": "The rhythmic rising and falling of sharp, oily columns.",
-        "high": "Violent, jagged spikes erupting and collapsing in rapid succession."
-      }
-    },
-    {
-      "id": "fracturing-cryo",
+      "id": "suspended-frost",
       "material": "cryo",
-      "material_seed": 9402,
-      "still_prompt": "Brittle, crystalline structures undergoing rapid thermal stress and internal fracturing.",
+      "material_seed": 9400,
+      "still_prompt": "microscopic ice crystals forming and interlocking in a void of absolute stillness.",
       "beats": [
-        "Macro: a single, translucent ice grain expanding as a white crack forms inside.",
-        "Close-up: a web of frost-white fractures racing through a clear, frozen mass.",
-        "Medium: large sheets of crystalline structure splintering into thousands of jagged shards.",
-        "Wide: an explosive network of white fissures tearing through a dense, frozen void.",
-        "Extreme wide: a chaotic, blinding spray of crystalline shards rushing toward the lens."
+        "extreme macro: individual frost needles elongating through the frame",
+        "macro: a lattice of ice branches knitting together",
+        "medium: a dense wall of white rime creeping across the lens",
+        "close: sharp crystalline shards colliding and freezing mid-air",
+        "extreme close: the sudden snap of a single frost spike fracturing"
       ],
-      "video_prompt": "Microscopic shards of ice glittering in the light as they settle. The material texture stays constant and visible throughout.",
+      "video_prompt": "a soft, constant shimmer of suspended ice dust The material texture stays constant and visible throughout.",
       "motion": {
-        "low": "The slow, creeping growth of white frost along internal planes.",
-        "mid": "A steady, rhythmic spider-webbing of cracks through a transparent mass.",
-        "high": "Violent, explosive shattering of crystalline structures into flying fragments."
+        "low": "glacial, imperceptible growth of ice crystals",
+        "mid": "slow, drifting patterns of frost expansion",
+        "high": "rapid, jagged fracturing of frozen structures"
+      }
+    },
+    {
+      "id": "nacre-bloom",
+      "material": "nacre",
+      "material_seed": 9401,
+      "still_prompt": "iridescent layers of mother-of-pearl swirling in a viscous, milky fluid.",
+      "beats": [
+        "extreme macro: pearlescent oil-slick ribbons curling",
+        "macro: waves of iridescent light washing across a surface",
+        "medium: undulating sheets of pastel color folding inward",
+        "close: thick, milky plumes of light separating and recombining",
+        "extreme close: a sudden flash of rainbow refraction through a translucent layer"
+      ],
+      "video_prompt": "a constant, soft pearlescent glow shifting through the spectrum The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, rhythmic pulsing of iridescent light",
+        "mid": "fluid, swirling motions of colored silt",
+        "high": "turbulent, chaotic churning of pearlescent waves"
+      }
+    },
+    {
+      "id": "microbial-growth",
+      "material": "microbial",
+      "material_seed": 9402,
+      "still_prompt": "a rapid proliferation of translucent, bioluminescent organic cells.",
+      "beats": [
+        "extreme macro: single glowing spheres dividing",
+        "macro: clusters of cells blooming like underwater flowers",
+        "medium: a dense, pulsating carpet of living light",
+        "close: rhythmic swelling and contraction of a cellular membrane",
+        "extreme close: a burst of tiny, glowing spores erupting from a center"
+      ],
+      "video_prompt": "a steady, faint bioluminescent flicker The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "gentle, rhythmic swelling of soft membranes",
+        "mid": "steady, creeping expansion of cellular colonies",
+        "high": "explosive, frantic division and bursting of cells"
+      }
+    },
+    {
+      "id": "chemigram-corrosion",
+      "material": "chemigram",
+      "material_seed": 9403,
+      "still_prompt": "violent chemical reactions creating dark, etched streaks through bright light.",
+      "beats": [
+        "extreme macro: sharp black ink-like veins cutting through light",
+        "macro: jagged, corrosive textures eating through a bright field",
+        "medium: chaotic, lightning-like streaks of dark pigment",
+        "close: a frantic storm of chemical precipitation",
+        "extreme close: the sudden, sharp crystallization of dark salts"
+      ],
+      "video_prompt": "a constant, turbulent bubbling of dark and light fluids The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, creeping stains of dark pigment",
+        "mid": "erratic, branching chemical reactions",
+        "high": "violent, jagged explosions of dark matter"
+      }
+    },
+    {
+      "id": "ferrofluid-spikes",
+      "material": "ferrofluid",
+      "material_seed": 9404,
+      "still_prompt": "glossy black liquid spikes erupting and collapsing in response to unseen forces.",
+      "beats": [
+        "extreme macro: the smooth surface breaking into tiny needles",
+        "macro: sharp, geometric black towers rising upward",
+        "medium: a field of obsidian spikes dancing in unison",
+        "close: rapid, violent oscillation of liquid spikes",
+        "extreme close: the collapse of a spire into a dark pool"
+      ],
+      "video_prompt": "a continuous, dark, oily sheen The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, rhythmic rising of liquid peaks",
+        "mid": "steady, rhythmic pulsing of sharp formations",
+        "high": "violent, erratic snapping of liquid spikes"
+      }
+    },
+    {
+      "id": "darkfield-diatoms",
+      "material": "darkfield",
+      "material_seed": 9405,
+      "still_prompt": "jeweled, geometric diatoms shimmering against a pitch-black void.",
+      "beats": [
+        "extreme macro: a single, glowing geometric lattice",
+        "macro: a cluster of glittering, crystalline structures",
+        "medium: a swarm of luminous, patterned particles",
+        "close: sharp, brilliant points of light flashing",
+        "extreme close: the intense, blinding glint of a single facet"
+      ],
+      "video_prompt": "a constant, fine rain of microscopic light The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, drifting rotation of light points",
+        "mid": "steady, rhythmic pulsing of crystalline light",
+        "high": "rapid, flashing bursts of intense brilliance"
+      }
+    },
+    {
+      "id": "smoke-void",
+      "material": "smoke",
+      "material_seed": 9406,
+      "still_prompt": "thin, ghostly wisps of vapor curling through a dark void.",
+      "beats": [
+        "extreme macro: a single, delicate thread of grey",
+        "macro: swirling eddies of translucent shadow",
+        "medium: large, heavy plumes of smoke folding over themselves",
+        "close: a chaotic storm of vaporous ribbons",
+        "extreme close: a sudden dissipation into nothingness"
+      ],
+      "video_prompt": "a constant, drifting haze The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, languid curling of smoke tendrils",
+        "mid": "steady, swirling vortexes of vapor",
+        "high": "violent, turbulent gusts of smoke"
+      }
+    },
+    {
+      "id": "crystallographic-lattice",
+      "material": "crystallographic",
+      "material_seed": 9407,
+      "still_prompt": "perfectly ordered atomic lattices undergoing structural shifts.",
+      "beats": [
+        "extreme macro: a singular, rigid geometric intersection",
+        "macro: a vast, repeating grid of light and shadow",
+        "medium: a shifting, undulating wave of crystalline planes",
+        "close: the sudden, sharp realignment of a lattice",
+        "extreme close: a blindingly bright diffraction pattern"
+      ],
+      "video_prompt": "a constant, crystalline shimmer of light The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, subtle shifting of geometric planes",
+        "mid": "steady, rhythmic oscillation of the grid",
+        "high": "violent, sudden structural reorganization"
       }
     }
   ]

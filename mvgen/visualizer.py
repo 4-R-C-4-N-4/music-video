@@ -129,7 +129,9 @@ def direct(jobdir: str, model: str = "gemma4-nothink") -> dict:
     if vibe:
         ranked = [k for k, _ in vibe["families"] if k in ABSTRACT]
         keys = ranked + [k for k in ABSTRACT if k not in ranked]
-    keys = keys[:max(12, len(secs) + 6)]
+    bar_secs_est = 240.0 / max(analysis["tempo"], 1)
+    est_shots_pre = max(1, int(analysis["duration"] / (bar_secs_est * 1.2)))
+    keys = keys[:max(12, min(est_shots_pre // 2, 20))]
     palette = "\n".join(
         f"  {k}: {MATERIALS[k]['mood']}\n      suits: {MATERIALS[k]['suits']}"
         for k in keys)
