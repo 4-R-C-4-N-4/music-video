@@ -19,6 +19,8 @@ COMFY_OUT = pathlib.Path.home() / "programs/comfyui/output"
 COMFY_IN = pathlib.Path.home() / "programs/comfyui/input"
 SIGMAS = "1., 0.99375, 0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0"
 
+TEMPORAL_UPSCALER = "ltx-2.3-temporal-upscaler-x2-1.0.safetensors"
+
 MODELS = {
     "ltx": "LTX-2.3-22B-distilled-1.1-Q4_K_M.gguf",
     "gemma": "gemma_3_12B_it_fp8_scaled.safetensors",
@@ -113,6 +115,32 @@ def run_graph(graph, label, timeout=1800, attempts=4):
                   f"[{attempt+1}/{attempts-1}]", flush=True)
             if not ensure_comfy():
                 raise RuntimeError("could not bring comfyui back up") from e
+
+
+def add_temporal_2x(g: dict, fps: int) -> dict:
+    """Double the frame rate of a finished graph via the LTX temporal upscaler.
+
+    Splices in wherever the decoder currently reads from rather than assuming a
+    node id: the plain i2v path decodes straight off LTXVSeparateAVLatent, the
+    tween path routes through LTXVCropGuides first.
+
+    Video branch only. The audio latent is silent and discarded at assembly, so
+    there is nothing to keep in step — a simplification that only exists because
+    audio conditioning was removed.
+
+    Measured on one shot: 57 frames @ 25fps -> 113 frames @ 50fps, duration
+    unchanged at 2.3s. Cheap, because it operates on an already-sampled latent
+    rather than resampling.
+    """
+    src = g["17"]["inputs"]["samples"]
+    g["40"] = {"class_type": "LatentUpscaleModelLoader",
+               "inputs": {"model_name": TEMPORAL_UPSCALER}}
+    g["41"] = {"class_type": "LTXVLatentUpsampler",
+               "inputs": {"samples": src, "upscale_model": ["40", 0],
+                          "vae": ["5", 0]}}
+    g["17"]["inputs"]["samples"] = ["41", 0]
+    g["19"]["inputs"]["fps"] = fps * 2
+    return g
 
 
 def still_graph(prompt, seed, w, h, prefix):
@@ -238,7 +266,8 @@ def pick_still(shot, i, total, w, h, job, workdir, picked,
 
 def render(manifest_path: str, workdir: str, limit: int | None = None,
            stills_only: bool = False, candidates: int | None = None,
-           sim_max: float = 0.95, use_tween: bool | None = None):
+           sim_max: float = 0.95, use_tween: bool | None = None,
+           fps2x: bool | None = None):
     manifest = json.load(open(manifest_path))
     workdir = pathlib.Path(workdir)
     workdir.mkdir(parents=True, exist_ok=True)
@@ -254,6 +283,10 @@ def render(manifest_path: str, workdir: str, limit: int | None = None,
         candidates = int(os.environ.get("MVGEN_CANDIDATES", "3"))
     if use_tween is None:
         use_tween = os.environ.get("MVGEN_TWEEN", "0") == "1"
+    if fps2x is None:
+        fps2x = os.environ.get("MVGEN_FPS2X", "0") == "1"
+    if fps2x:
+        print(f"temporal upscaling ON ({fps} -> {fps*2}fps)", flush=True)
     if use_tween:
         print("tweening ON (each shot ends on the next shot's still)", flush=True)
 
@@ -317,6 +350,8 @@ def render(manifest_path: str, workdir: str, limit: int | None = None,
                           w, h, shot["frames"], fps, f"mv-{job}-{i:03d}",
                           strength=strength,
                           img_compression=shot.get("img_compression", 33))
+        if fps2x:
+            g = add_temporal_2x(g, fps)
         out = run_graph(g, f"shot:{i}")
         dest = grab_output(out, "20", "images", workdir, f"shot-{i:03d}.mp4")
         state["shots"][str(i)] = dest.name

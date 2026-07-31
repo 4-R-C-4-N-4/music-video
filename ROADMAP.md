@@ -103,7 +103,7 @@ hours, and the benefit was described in summaries before it was ever measured.
 
 ---
 
-## 3. 50fps via the temporal upscaler
+## 3. 50fps via the temporal upscaler — DONE
 
 **Why.** Lowest-effort visible improvement. At 25fps with 3s shots, fast
 material reads as slightly strobed. The strength calibration bought motion
@@ -120,9 +120,30 @@ concatenated at a fixed frame rate, so temporal upscaling the video half may
 desynchronise them — the same class of bug as the audio-slice length. Test on
 one shot with audio conditioning on before wiring it in.
 
-**Fallback.** `ffmpeg minterpolate` needs no download and no graph changes, but
-interpolates in pixel space and will smear fast material. Only worth it if the
-LTX upscaler proves incompatible with the AV latent.
+### Result (measured, one shot)
+
+| | fps | frames | duration |
+|---|---|---|---|
+| plain | 25 | 57 | 2.28s |
+| upscaled | 50 | 113 | 2.26s |
+
+Frames double, duration holds — a real temporal upscale rather than slow
+motion, which was the way this most plausibly went wrong. Cheap too: it
+operates on an already-sampled latent instead of resampling, so it adds
+seconds per shot rather than doubling render time.
+
+**The open question resolved itself.** The flagged risk was desynchronising the
+audio half of the AV latent pair. That risk disappeared when audio conditioning
+was cut — the audio latent is now always silent and discarded at assembly, with
+the real track muxed over the top, so the video branch can be upscaled freely.
+Deleting a dead feature made the next one simpler.
+
+Shipped as `--fps50` / `MVGEN_FPS2X`, opt-in. The `add_temporal_2x` helper
+splices in wherever the decoder currently reads from rather than assuming a
+node id, because the plain and tween paths feed it differently.
+
+**Fallback (unused).** `ffmpeg minterpolate` needs no download but interpolates
+in pixel space and would smear fast material.
 
 ---
 
