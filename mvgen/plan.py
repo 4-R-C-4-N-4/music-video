@@ -95,10 +95,15 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
     # composed still only falls 0.969 -> 0.952 across the whole range. The
     # dissolution risk these were originally set against did not materialise,
     # so the floor is set by diminishing returns rather than by damage.
+    # Widened and shifted down after side-by-side viewing: the 0.55/0.45/0.35
+    # build read as more interesting than the 0.85/0.75/0.68 one. The spread
+    # matters as much as the level — 0.17 between quiet and loud was too narrow
+    # for the dynamics to show. Note the sweeps could not resolve an optimum at
+    # one seed per setting, so this is set by eye, not by measurement.
     strength_by_level = spec.get("strength_by_level",
-                                 {"low": 0.85, "mid": 0.75, "high": 0.68})
+                                 {"low": 0.70, "mid": 0.50, "high": 0.32})
     compression_by_level = spec.get("compression_by_level",
-                                    {"low": 33, "mid": 38, "high": 42})
+                                    {"low": 34, "mid": 42, "high": 50})
 
     style = spec.get("style", "")
     n_sections = len(analysis["sections"])

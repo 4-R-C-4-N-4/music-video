@@ -19,8 +19,16 @@ Sampling is seeded, so a manifest reproduces exactly. Per-shot jitter
 re-rolls artifacts only, which makes each shot read as a separate physical
 artefact rather than one image with a filter over it.
 
-Rule that still governs everything: name the *physical process*. Abstract
-optical asks ("formed from thin-film interference") collapse to photoreal.
+Two rules govern everything here:
+
+1. Name the *physical process*. Abstract optical asks ("formed from thin-film
+   interference") collapse to photoreal.
+2. Never ask for text or measurement furniture — scale bars, data bars, axis
+   labels, plate numbering, handwriting. They were originally included as
+   authenticity details for the instrument families, and they render as
+   garbled pseudo-text that reads as obviously machine-generated and sits
+   static over a moving image. The director is already told "no text in
+   frame"; the material vocabulary must not contradict it.
 """
 import random
 
@@ -474,7 +482,7 @@ FAMILIES.update({
                      "the rough aggregate of the plaster showing through thin passages"],
         "artifacts": ["large losses where the plaster has fallen away",
                       "a crack running through the composition", "salt efflorescence blooming white",
-                      "smoke blackening across one corner", "later graffiti scratched into the surface"],
+                      "smoke blackening across one corner", "a later repair patch in mismatched plaster"],
         "captures": ["lit by raking daylight from a high window", "flat archaeological documentation lighting",
                      "photographed at an angle showing the wall's curve"],
         "wear": ["recently uncovered and cleaned", "centuries of soot and loss",
@@ -683,7 +691,7 @@ FAMILIES.update({
                      "fine root hairs fanning out like drawn lines"],
         "artifacts": ["a leaf cracked across from handling", "old adhesive strips holding a stem down",
                       "insect damage lacing one leaf", "foxing spots on the mounting sheet",
-                      "a faded handwritten label edge intruding"],
+                      "a pressed stem lifting away from the sheet"],
         "captures": ["flat on a mounting sheet under museum light",
                      "backlit so the leaf veins glow", "scanned flat and sharp",
                      "raking light throwing the curled edges into relief"],
@@ -746,7 +754,7 @@ FAMILIES.update({
                       "the inoculation loop's streak lines still visible",
                       "the agar cracked and pulling from the dish wall",
                       "a bubble trapped in the medium",
-                      "handwriting on the dish base showing through"],
+                      "the agar pulling away from the dish wall"],
         "captures": ["lit from below on a light box", "photographed straight down through the lid",
                      "dark-field lighting against black", "in flat clinical lab light"],
         "wear": ["24 hours' growth, edges still sharp", "overgrown, colonies merged into a mat",
@@ -802,7 +810,7 @@ FAMILIES.update({
                      "lichen colonising the sheltered hollows"],
         "artifacts": ["a large spall lost from one area", "iron staining bleeding from a cramp",
                       "a crack running through the relief", "salt crystallising in the pores",
-                      "later graffiti cut across an older surface"],
+                      "a drill hole cut through an older surface"],
         "captures": ["in hard low sun so the relief throws long shadows",
                      "under flat overcast light", "wet with rain, contrast raised",
                      "lit from one side at night"],
@@ -892,10 +900,10 @@ FAMILIES.update({
                      "everything in focus at once, front to back",
                      "shadowless illumination that seems to come from the lens"],
         "artifacts": ["a charging streak smearing across the frame",
-                      "beam damage puckering one area", "a scale bar and data bar at the frame edge",
+                      "beam damage puckering one area", "charge build-up flaring one edge to white",
                       "contamination deposits speckling the surface",
                       "drift blurring one axis of the scan"],
-        "captures": ["at 500x with a data bar", "at 20,000x, the subject unrecognisable",
+        "captures": ["at 500x, filling the frame", "at 20,000x, the subject unrecognisable",
                      "tilted stage, the specimen seen obliquely"],
         "wear": ["a clean freshly coated specimen", "beam-damaged from long exposure",
                  "poorly coated, charging badly"],
@@ -959,7 +967,7 @@ FAMILIES.update({
                       "thermal drift skewing the lattice",
                       "a vacancy where an atom is missing",
                       "scan noise streaking one direction"],
-        "captures": ["as a false-coloured height map with a scale bar",
+        "captures": ["as a false-coloured height map, filling the frame",
                      "as a raw greyscale scan", "as a reciprocal-space diffraction plate"],
         "wear": ["a clean atomically flat terrace", "a heavily defective sample",
                  "a drifting noisy acquisition"],
@@ -1599,7 +1607,7 @@ FAMILIES.update({
                      "residual heat traces where something has been touched or has moved",
                      "no shadows at all, only thermal gradients"],
         "artifacts": ["the sensor's dead pixels as fixed dots",
-                      "a calibration bar and temperature scale at the frame edge",
+                      "halo blooming around the hottest region",
                       "halo blooming around the hottest region",
                       "banding from the sensor's non-uniformity"],
         "captures": ["as a false-coloured frame with a temperature scale",
@@ -1653,7 +1661,7 @@ FAMILIES.update({
                       "an air bubble in the mounting medium",
                       "the condenser's stop visible as a soft ring",
                       "chromatic fringing at the highest magnification"],
-        "captures": ["as a circular field with a scale bar", "Rheinberg-filtered in two colours",
+        "captures": ["as a circular field, edge to edge", "Rheinberg-filtered in two colours",
                      "focus-stacked for full depth"],
         "wear": ["a clean freshly mounted slide", "a decades-old Victorian slide with balsam yellowing",
                  "a dusty poorly cleaned preparation"],
@@ -1673,13 +1681,13 @@ FAMILIES.update({
                      "sepia-toned archival photographic plate", "false-coloured tracks by particle charge"],
         "emphasis": ["tracks curving in the magnetic field, tighter as they slow",
                      "a vertex where one track becomes several",
-                     "the fiducial marks and grid printed on the plate",
+                     "tracks fanning outward from a single origin point",
                      "the chamber's window frame and reference crosses"],
         "artifacts": ["scratches on the photographic plate",
-                      "the plate's edge numbering intruding",
+                      "emulsion grain across the whole frame",
                       "bubbles from a previous event not yet cleared",
                       "emulsion grain across the whole frame"],
-        "captures": ["as a scanned archival plate with fiducials",
+        "captures": ["as a scanned archival plate",
                      "with three stereo views side by side", "as a sepia-toned print"],
         "wear": ["a clean well-exposed plate", "a scratched and fogged archival plate",
                  "a badly developed low-contrast frame"],
@@ -1729,11 +1737,11 @@ FAMILIES.update({
         "emphasis": ["evenly spaced harmonic stacks climbing the frame",
                      "vertical smears where a transient hits every frequency at once",
                      "the noise floor's fine granular texture",
-                     "axis labelling and a colour scale at the frame edge"],
+                     "the brightest ridges blooming into their neighbours"],
         "artifacts": ["window-function smearing widening every band",
                       "aliasing folding a band back down the frame",
                       "a clipped region saturating to flat white",
-                      "the frequency axis labels intruding on the image"],
+                      "a clipped region saturating to flat white"],
         "captures": ["as a labelled linear-frequency plot",
                      "as a log-frequency waterfall", "cropped tight so the axes are gone"],
         "wear": ["a clean high-resolution analysis", "a coarse low-resolution transform",
