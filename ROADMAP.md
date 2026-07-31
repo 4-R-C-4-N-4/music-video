@@ -167,6 +167,30 @@ material progression agree instead of competing.
 
 ---
 
+## Negative findings
+
+**Cross-material tweening produces fades, not transformations.** Guiding a shot
+from one material's still to a different material's still — whether with two
+guides at the ends or four spread across ten seconds — reads as a crossfade.
+Guided i2v interpolates in latent space, and between two unrelated images that
+interpolation *is* a blend; there is no physical process connecting a diatom to
+a nebula for the model to invent.
+
+Measured, and the measurement is the cautionary part: with two guides the middle
+frame stayed 0.983 similar to the *start* image at the halfway point, so nothing
+happened until the tail. Adding waypoints every 3.2s fixed the timing and gave a
+clean diagonal — each sample matching its nearest waypoint — which looked like
+success in the numbers and like quick fades on screen. **A crossfade scores
+identically to a transformation on arrival-based metrics.** Judged by eye:
+uninteresting.
+
+Endpoint tweening between *adjacent* shots is still worth keeping — it makes
+cuts continuations rather than jumps, which is a different and achieved goal.
+
+If revisited, the idea with an actual path to follow is same-material state
+change (the `wear` axis: freshly formed -> decayed) rather than material
+substitution.
+
 ## Explicitly not doing
 
 - **More materials.** 63 families; count stopped being the constraint several
