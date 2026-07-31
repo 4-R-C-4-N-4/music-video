@@ -174,6 +174,104 @@ def similarity(path_a: str, path_b: str) -> float:
     return round(float(e[0:1] @ e[1:2].T), 4)
 
 
+# --- video judging (roadmap item 1) ---------------------------------------
+# Every quality mechanism above stops at the still. These score the rendered
+# clip, so a shot that freezes, dissolves, or abandons its material can be
+# caught instead of silently shipping.
+
+def _sample_frames(video: str, out_dir) -> list[str]:
+    """Pull first / middle / last frames out of a clip.
+
+    Seeks by time rather than frame-selecting: ffmpeg's select filter has no
+    total-frame variable, so expressions like eq(n,n-1) never match and yield
+    nothing. -sseof is the reliable way to reach the final frame.
+    """
+    import subprocess
+    out_dir = pathlib.Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    stem = pathlib.Path(video).stem
+
+    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries",
+                        "format=duration", "-of", "csv=p=0", str(video)],
+                       capture_output=True, text=True)
+    try:
+        dur = float(r.stdout.strip())
+    except ValueError:
+        return []
+
+    seeks = [("a", ["-ss", "0"]), ("b", ["-ss", f"{dur/2:.3f}"]),
+             ("c", ["-sseof", "-0.2"])]
+    paths = []
+    for tag, seek in seeks:
+        pth = out_dir / f"{stem}-{tag}.png"
+        subprocess.run(["ffmpeg", "-y", "-v", "error", *seek, "-i", str(video),
+                        "-frames:v", "1", str(pth)], capture_output=True)
+        if pth.exists() and pth.stat().st_size > 0:
+            paths.append(str(pth))
+    return paths
+
+
+def motion_of(video: str) -> float:
+    """Mean frame-to-frame difference — how much actually moves."""
+    import subprocess
+
+    import numpy as np
+    r = subprocess.run(["ffmpeg", "-v", "error", "-i", str(video),
+                        "-vf", "select=not(mod(n\\,4)),scale=160:88,format=gray",
+                        "-f", "rawvideo", "-"], capture_output=True)
+    a = np.frombuffer(r.stdout, dtype=np.uint8).astype(np.float32)
+    n = len(a) // (160 * 88)
+    if n < 2:
+        return 0.0
+    a = a[:n * 160 * 88].reshape(n, -1)
+    return float(np.abs(np.diff(a, axis=0)).mean())
+
+
+def judge_video(video: str, still: str, description: str, tmp_dir,
+                end_ref: str | None = None,
+                motion_floor: float = 0.12, material_floor: float = 0.70) -> dict:
+    """Score a rendered shot. Returns reasons it failed, empty list if fine.
+
+    - froze:    almost nothing moved; the clip is effectively a still.
+    - lost:     the final frame no longer resembles where it should have
+                ended. `end_ref` is that target: normally the shot's own
+                still, but under tweening the NEXT shot's still, because a
+                tweened shot is *supposed* to land on the following frame.
+                Measured on real output: tweened shots score ~0.6 against
+                their own still and ~0.98 against the next one, so checking
+                the wrong reference flags healthy shots as failures.
+    There is deliberately no separate "dissolved into mush" check. The obvious
+    one — final-frame adherence relative to the still's — divides two raw
+    SigLIP similarities, which are small and sometimes negative, so the ratio
+    goes meaningless (measured values of -1.01 and -0.15 on healthy shots).
+    Dissolution is already caught by the landing check: mush does not resemble
+    the target frame either.
+
+    Thresholds are deliberately loose. A false reroll costs ~90s of GPU, so
+    this should only fire on genuine failure, not on mild drift.
+    """
+    target = end_ref or still
+    frames = _sample_frames(video, tmp_dir)
+    if len(frames) < 3:
+        # Do not report a pass we did not actually establish — a broken judge
+        # that silently approves everything is worse than no judge at all.
+        return {"ok": True, "unjudged": True,
+                "reasons": [], "note": "could not sample frames"}
+
+    motion = motion_of(video)
+    emb = embed_images([still, target] + frames)
+    src, tgt, f_last = emb[0:1], emb[1:2], emb[4:5]
+    material = float(f_last @ tgt.T)
+
+    reasons = []
+    if motion < motion_floor:
+        reasons.append(f"froze (motion {motion:.3f} < {motion_floor})")
+    if material < material_floor:
+        reasons.append(f"lost material ({material:.3f} < {material_floor})")
+    return {"ok": not reasons, "reasons": reasons, "motion": round(motion, 4),
+            "material": round(material, 4)}
+
+
 def main():
     import sys
     args = sys.argv[1:]
