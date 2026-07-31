@@ -47,7 +47,7 @@ the scoring is wrong, not the video.
 
 ---
 
-## 2. Audit whether audio conditioning does anything
+## 2. Audit whether audio conditioning does anything — DONE: CUT
 
 **Why.** This one is a correction, not a feature. Audio conditioning was proven
 to *render*, and then described as making motion answer the music. That was
@@ -67,6 +67,39 @@ an encode per shot, and a feature that does nothing is worse than absent because
 it invites building on top of it.
 
 **Cost.** 12 renders, ~25 min. No code to maintain if the answer is negative.
+
+### Result (measured, 6 shots on `wedbecute`)
+
+| shot | motion audio-on | motion audio-off |
+|---|---|---|
+| 0 | 0.51 | 0.52 |
+| 10 | 1.46 | 1.46 |
+| 20 | 5.52 | 5.51 |
+| 30 | 1.71 | 1.71 |
+| 40 | 1.53 | 1.53 |
+| 50 | 0.35 | 0.36 |
+
+Mean correlation against the onset envelope: **-0.176 on, -0.177 off, delta
++0.000.** Same still, same seed, real audio versus silent latent — the video is
+identical either way.
+
+The slices were checked before drawing the conclusion, in case the audit was
+measuring silence: RMS 0.03-0.34, peaks to full scale. Real audio, no effect.
+
+**Removed.** `slice_audio`, the `LTXVAudioVAEEncode` branch, `--audio` and
+`MVGEN_AUDIO_COND` are gone. Every video built with the flag on was unaffected
+by it.
+
+**Why it probably failed.** Supplying a real audio latent in place of the empty
+one was the wrong mechanism. LTX-2 lists audio-to-video as a *separate
+pipeline*, not a parameter of image-to-video — so the video branch presumably
+never attends to the audio stream in this configuration, and the AV pair is
+simply carried alongside each other. Anyone revisiting this should start from
+that pipeline rather than from the latent swap, and should re-run this audit as
+the acceptance test rather than trusting that it renders.
+
+**Lesson.** "It renders without error" was treated as "it works" for several
+hours, and the benefit was described in summaries before it was ever measured.
 
 ---
 
