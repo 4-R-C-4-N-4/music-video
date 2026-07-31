@@ -1,0 +1,140 @@
+{
+ "acoustic": {
+  "valence": 0.849,
+  "energy": 0.483,
+  "warmth": 0.726,
+  "scale": 0.567,
+  "tempo": 92.3,
+  "majorness": 1.0
+ },
+ "semantic": {
+  "valence": 0.1,
+  "energy": 0.2,
+  "warmth": 0.1,
+  "age": 0.0,
+  "tactility": 0.1,
+  "scale": 0.8,
+  "organic": 0.0,
+  "adjectives": [
+   "desolate",
+   "mechanical",
+   "expansive",
+   "void-like",
+   "stark"
+  ],
+  "imagery": [
+   "monolith",
+   "vacuum",
+   "circuitry",
+   "starlight"
+  ]
+ },
+ "vector": {
+  "valence": 0.549,
+  "energy": 0.398,
+  "warmth": 0.476,
+  "age": 0.0,
+  "tactility": 0.1,
+  "scale": 0.66,
+  "organic": 0.0
+ },
+ "tension": 0.749,
+ "families": [
+  [
+   "lidar",
+   0.505
+  ],
+  [
+   "cathoderay",
+   0.51
+  ],
+  [
+   "spectrogram",
+   0.567
+  ],
+  [
+   "dotmatrix",
+   0.583
+  ],
+  [
+   "schlieren",
+   0.626
+  ],
+  [
+   "smoke",
+   0.644
+  ],
+  [
+   "neon",
+   0.678
+  ],
+  [
+   "halftone",
+   0.678
+  ],
+  [
+   "silkscreen",
+   0.696
+  ],
+  [
+   "scratchboard",
+   0.701
+  ],
+  [
+   "risograph",
+   0.706
+  ],
+  [
+   "cosmic",
+   0.723
+  ],
+  [
+   "linocut",
+   0.757
+  ],
+  [
+   "thermal",
+   0.769
+  ],
+  [
+   "charcoal",
+   0.841
+  ],
+  [
+   "crystallographic",
+   0.846
+  ],
+  [
+   "sumi",
+   0.868
+  ],
+  [
+   "chemigram",
+   0.889
+  ],
+  [
+   "ukiyoe",
+   0.91
+  ],
+  [
+   "lithograph",
+   0.92
+  ],
+  [
+   "platinum",
+   0.923
+  ],
+  [
+   "ferrofluid",
+   0.948
+  ],
+  [
+   "salt",
+   0.948
+  ],
+  [
+   "cutpaper",
+   0.955
+  ]
+ ]
+}

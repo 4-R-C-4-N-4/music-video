@@ -1,0 +1,354 @@
+{
+  "title": "M4Yonais3",
+  "mode": "visualizer",
+  "concept": "A descent from celestial vastness into the microscopic structural decay of light and matter, oscillating between sterile order and entropic chaos.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 5000,
+  "style": "No people, no figures, no buildings, no landscape, no horizon. No object with a visible outline \u2014 no vessel, bowl, panel or plate. The matter fills the frame edge to edge and continues past it.",
+  "scenes": [
+    {
+      "id": "cosmic-void-start",
+      "material": "cosmic",
+      "material_seed": 9400,
+      "still_prompt": "A vast, dark vacuum filled with drifting, pinprick-sized points of light that pulse with a cold, rhythmic dimming.",
+      "beats": [
+        "extreme wide shot of distant, static starlight",
+        "moderate wide shot of light points drifting slowly through the void",
+        "close-up of a single luminous speck flickering",
+        "macro shot of light points clustering into faint nebulous filaments",
+        "extreme macro of light diffraction through a thin cosmic dust veil"
+      ],
+      "video_prompt": "A constant, silent expansion of darkness between the points of light. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, imperceptible drifting of light points through a black vacuum.",
+        "mid": "Swirling, slow-motion eddies of starlight and dark matter.",
+        "high": "Violent, rapid scattering of light points like an explosion in slow motion."
+      }
+    },
+    {
+      "id": "cosmic-nebula-drift",
+      "material": "cosmic",
+      "material_seed": 9401,
+      "still_prompt": "Translucent, glowing gas clouds undulating in a vacuum.",
+      "beats": [
+        "extreme wide shot of vast, pale blue gas curtains",
+        "wide shot of swirling, thin gas filaments",
+        "medium shot of gas density thickening and thinning",
+        "close-up of luminous gas vortices",
+        "extreme close-up of sparkling particulate matter within the gas"
+      ],
+      "video_prompt": "A continuous, faint shimmer of light through the gas. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Gentle, heavy undulations of gas plumes.",
+        "mid": "Rhythmic swirling and expansion of light-catching gas.",
+        "high": "Turbulent, churning gas clouds collapsing inward."
+      }
+    },
+    {
+      "id": "cosmic-starlight-burst",
+      "material": "cosmic",
+      "material_seed": 9402,
+      "still_prompt": "A sudden, blinding surge of white light scattering through deep space.",
+      "beats": [
+        "extreme wide shot of total darkness",
+        "wide shot of light rays piercing the void",
+        "medium shot of light streaks cutting across the frame",
+        "close-up of intense white glare",
+        "extreme close-up of light diffraction patterns"
+      ],
+      "video_prompt": "The persistent, silent vibration of intense light. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Static, unmoving darkness.",
+        "mid": "Expanding ripples of light.",
+        "high": "Explosive, high-velocity streaks of light tearing through the frame."
+      }
+    },
+    {
+      "id": "spectrogram-frequency-waves",
+      "material": "spectrogram",
+      "material_seed": 9403,
+      "still_prompt": "Linear, monochromatic bands of data oscillating in a rhythmic pattern.",
+      "beats": [
+        "wide shot of thin, horizontal data lines",
+        "medium shot of undulating wave peaks",
+        "close-up of sharp, jagged frequency spikes",
+        "macro shot of high-frequency jitter",
+        "extreme macro of pixelated data interference"
+      ],
+      "video_prompt": "A constant, fine-grained digital flicker across the bands. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Steady, slow oscillation of horizontal lines.",
+        "mid": "Rapidly rising and falling sine waves.",
+        "high": "Violent, chaotic vertical spikes of data noise."
+      }
+    },
+    {
+      "id": "spectrogram-signal-burst",
+      "material": "spectrogram",
+      "material_seed": 9404,
+      "still_prompt": "High-amplitude vertical bursts of signal cutting through a flat baseline.",
+      "beats": [
+        "wide shot of a flat, silent baseline",
+        "medium shot of rhythmic signal pulses",
+        "close-up of intense, thick data columns",
+        "macro shot of signal saturation",
+        "extreme macro of white-noise interference"
+      ],
+      "video_prompt": "A continuous, low-level white noise texture. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Minimal, steady baseline hum.",
+        "mid": "Regular, rhythmic pulsing of signal spikes.",
+        "high": "Aggressive, rapid-fire vertical data bursts."
+      }
+    },
+    {
+      "id": "spectrogram-glitch-static",
+      "material": "spectrogram",
+      "material_seed": 9405,
+      "still_prompt": "Fragmented, broken data blocks shifting in a grid-like pattern.",
+      "beats": [
+        "wide shot of a structured data grid",
+        "medium shot of flickering grid blocks",
+        "close-up of pixelated signal decay",
+        "macro shot of digital artifacts",
+        "extreme macro of chromatic aberration in the data"
+      ],
+      "video_prompt": "A persistent, high-frequency digital hum. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, methodical shifting of data blocks.",
+        "mid": "Rhythmic flickering of signal segments.",
+        "high": "Chaotic, rapid-fire digital glitching and fragmentation."
+      }
+    },
+    {
+      "id": "schlieren-heat-plumes",
+      "material": "schlieren",
+      "material_seed": 9406,
+      "still_prompt": "Invisible thermal currents made visible as translucent, warping shadows.",
+      "beats": [
+        "wide shot of subtle, wavy distortions in the air",
+        "medium shot of rising thermal plumes",
+        "close-up of swirling air eddies",
+        "macro shot of turbulent heat convection",
+        "extreme macro of microscopic air refraction"
+      ],
+      "video_prompt": "A continuous, subtle warping of the visual field. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Languid, almost static heat distortions.",
+        "mid": "Steady, rising plumes of thermal energy.",
+        "high": "Violent, turbulent air churning and twisting."
+      }
+    },
+    {
+      "id": "schlieren-shock-wave",
+      "material": "schlieren",
+      "material_seed": 9407,
+      "still_prompt": "Sharp, high-velocity pressure waves rippling through a medium.",
+      "beats": [
+        "wide shot of a clear, undisturbed medium",
+        "medium shot of a single, expanding ripple",
+        "close-up of multiple intersecting shock waves",
+        "macro shot of high-pressure turbulence",
+        "extreme macro of rapid density fluctuations"
+      ],
+      "video_prompt": "A constant, subtle vibration of the medium. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Faint, slow-moving ripples.",
+        "mid": "Steady, expanding concentric waves.",
+        "high": "Rapid, violent, chaotic pressure bursts."
+      }
+    },
+    {
+      "id": "schlieren-gas-jet",
+      "material": "schlieren",
+      "material_seed": 9408,
+      "still_prompt": "A concentrated, high-pressure stream of gas expanding into a void.",
+      "beats": [
+        "wide shot of a faint, ghostly jet stream",
+        "medium shot of a focused, turbulent stream",
+        "close-up of the jet's expanding edge",
+        "macro shot of micro-vortices in the jet",
+        "extreme macro of gas-particle collisions"
+      ],
+      "video_prompt": "A continuous, soft flow of air-like density. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, steady laminar flow.",
+        "mid": "Rhythmic, pulsing jet streams.",
+        "high": "Violent, chaotic jet turbulence."
+      }
+    },
+    {
+      "id": "ferrofluid-spikes",
+      "material": "ferrofluid",
+      "material_seed": 9409,
+      "still_prompt": "A black, oily liquid forming sharp, architectural spikes under magnetic influence.",
+      "beats": [
+        "wide shot of a smooth, dark liquid surface",
+        "medium shot of emerging, slow-moving spikes",
+        "close-up of sharp, geometric liquid towers",
+        "macro shot of undulating black peaks",
+        "extreme macro of oily, shimmering textures"
+      ],
+      "video_prompt": "A continuous, slow ripple across the liquid surface. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, viscous movement of the liquid surface.",
+        "mid": "Rhythmic rising and falling of spikes.",
+        "high": "Violent, frantic spike movement and liquid splashing."
+      }
+    },
+    {
+      "id": "ferrofluid-magnetic-surge",
+      "material": "ferrofluid",
+      "material_seed": 9410,
+      "still_prompt": "A frantic, churning mass of black liquid responding to shifting fields.",
+      "beats": [
+        "wide shot of a vibrating dark pool",
+        "medium shot of rapid spike oscillations",
+        "close-up of aggressive liquid spikes",
+        "macro shot of chaotic black ripples",
+        "extreme macro of liquid surface tension breaking"
+      ],
+      "video_prompt": "A constant, low-frequency tremor in the liquid. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, rhythmic pulsing of the fluid.",
+        "mid": "Rapid, jittery movement of the spikes.",
+        "high": "Violent, chaotic churning of the entire mass."
+      }
+    },
+    {
+      "id": "ferrofluid-void-flow",
+      "material": "ferrofluid",
+      "material_seed": 9411,
+      "still_prompt": "A thin, reflective film of black liquid flowing across an invisible boundary.",
+      "beats": [
+        "wide shot of a dark, reflective plane",
+        "medium shot of flowing liquid ribbons",
+        "close-up of swirling black ink-like flows",
+        "macro shot of liquid surface tension edges",
+        "extreme macro of microscopic oily swirls"
+      ],
+      "video_prompt": "A continuous, slow-moving liquid sheen. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Languid, slow-motion liquid flow.",
+        "mid": "Rhythmic, pulsing flows of black liquid.",
+        "high": "Rapid, turbulent liquid sheeting."
+      }
+    },
+    {
+      "id": "crystallographic-lattice",
+      "material": "crystallographic",
+      "material_seed": 9412,
+      "still_prompt": "A perfect, repeating atomic lattice structure shifting its orientation.",
+      "beats": [
+        "wide shot of a vast, repeating geometric grid",
+        "medium shot of lattice planes tilting",
+        "close-up of grain boundaries and junctions",
+        "macro shot of atomic-scale diffraction patterns",
+        "extreme macro of crystal lattice defects"
+      ],
+      "video_prompt": "A constant, subtle vibration of the lattice structure. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, methodical rotation of the lattice.",
+        "mid": "Rhythmic, pulsing lattice vibrations.",
+        "high": "Violent, chaotic structural shifting and fracturing."
+      }
+    },
+    {
+      "id": "crystallographic-diffraction",
+      "material": "crystallographic",
+      "material_seed": 9413,
+      "still_prompt": "Light diffracting through a microscopic crystal grain in sharp, geometric patterns.",
+      "beats": [
+        "wide shot of diffuse light through a crystal",
+        "medium shot of sharp diffraction spikes",
+        "close-up of geometric light patterns",
+        "macro shot of intense light interference",
+        "extreme macro of light scattering at grain boundaries"
+      ],
+      "video_prompt": "A continuous, faint shimmer of refracted light. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, subtle shifting of light patterns.",
+        "mid": "Rhythmic pulsing of light intensities.",
+        "high": "Violent, rapid-fire flashes of light diffraction."
+      }
+    },
+    {
+      "id": "crystallographic-fracture",
+      "material": "crystallographic",
+      "material_seed": 9414,
+      "still_prompt": "A rigid crystal structure undergoing microscopic fracturing and cleavage.",
+      "beats": [
+        "wide shot of a static, perfect crystal",
+        "medium shot of hairline cracks appearing",
+        "close-up of expanding fracture lines",
+        "macro shot of crystal shards separating",
+        "extreme macro of microscopic surface cleavage"
+      ],
+      "video_prompt": "A constant, high-pitched structural tension. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, creeping crack propagation.",
+        "mid": "Rhythmic, pulsing fractures.",
+        "high": "Violent, chaotic shattering of the lattice."
+      }
+    },
+    {
+      "id": "sem-microscopic-fibres",
+      "material": "sem",
+      "material_seed": 9415,
+      "still_prompt": "A forest of microscopic, rod-like structures under an electron beam.",
+      "beats": [
+        "wide shot of a dense field of vertical rods",
+        "medium shot of tilting, shifting rods",
+        "close-up of surface textures on the rods",
+        "macro shot of tangled, fibrous intersections",
+        "extreme macro of microscopic surface pits"
+      ],
+      "video_prompt": "A constant, low-level electronic hum. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, methodical swaying of the rods.",
+        "mid": "Rhythmic, pulsing movement of the fibers.",
+        "high": "Violent, chaotic thrashing of the micro-fibres."
+      }
+    },
+    {
+      "id": "sem-dust-collision",
+      "material": "sem",
+      "material_seed": 9416,
+      "still_prompt": "Microscopic dust particles colliding and sticking together in a vacuum.",
+      "beats": [
+        "wide shot of drifting, irregular particles",
+        "medium shot of particles colliding",
+        "close-up of particle aggregation",
+        "macro shot of jagged, microscopic surfaces",
+        "extreme macro of atomic-scale particle contact"
+      ],
+      "video_prompt": "A continuous, faint particle-on-surface static. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, drifting motion of particles.",
+        "mid": "Rhythmic, pulsing particle collisions.",
+        "high": "Violent, chaotic particle bombardment."
+      }
+    },
+    {
+      "id": "sem-fracture-face",
+      "material": "sem",
+      "material_seed": 9417,
+      "still_prompt": "The jagged, stepped topography of a microscopic fracture face.",
+      "beats": [
+        "wide shot of a vast, stepped surface",
+        "medium shot of receding, jagged ridges",
+        "close-up of sharp, microscopic cliffs",
+        "macro shot of intricate, broken textures",
+        "extreme macro of singular microscopic cracks"
+      ],
+      "video_prompt": "A constant, high-frequency structural resonance. The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "Slow, sliding movement across the surface.",
+        "mid": "Rhythmic, pulsing texture shifts.",
+        "high": "Violent, rapid-fire structural collapse."
+      }
+    }
+  ]
+}
