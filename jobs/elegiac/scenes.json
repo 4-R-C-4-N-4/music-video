@@ -1,0 +1,392 @@
+{
+  "title": "Elegiac",
+  "mode": "visualizer",
+  "concept": "An elemental descent through shifting states of matter, moving from microscopic stillness to cosmic upheaval and back to silent dissolution.",
+  "fps": 25,
+  "width": 1280,
+  "height": 704,
+  "seed": 5000,
+  "style": "No people, no figures, no buildings, no landscape, no horizon. No object with a visible outline \u2014 no vessel, bowl, panel or plate. The matter fills the frame edge to edge and continues past it.",
+  "scenes": [
+    {
+      "id": "micro-dust-drift",
+      "material": "sem",
+      "material_seed": 9400,
+      "still_prompt": "microscopic particulates suspended in a void, drifting through light shafts.",
+      "beats": [
+        "extreme macro: single translucent fibers drifting slowly",
+        "macro: a cluster of jagged dust grains colliding",
+        "wide macro: a cloud of silvered particles swirling",
+        "macro: a dense wall of grit passing the lens",
+        "extreme macro: single crystalline edges catching light"
+      ],
+      "video_prompt": "tiny, silent specks dancing in light The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, drifting sedimentation",
+        "mid": "slow, drifting sedimentation",
+        "high": "slow, drifting sedimentation"
+      }
+    },
+    {
+      "id": "smoke-swirl-low",
+      "material": "smoke",
+      "material_seed": 9401,
+      "still_prompt": "wisps of grey vapor curling through a dark void.",
+      "beats": [
+        "macro: a single thin thread of smoke uncoiling",
+        "wide macro: a voluminous plume expanding outwards",
+        "macro: smoke braiding into a thick rope",
+        "extreme macro: the turbulent edge of a gas cloud",
+        "wide macro: a vast shroud of grey obscuring the darkness"
+      ],
+      "video_prompt": "faint, ghostly currents of air The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "gentle, rhythmic billowing",
+        "mid": "gentle, rhythmic billowing",
+        "high": "gentle, rhythmic billowing"
+      }
+    },
+    {
+      "id": "ferro-spike-mid",
+      "material": "ferrofluid",
+      "material_seed": 9402,
+      "still_prompt": "black liquid spikes forming and collapsing in rhythmic pulses.",
+      "beats": [
+        "macro: sharp vertical spikes emerging from a dark pool",
+        "wide macro: a landscape of spikes oscillating",
+        "extreme macro: the liquid surface tension breaking into beads",
+        "macro: a wave of black spikes rushing forward",
+        "wide macro: the entire field of spikes undulating in unison"
+      ],
+      "video_prompt": "a rhythmic, heavy thickening of the liquid The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "pulsing, magnetic undulations",
+        "mid": "pulsing, magnetic undulations",
+        "high": "pulsing, magnetic undulations"
+      }
+    },
+    {
+      "id": "salt-crust-still",
+      "material": "salt",
+      "material_seed": 9403,
+      "still_prompt": "geometric salt crystals growing across a surface.",
+      "beats": [
+        "extreme macro: a single white crystal facet growing",
+        "macro: interlocking hexagonal patterns spreading",
+        "wide macro: a vast white crust layering upward",
+        "macro: sharp salt edges catching a harsh light",
+        "extreme macro: the microscopic jaggedness of a salt grain"
+      ],
+      "video_prompt": "a static, blinding white stillness The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "imperceptible, crystalline expansion",
+        "mid": "imperceptible, crystalline expansion",
+        "high": "imperceptible, crystalline expansion"
+      }
+    },
+    {
+      "id": "verdigris-bloom",
+      "material": "verdigris",
+      "material_seed": 9404,
+      "still_prompt": "crusty green oxidation spreading across a dark metallic surface.",
+      "beats": [
+        "macro: a speck of teal powder blooming",
+        "wide macro: a textured wave of corrosion flowing",
+        "extreme macro: the flaky, porous surface of a green scale",
+        "macro: thick layers of verdigris folding over themselves",
+        "wide macro: a heavy, elemental patina consuming the frame"
+      ],
+      "video_prompt": "the silent, creeping growth of mineral crust The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, heavy spreading",
+        "mid": "slow, heavy spreading",
+        "high": "slow, heavy spreading"
+      }
+    },
+    {
+      "id": "schlieren-flow",
+      "material": "schlieren",
+      "material_seed": 9405,
+      "still_prompt": "refractive heat plumes distorting the space.",
+      "beats": [
+        "wide macro: soft, wavy distortions of light",
+        "macro: sharp, turbulent eddies of heat",
+        "extreme macro: the ripple of a single convection cell",
+        "wide macro: rapid, chaotic shimmering of the air",
+        "macro: long, flowing ribbons of thermal energy"
+      ],
+      "video_prompt": "a continuous, invisible shimmering The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "fluid, refractive warping",
+        "mid": "fluid, refractive warping",
+        "high": "fluid, refractive warping"
+      }
+    },
+    {
+      "id": "obsidian-fracture",
+      "material": "obsidian",
+      "material_seed": 9406,
+      "still_prompt": "glassy black surfaces cracking into sharp, razor-like shards.",
+      "beats": [
+        "macro: a single hairline crack racing through glass",
+        "extreme macro: the sharp edge of a black shard",
+        "wide macro: a field of fractured obsidian planes",
+        "macro: heavy black pieces sliding past one another",
+        "extreme macro: light reflecting off a deep, black void"
+      ],
+      "video_prompt": "the heavy, silent weight of stone The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, tectonic shifting",
+        "mid": "slow, tectonic shifting",
+        "high": "slow, tectonic shifting"
+      }
+    },
+    {
+      "id": "cyanotype-wash",
+      "material": "cyanotype",
+      "material_seed": 9407,
+      "still_prompt": "deep blue pigment bleeding through a white medium.",
+      "beats": [
+        "wide macro: a soft wash of Prussian blue",
+        "macro: dark indigo edges bleeding into light",
+        "extreme macro: the grain of the paper soaking up pigment",
+        "wide macro: a heavy, dark blue tide washing across",
+        "macro: the fading of blue into a ghostly grey"
+      ],
+      "video_prompt": "the gradual darkening of a blue void The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, liquid bleeding",
+        "mid": "slow, liquid bleeding",
+        "high": "slow, liquid bleeding"
+      }
+    },
+    {
+      "id": "crystallographic-lattice",
+      "material": "crystallographic",
+      "material_seed": 9408,
+      "still_prompt": "atomic-scale lattices shifting and realigning.",
+      "beats": [
+        "extreme macro: a single atomic node vibrating",
+        "macro: a grid of spheres shifting in perfect unison",
+        "wide macro: a massive lattice structure folding",
+        "extreme macro: the diffraction of light through a grain boundary",
+        "macro: a sudden snap of the molecular grid"
+      ],
+      "video_prompt": "a rigid, mathematical tremor The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "precise, geometric reconfiguration",
+        "mid": "precise, geometric reconfiguration",
+        "high": "precise, geometric reconfiguration"
+      }
+    },
+    {
+      "id": "rust-flake",
+      "material": "rust",
+      "material_seed": 9409,
+      "still_prompt": "layers of iron oxide flaking and peeling away.",
+      "beats": [
+        "macro: a single orange flake curling",
+        "extreme macro: the rough, granular texture of corrosion",
+        "wide macro: a cascade of rust flakes falling",
+        "macro: deep reddish-brown textures colliding",
+        "extreme macro: a microscopic void between metal and rust"
+      ],
+      "video_prompt": "the slow disintegration of metal The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "flaking and crumbling",
+        "mid": "flaking and crumbling",
+        "high": "flaking and crumbling"
+      }
+    },
+    {
+      "id": "sand-drift",
+      "material": "sand",
+      "material_seed": 9410,
+      "still_prompt": "fine grains of sand cascading in endless waves.",
+      "beats": [
+        "macro: a single slip of sand falling",
+        "wide macro: a massive dune-crest collapsing",
+        "extreme macro: individual grains tumbling through light",
+        "macro: a thick, opaque wave of grit",
+        "wide macro: a swirling vortex of golden dust"
+      ],
+      "video_prompt": "the dry hiss of shifting grains The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "violent, cascading avalanches",
+        "mid": "violent, cascading avalanches",
+        "high": "violent, cascading avalanches"
+      }
+    },
+    {
+      "id": "chemigram-surge",
+      "material": "chemigram",
+      "material_seed": 9411,
+      "still_prompt": "chaotic, swirling chemical reactions in liquid.",
+      "beats": [
+        "macro: a burst of dark ink in clear liquid",
+        "wide macro: marbled streaks of black and white",
+        "extreme macro: a bubble of chemical reagent expanding",
+        "macro: chaotic, frenzied swirls of pigment",
+        "wide macro: a total takeover of dark, oily patterns"
+      ],
+      "video_prompt": "the frantic movement of reacting fluids The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "frenzied, turbulent reaction",
+        "mid": "frenzied, turbulent reaction",
+        "high": "frenzied, turbulent reaction"
+      }
+    },
+    {
+      "id": "microbial-bloom",
+      "material": "microbial",
+      "material_seed": 9412,
+      "still_prompt": "dense colonies of cells proliferating rapidly.",
+      "beats": [
+        "extreme macro: a single cell dividing",
+        "macro: a cluster of translucent spheres expanding",
+        "wide macro: a thick, organic mat spreading",
+        "extreme macro: the gelatinous edge of a colony",
+        "macro: a wave of biological growth"
+      ],
+      "video_prompt": "a wet, rhythmic pulsing The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "pulsing, organic expansion",
+        "mid": "pulsing, organic expansion",
+        "high": "pulsing, organic expansion"
+      }
+    },
+    {
+      "id": "cryo-fracture",
+      "material": "cryo",
+      "material_seed": 9413,
+      "still_prompt": "brittle ice shattering and frost forming.",
+      "beats": [
+        "macro: a frost pattern spreading like a web",
+        "extreme macro: a crack racing through clear ice",
+        "wide macro: a massive sheet of ice splintering",
+        "macro: white, opaque ice crystals blooming",
+        "extreme macro: the jagged underside of a frozen edge"
+      ],
+      "video_prompt": "the silent expansion of freezing frost The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "sharp, brittle cracking",
+        "mid": "sharp, brittle cracking",
+        "high": "sharp, brittle cracking"
+      }
+    },
+    {
+      "id": "mineral-glint",
+      "material": "mineral",
+      "material_seed": 9414,
+      "still_prompt": "glittering mineral facets reflecting intense light.",
+      "beats": [
+        "extreme macro: a single sparkling grain",
+        "macro: a cluster of crystals catching light",
+        "wide macro: a massive, shimmering geode face",
+        "macro: light dancing across jagged edges",
+        "extreme macro: the intense refraction of a single facet"
+      ],
+      "video_prompt": "the dancing of reflected light The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "shimmering, light-driven movement",
+        "mid": "shimmering, light-driven movement",
+        "high": "shimmering, light-driven movement"
+      }
+    },
+    {
+      "id": "spectrogram-band",
+      "material": "spectrogram",
+      "material_seed": 9415,
+      "still_prompt": "oscillating bands of frequency and amplitude.",
+      "beats": [
+        "macro: a single, sharp frequency line",
+        "wide macro: a complex wave pattern undulating",
+        "extreme macro: the granular texture of noise",
+        "wide macro: massive, crashing vertical bars",
+        "macro: a rapid, vibrating pulse of signal"
+      ],
+      "video_prompt": "the constant hum of data The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "rapid, jagged oscillations",
+        "mid": "rapid, jagged oscillations",
+        "high": "rapid, jagged oscillations"
+      }
+    },
+    {
+      "id": "cosmic-nebula",
+      "material": "cosmic",
+      "material_seed": 9416,
+      "still_prompt": "vast clouds of luminous gas and dust.",
+      "beats": [
+        "wide macro: a soft, glowing nebula cloud",
+        "macro: swirling filaments of light",
+        "extreme macro: a dense, bright core of gas",
+        "wide macro: massive, sweeping cosmic currents",
+        "macro: a sudden burst of starlight through gas"
+      ],
+      "video_prompt": "the silent, vast expansion of space The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "slow, celestial swirling",
+        "mid": "slow, celestial swirling",
+        "high": "slow, celestial swirling"
+      }
+    },
+    {
+      "id": "lidar-pointcloud",
+      "material": "lidar",
+      "material_seed": 9417,
+      "still_prompt": "a dense cloud of glowing points defining a shape.",
+      "beats": [
+        "macro: a swarm of dots coalescing",
+        "wide macro: a structural grid of points flickering",
+        "extreme macro: individual points of light drifting",
+        "macro: a wave of points scanning the void",
+        "wide macro: a complex, digital architecture of light"
+      ],
+      "video_prompt": "a rhythmic, flickering data stream The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "pulsing, digital scanning",
+        "mid": "pulsing, digital scanning",
+        "high": "pulsing, digital scanning"
+      }
+    },
+    {
+      "id": "darkfield-jewel",
+      "material": "darkfield",
+      "material_seed": 9418,
+      "still_prompt": "luminous microscopic particles in total darkness.",
+      "beats": [
+        "extreme macro: a single, glowing diatom",
+        "macro: a swarm of jewelled particles",
+        "wide macro: a cloud of brilliant, tiny specks",
+        "extreme macro: the intricate, light-catching shell of a cell",
+        "macro: a sudden, bright flash of light from a grain"
+      ],
+      "video_prompt": "the quiet drift of sparkling dust The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "swirling, luminous suspension",
+        "mid": "swirling, luminous suspension",
+        "high": "swirling, luminous suspension"
+      }
+    },
+    {
+      "id": "web-gossamer",
+      "material": "web",
+      "material_seed": 9419,
+      "still_prompt": "delicate, intersecting filaments of silk.",
+      "beats": [
+        "macro: a single strand tensioning",
+        "wide macro: a complex, geometric mesh",
+        "extreme macro: a tiny droplet on a thread",
+        "macro: the web vibrating in a breeze",
+        "wide macro: a vast, dusty web filling the frame"
+      ],
+      "video_prompt": "the slow settling of dust on silk The material texture stays constant and visible throughout.",
+      "motion": {
+        "low": "delicate, trembling vibrations",
+        "mid": "delicate, trembling vibrations",
+        "high": "delicate, trembling vibrations"
+      }
+    }
+  ]
+}

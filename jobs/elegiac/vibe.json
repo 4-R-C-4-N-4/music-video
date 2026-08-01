@@ -1,0 +1,140 @@
+{
+ "acoustic": {
+  "valence": 0.287,
+  "energy": 0.664,
+  "warmth": 0.732,
+  "scale": 0.605,
+  "tempo": 136.0,
+  "majorness": 0.198
+ },
+ "semantic": {
+  "valence": 0.1,
+  "energy": 0.1,
+  "warmth": 0.4,
+  "age": 0.7,
+  "tactility": 0.6,
+  "scale": 0.8,
+  "organic": 0.5,
+  "adjectives": [
+   "melancholic",
+   "somber",
+   "reverent",
+   "expansive",
+   "wistful"
+  ],
+  "imagery": [
+   "marble",
+   "dust",
+   "shadows",
+   "tide"
+  ]
+ },
+ "vector": {
+  "valence": 0.212,
+  "energy": 0.495,
+  "warmth": 0.599,
+  "age": 0.7,
+  "tactility": 0.6,
+  "scale": 0.683,
+  "organic": 0.5
+ },
+ "tension": 0.187,
+ "families": [
+  [
+   "sumi",
+   0.488
+  ],
+  [
+   "charcoal",
+   0.489
+  ],
+  [
+   "pyrography",
+   0.495
+  ],
+  [
+   "smoke",
+   0.497
+  ],
+  [
+   "rust",
+   0.503
+  ],
+  [
+   "ukiyoe",
+   0.549
+  ],
+  [
+   "fresco",
+   0.56
+  ],
+  [
+   "platinum",
+   0.56
+  ],
+  [
+   "tapestry",
+   0.564
+  ],
+  [
+   "photogravure",
+   0.574
+  ],
+  [
+   "encaustic",
+   0.583
+  ],
+  [
+   "tempera",
+   0.587
+  ],
+  [
+   "wax",
+   0.598
+  ],
+  [
+   "etching",
+   0.609
+  ],
+  [
+   "sand",
+   0.618
+  ],
+  [
+   "lithograph",
+   0.63
+  ],
+  [
+   "salt",
+   0.63
+  ],
+  [
+   "verdigris",
+   0.632
+  ],
+  [
+   "scratchboard",
+   0.639
+  ],
+  [
+   "lithic",
+   0.64
+  ],
+  [
+   "chemigram",
+   0.646
+  ],
+  [
+   "obsidian",
+   0.648
+  ],
+  [
+   "linocut",
+   0.651
+  ],
+  [
+   "mosaic",
+   0.659
+  ]
+ ]
+}

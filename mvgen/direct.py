@@ -158,6 +158,22 @@ def mood_context(lyrics: dict | None, vibe: dict | None = None) -> str:
     return "\n".join(parts)
 
 
+
+def normalise_motion(motion, fallback: str = "The camera moves slowly.") -> dict:
+    """Guarantee all three energy levels exist.
+
+    The director often returns only the level matching a scene's own section
+    rather than all three — a fair reading of the schema, since each scene maps
+    to one section. Planning indexes motion by level, so a missing key raised
+    KeyError and killed the build after the LLM had already run. Fill from
+    whatever was supplied instead of failing.
+    """
+    motion = dict(motion or {})
+    present = [v for v in motion.values() if isinstance(v, str) and v.strip()]
+    base = present[0] if present else fallback
+    return {lvl: motion.get(lvl) or base for lvl in ("low", "mid", "high")}
+
+
 def build_spec(plan_json: dict, analysis: dict, lyrics: dict | None,
                title: str, seed: int = 3000, ranked: list[str] | None = None) -> dict:
     levels = [s["level"] for s in analysis["sections"]]
@@ -183,7 +199,7 @@ def build_spec(plan_json: dict, analysis: dict, lyrics: dict | None,
             "still_prompt": sc["setting"],
             "beats": sc["beats"],
             "video_prompt": sc.get("ambient", "") + " The material texture of the image stays constant and visible throughout.",
-            "motion": sc["motion"],
+            "motion": normalise_motion(sc.get("motion")),
         })
     return {
         "title": title,
