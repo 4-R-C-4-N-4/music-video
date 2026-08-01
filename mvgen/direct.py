@@ -34,7 +34,9 @@ context for mood and theme only. Your output describes places and actions.
 - Describe concrete, filmable places. No abstractions ("a sense of longing"), \
 no text or writing in frame, no logos.
 - Never name a real person, artist, band, or trademark.
-- Each scene must be a genuinely different location, not a variation."""
+- Each scene must be a genuinely different location, not a variation.
+- Use a DIFFERENT material for every scene. Do not group several scenes under
+  one material."""
 
 USER = """Design the visual plan for a music video.
 
@@ -157,14 +159,21 @@ def mood_context(lyrics: dict | None, vibe: dict | None = None) -> str:
 
 
 def build_spec(plan_json: dict, analysis: dict, lyrics: dict | None,
-               title: str, seed: int = 3000) -> dict:
+               title: str, seed: int = 3000, ranked: list[str] | None = None) -> dict:
     levels = [s["level"] for s in analysis["sections"]]
+    used: set[str] = set()
     scenes = []
     for i, sc in enumerate(plan_json["scenes"]):
         level = levels[i] if i < len(levels) else "mid"
+        # One material per scene — see visualizer.build_spec for the measured
+        # reason. The model reuses its favourites when left to choose freely.
         key = sc.get("material")
-        if key not in MATERIALS:
-            key = BY_LEVEL[level][i % len(BY_LEVEL[level])]
+        if key not in MATERIALS or key in used:
+            key = next((k for k in (ranked or []) if k not in used),
+                       None) or next(
+                (k for k in BY_LEVEL[level] if k not in used),
+                BY_LEVEL[level][i % len(BY_LEVEL[level])])
+        used.add(key)
         scenes.append({
             "id": sc.get("id") or f"scene-{i+1}",
             "material": key,
@@ -237,7 +246,8 @@ def direct(jobdir: str, model: str = "gemma4-nothink", keep_llm: bool = False) -
         for attempt in range(3):
             plan_json = ask(prompt)
             spec = build_spec(plan_json, analysis, lyrics,
-                              title=job.name.replace("-", " ").title())
+                              title=job.name.replace("-", " ").title(),
+                              ranked=keys)
             blob = json.dumps(spec)
             if not leaks(blob, grams):
                 break

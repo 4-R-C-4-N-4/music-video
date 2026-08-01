@@ -30,7 +30,10 @@ Hard rules:
   bowls, panels, plates, sheets or any thing with an outline in the frame. The
   camera is inside the material, not looking at it.
 - Never quote or reproduce lyrics. Transcript context is for mood only.
-- Each scene must be a genuinely different phenomenon, not a variation."""
+- Each scene must be a genuinely different phenomenon, not a variation.
+- Use a DIFFERENT material for every scene. Do not group several scenes under
+  one material — varying the phenomenon while repeating the material still
+  reads as dwelling on one look."""
 
 USER = """Design an abstract visualiser for a track.
 
@@ -71,14 +74,32 @@ Exactly {n} scenes. There may be more scenes than sections — that is intended,
 the extra phenomena keep an abstract sequence from visibly cycling."""
 
 
-def build_spec(plan_json: dict, analysis: dict, title: str, seed: int = 5000) -> dict:
+def build_spec(plan_json: dict, analysis: dict, title: str, seed: int = 5000,
+               ranked: list[str] | None = None) -> dict:
     levels = [s["level"] for s in analysis["sections"]]
+    # Draw the palette down rather than letting it be resampled. Measured over
+    # every job since the palette expanded: given a free choice the model picks
+    # ferrofluid 2.75 times per offer and sumi 0.14, and it groups scenes under
+    # one material (one build came back as 18 phenomena across only 6 materials,
+    # in blocks of three). Enforcing one material per scene guarantees the
+    # spread instead of asking the model to override its own taste.
+    pool = [k for k in (ranked or ABSTRACT) if k in ABSTRACT] or list(ABSTRACT)
+    used: set[str] = set()
+
+    def take(preferred: str | None, i: int) -> str:
+        if preferred in ABSTRACT and preferred in MATERIALS and preferred not in used:
+            return preferred
+        for k in pool:                      # next best fit not yet spent
+            if k not in used:
+                return k
+        return (preferred if preferred in MATERIALS
+                else ABSTRACT[i % len(ABSTRACT)])   # pool exhausted
+
     scenes = []
     for i, sc in enumerate(plan_json["scenes"]):
         level = levels[i] if i < len(levels) else levels[i % len(levels)]
-        key = sc.get("material")
-        if key not in MATERIALS or key not in ABSTRACT:
-            key = ABSTRACT[i % len(ABSTRACT)]
+        key = take(sc.get("material"), i)
+        used.add(key)
         scenes.append({
             "id": sc.get("id") or f"scene-{i+1}",
             "material": key,
@@ -161,7 +182,7 @@ def direct(jobdir: str, model: str = "gemma4-nothink") -> dict:
         llm_down()
 
     title = re.sub(r"[-_]+", " ", job.name).title()
-    spec = build_spec(plan_json, analysis, title)
+    spec = build_spec(plan_json, analysis, title, ranked=keys)
     json.dump(spec, open(job / "scenes.json", "w"), indent=2)
     return spec
 
