@@ -10,7 +10,7 @@ import json
 import random
 import sys
 
-from .materials import FAMILIES, jitter
+from .materials import ABSTRACT_FRAMING, FAMILIES, jitter
 
 # Fallback beats when a scene doesn't author its own: generic blocking that
 # leads the prompt (the image model follows lead content, so composition MUST
@@ -217,6 +217,8 @@ def plan(analysis: dict, spec: dict, lyrics: dict | None = None) -> dict:
                 # with a filter applied.
                 t = jitter(fam, scene.get("material_seed", base_seed), shot["seed"])
                 lead, scene_style = t["lead"], t["style"]
+                if visualizer and fam in ABSTRACT_FRAMING:
+                    scene_style += " " + ABSTRACT_FRAMING[fam]
             else:
                 scene_style = scene.get("style", style)
                 lead = scene.get("lead", "Cinematic film still:")

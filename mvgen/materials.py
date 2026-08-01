@@ -1773,3 +1773,49 @@ ABSTRACT = ["ferrofluid", "chemigram", "crystallographic", "mineral", "cryo",
             "sem", "cosmic", "microbial", "verdigris", "cyanotype",
             "smoke", "salt", "rust", "sand", "web", "schlieren", "spectrogram",
             "lidar", "darkfield", "bubblechamber", "thermal", "nacre", "obsidian"]
+
+
+# Redefined here, last-wins, after every FAMILIES.update() above.
+#
+# Craft families are admissible as abstract phenomena when the material is
+# itself a *field* — the constraint is not the medium but whether the framing
+# centres an object. A mosaic panel is a thing; a field of tesserae is not.
+ABSTRACT = [
+    # substance / instrument — abstract by nature
+    "ferrofluid", "chemigram", "crystallographic", "mineral", "cryo",
+    "sem", "cosmic", "microbial", "verdigris", "cyanotype",
+    "smoke", "salt", "rust", "sand", "web", "schlieren", "spectrogram",
+    "lidar", "darkfield", "bubblechamber", "thermal", "nacre", "obsidian",
+    # surface-native craft: filling the frame is the natural framing
+    "encaustic", "batik", "fresco", "charcoal", "lacework", "embroidery",
+    "tapestry", "pyrography", "scratchboard", "halftone", "cathoderay",
+    "mosaic",
+    # admissible, but the substrate pulls toward a discrete object — these
+    # rely on the framing notes below
+    "felted", "stainedglass", "raku", "neon", "dotmatrix", "cutpaper",
+]
+
+# Appended to the treatment in visualizer mode only. Each names the fragment
+# rather than the artifact: the model renders the pot, panel or sheet its
+# substrate implies even when the prompt forbids objects, and naming the
+# surface instead is what keeps these abstract.
+ABSTRACT_FRAMING = {
+    "felted": "A fragment of the felted surface filling the frame, never a whole object or figure.",
+    "stainedglass": "A detail of the glass filling the frame — came and colour only, never a whole window or a depicted scene.",
+    "raku": "A fragment of the glazed surface filling the frame, never a whole vessel.",
+    "neon": "The tubing filling the frame as pure glowing line, never a sign or legible shape.",
+    "dotmatrix": "The printed field filling the frame, no sheet edge or perforations visible.",
+    "cutpaper": "The layered planes filling the frame, no box, mount or frame edge visible.",
+    "mosaic": "The tesserae filling the frame edge to edge, never a whole panel or a depicted figure.",
+    "tapestry": "The woven surface filling the frame, no hanging edge or border visible.",
+    "embroidery": "The stitched surface filling the frame, no hoop, edge or depicted motif.",
+    "lacework": "The lace mesh filling the frame, no edge or garment visible.",
+    "fresco": "The plaster surface filling the frame, no architecture or depicted figures.",
+    "charcoal": "The drawn surface filling the frame, no sheet edge and nothing depicted.",
+    "halftone": "The dot screen filling the frame, no page edge or text.",
+    "cathoderay": "The phosphor field filling the frame, no bezel and nothing legible.",
+    "scratchboard": "The cut field filling the frame, no board edge and nothing depicted.",
+    "encaustic": "The wax surface filling the frame, no panel edge visible.",
+    "batik": "The dyed cloth filling the frame, no selvedge or garment shape.",
+    "pyrography": "The scorched wood surface filling the frame, no panel edge or depicted image.",
+}
