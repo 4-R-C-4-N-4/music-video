@@ -1819,3 +1819,13 @@ ABSTRACT_FRAMING = {
     "batik": "The dyed cloth filling the frame, no selvedge or garment shape.",
     "pyrography": "The scorched wood surface filling the frame, no panel edge or depicted image.",
 }
+
+
+# spectrogram is defined above but deliberately not selectable: the frequency
+# -band look reads as a literal audio waveform, which is the most obvious
+# possible visual for a music video and lands as a cliché rather than a
+# material. The family stays defined so a hand-authored spec can still ask for
+# it, but it is removed from every automatic pool.
+ABSTRACT = [k for k in ABSTRACT if k != "spectrogram"]
+BY_LEVEL = {lvl: [k for k in ks if k != "spectrogram"] for lvl, ks in BY_LEVEL.items()}
+ABSTRACT_FRAMING.pop("spectrogram", None)
